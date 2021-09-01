@@ -1,14 +1,50 @@
-# Project
+<img style="float: left;" src="assets/images/APIM.png">
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+# Azure API Management - Hands-on Lab Workshop
 
-As the maintainer of this project, please make a few updates:
+This hands-on-lab will guide you through the different concepts around Azure API Management, from the creation, to the DevOps, including good practices in terms of versioning, security and so on.
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+Index
+
+- [Lab Prerrequisites](apimlab/0-labPrerrequisites/apimanagement-prerrequisites.md)
+- [Part 1 - Create an API Management instance](apim-lab/1-apimCreation/apimanagement-1.md)
+- [Part 2 - Developer Portal and Product Management](apim-lab/2-developerPortal/apimanagement-2.md)
+- [Part 3 - Adding API's](apim-lab/3-addingApis/apimanagement-3.md)
+- [Part 4 - Policy Expressions](apim-lab/4-policyExpressions/apimanagement-4.md)
+- [Part 5 - Versioning and Revisions](apim-lab/5-versionsRevisions/apimanagement-5.md)
+- [Part 6 - Analytics and Monitoring](apim-lab/6-analyticsMonitoring/apimanagement-6.md)
+- [Part 7 - Security](apim-lab/7-security/apimanagement-7.md)
+- [Part 8 - DevOps](apim-lab/8-devops/apimanagement-8.md)
+
+Additional Topics
+
+- [Deploy your own Colours web/api](apim-lab/9-additionalTopics/apimanagement-A.md)
+- [API Proxy to Serverless](apim-lab/9-additionalTopics/apimanagement-B.md)
+- [Self-hosted Gateway](apim-lab/9-additionalTopics/apimanagement-C.md)
+- [AAD - Integration, Work In progress](apim-lab/9-additionalTopics/apimanagement-D.md) 
+
+Slides
+
+- [Azure API Management Slides](assets/slides/APIM.pptx)
+
+Diagrams
+
+- [Azure API Management Architecture Design Session](assets/diagrams/apimADSv1.drawio)
+
+Authors
+
+- [Mark Harrison](http://github.com/markharrison)
+- [David Barkol](https://github.com/dbarkol)
+- [Osvaldo Dailbert](https://github.com/odaibert)
+- [Fernando Mejía](https://github.com/feranto)
+- [Louis-Guillaume MORAND](https://github.com/lgmorand)
+
+[Based on the original APIM Lab by Mark Harrison.](https://github.com/markharrison/Lab_APIM_Original)
+
+Last Updated: 24/Aug/2020
+
+---
+
 
 ## Contributing
 
