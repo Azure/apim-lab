@@ -1,0 +1,12 @@
+{
+    "name": "Codespaces Node.js Starter",
+    "extensions": [
+		"dbaeumer.vscode-eslint",
+		"vscode-icons-team.vscode-icons",
+        "ms-azuretools.vscode-docker"
+    ],
+    "dockerFile": "Dockerfile",
+    "settings": {
+        "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    }
+}
