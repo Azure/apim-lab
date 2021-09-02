@@ -1,9 +1,10 @@
 {
-    "name": "Codespaces Node.js Starter",
+    "name": "Codespaces Apim github pages",
     "extensions": [
 		"dbaeumer.vscode-eslint",
 		"vscode-icons-team.vscode-icons",
-        "ms-azuretools.vscode-docker"
+        "ms-azuretools.vscode-docker",
+        "ginfuru.ginfuru-vscode-jekyll-syntax"
     ],
     "dockerFile": "Dockerfile",
     "settings": {
