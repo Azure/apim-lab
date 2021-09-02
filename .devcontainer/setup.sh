@@ -22,7 +22,7 @@ sed -i -e "s/\/root\/.oh-my-zsh/\/home\/$USERNAME\/.oh-my-zsh/g" /home/$USERNAME
 chown -R $USER_UID:$USER_GID /home/$USERNAME/.oh-my-zsh /home/$USERNAME/.zshrc
 
 # setup and install ruby
-apt-get install -y grep md5 sha1 sha256 sha512 tar bzip2 patch gcc wget
+apt-get install -y grep md5sum sha1sum sha256sum sha512sum tar bzip2 patch gcc wget
 wget -O ruby-install-0.8.2.tar.gz https://github.com/postmodern/ruby-install/archive/v0.8.2.tar.gz
 tar -xzvf ruby-install-0.8.2.tar.gz
 cd ruby-install-0.8.2/
