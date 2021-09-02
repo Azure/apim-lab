@@ -22,4 +22,7 @@ sed -i -e "s/\/root\/.oh-my-zsh/\/home\/$USERNAME\/.oh-my-zsh/g" /home/$USERNAME
 chown -R $USER_UID:$USER_GID /home/$USERNAME/.oh-my-zsh /home/$USERNAME/.zshrc
 
 # setup and install ruby
-sudo apt-get install -y ruby-full
+sudo apt-get install -y ruby-full build-essential zlib1g-dev
+
+# setup and install jekyll
+gem install jekyll bundler
