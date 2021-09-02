@@ -23,6 +23,3 @@ chown -R $USER_UID:$USER_GID /home/$USERNAME/.oh-my-zsh /home/$USERNAME/.zshrc
 
 # setup and install ruby
 sudo apt-get install -y ruby-full
-
-# install ruby gems
-gem install just-the-docs
