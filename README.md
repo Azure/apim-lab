@@ -6,7 +6,7 @@ This hands-on-lab will guide you through the different concepts around Azure API
 
 Index
 
-- [Lab Prerrequisites](apimlab/0-labPrerrequisites/apimanagement-prerrequisites.md)
+- [Lab Prerrequisites](apim-lab/0-labPrerrequisites/apimanagement-prerrequisites.md)
 - [Part 1 - Create an API Management instance](apim-lab/1-apimCreation/apimanagement-1.md)
 - [Part 2 - Developer Portal and Product Management](apim-lab/2-developerPortal/apimanagement-2.md)
 - [Part 3 - Adding API's](apim-lab/3-addingApis/apimanagement-3.md)
@@ -40,10 +40,6 @@ Authors
 - [Louis-Guillaume MORAND](https://github.com/lgmorand)
 
 [Based on the original APIM Lab by Mark Harrison.](https://github.com/markharrison/Lab_APIM_Original)
-
-Last Updated: 24/Aug/2020
-
----
 
 
 ## Contributing
