@@ -1,7 +1,7 @@
 ---
 title: JWT token validation 
 parent: Security
-has_children: true
+has_children: false
 nav_order: 1
 ---
 

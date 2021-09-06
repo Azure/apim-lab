@@ -1,7 +1,7 @@
 ---
 title: Add your first API's
 parent: Adding API's
-has_children: true
+has_children: false
 nav_order: 1
 ---
 

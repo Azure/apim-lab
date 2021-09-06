@@ -1,7 +1,7 @@
 ---
 title: Provision your own instance of ColorWeb/ColorAPI
 parent: Additional Topics
-has_children: true
+has_children: false
 nav_order: 1
 ---
 

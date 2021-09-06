@@ -1,7 +1,7 @@
 ---
 title: Getting started with policies
 parent: Policy Expressions
-has_children: true
+has_children: false
 nav_order: 1
 ---
 
