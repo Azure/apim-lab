@@ -1,7 +1,7 @@
 ---
 title: Monitoring your API's
 parent: Analytics and Monitoring
-has_children: true
+has_children: false
 nav_order: 1
 ---
 

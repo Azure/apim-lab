@@ -1,7 +1,7 @@
 ---
 title: Getting started
 parent: Developer Portal
-has_children: true
+has_children: false
 nav_order: 1
 ---
 

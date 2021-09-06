@@ -1,7 +1,7 @@
 ---
 title: Create an Instance
 parent: Azure Apim Creation
-has_children: true
+has_children: false
 nav_order: 1
 ---
 

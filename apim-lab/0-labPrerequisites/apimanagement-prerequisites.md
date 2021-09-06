@@ -1,7 +1,7 @@
 ---
 title: Checking Access to assets
-parent: Prerrequisites
-has_children: true
+parent: Prerequisites
+has_children: false
 nav_order: 1
 ---
 

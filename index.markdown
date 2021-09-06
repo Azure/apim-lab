@@ -1,3 +1,10 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: home
+---
+
 <img style="float: left;" src="assets/images/APIM.png">
 
 # Azure API Management - Hands-on Lab Workshop
@@ -6,7 +13,7 @@ This hands-on-lab will guide you through the different concepts around Azure API
 
 Index
 
-- [Lab Prerrequisites](apim-lab/0-labPrerrequisites/apimanagement-prerrequisites.md)
+- [Lab Prerequisites](apim-lab/0-labPrerequisites/apimanagement-prerequisites.md)
 - [Part 1 - Create an API Management instance](apim-lab/1-apimCreation/apimanagement-1.md)
 - [Part 2 - Developer Portal and Product Management](apim-lab/2-developerPortal/apimanagement-2.md)
 - [Part 3 - Adding API's](apim-lab/3-addingApis/apimanagement-3.md)
