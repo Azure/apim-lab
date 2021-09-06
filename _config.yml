@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   This hands-on-lab will guide you through the different concepts around Azure API Management, from the creation to the DevOps, including good practices in terms of versioning, security and so on. It is designed to bring customers and partners to a 200-level understanding of Azure Api Management. 
 #baseurl: "" # the subpath of your site, e.g. /blog
 #url: "" # the base hostname & protocol for your site, e.g. http://example.com
-search_enabled: true
+search_enabled: false
 color_scheme: "light"
 theme: "just-the-docs"
 
