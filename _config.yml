@@ -27,7 +27,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 search_enabled: false
 color_scheme: "light"
 remote_theme: pmarsceill/just-the-docs
-
+logo: "/assets/images/APIMfavicon.png"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
