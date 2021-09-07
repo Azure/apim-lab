@@ -1,8 +1,7 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+title: About this workshop
+has_children: false
 nav_order: -1
-layout: home
 ---
 
 <img src="assets/images/APIM.png">
