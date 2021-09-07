@@ -5,6 +5,8 @@ nav_order: -1
 layout: home
 ---
 
+<img src="assets/images/APIM.png">
+
 #  About this workshop
 
 

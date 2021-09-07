@@ -27,7 +27,6 @@ description: >- # this means to ignore newlines until "baseurl:"
 search_enabled: true
 color_scheme: "light"
 remote_theme: pmarsceill/just-the-docs
-logo: "/assets/images/APIM.png"
 search:
   # Split pages into sections that can be searched individually
   # Supports 1 - 6, default: 2
@@ -97,5 +96,3 @@ back_to_top_text: "Back to top"
 
 ga_tracking: UA-177508304-1
 ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
-
-color_scheme: light
