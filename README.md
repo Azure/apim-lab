@@ -4,47 +4,13 @@ nav_exclude: true
 
 <img style="float: left;" src="assets/images/APIM.png">
 
-# Azure API Management - Hands-on Lab Workshop
+#  About this workshop
 
-This hands-on-lab will guide you through the different concepts around Azure API Management, from the creation, to the DevOps, including good practices in terms of versioning, security and so on.
 
-Index
+This hands-on-lab will guide you through the different concepts around Azure API Management, from the creation to the DevOps, including good practices in terms of versioning, security and so on. It is designed to bring customers and partners to a 200-level understanding of Azure Api Management. This is meant to be a hands on lab experience, all instructions are provided, but a basic level of understanding of apis is expected(http operations, networking basics, openapi, rest, soap, oauth2 and other concepts).
 
-- [Lab Prerrequisites](apim-lab/0-labPrerrequisites/apimanagement-prerrequisites.md)
-- [Part 1 - Create an API Management instance](apim-lab/1-apimCreation/apimanagement-1.md)
-- [Part 2 - Developer Portal and Product Management](apim-lab/2-developerPortal/apimanagement-2.md)
-- [Part 3 - Adding API's](apim-lab/3-addingApis/apimanagement-3.md)
-- [Part 4 - Policy Expressions](apim-lab/4-policyExpressions/apimanagement-4.md)
-- [Part 5 - Versioning and Revisions](apim-lab/5-versionsRevisions/apimanagement-5.md)
-- [Part 6 - Analytics and Monitoring](apim-lab/6-analyticsMonitoring/apimanagement-6.md)
-- [Part 7 - Security](apim-lab/7-security/apimanagement-7.md)
-- [Part 8 - DevOps](apim-lab/8-devops/apimanagement-8.md)
 
-Additional Topics
-
-- [Deploy your own Colours web/api](apim-lab/9-additionalTopics/apimanagement-A.md)
-- [API Proxy to Serverless](apim-lab/9-additionalTopics/apimanagement-B.md)
-- [Self-hosted Gateway](apim-lab/9-additionalTopics/apimanagement-C.md)
-- [AAD - Integration, Work In progress](apim-lab/9-additionalTopics/apimanagement-D.md) 
-
-Slides
-
-- [Azure API Management Slides](assets/slides/APIM.pptx)
-
-Diagrams
-
-- [Azure API Management Architecture Design Session](assets/diagrams/apimADSv1.drawio)
-
-Authors
-
-- [Mark Harrison](http://github.com/markharrison)
-- [David Barkol](https://github.com/dbarkol)
-- [Osvaldo Dailbert](https://github.com/odaibert)
-- [Fernando Mejía](https://github.com/feranto)
-- [Louis-Guillaume MORAND](https://github.com/lgmorand)
-
-[Based on the original APIM Lab by Mark Harrison.](https://github.com/markharrison/Lab_APIM_Original)
-
+[This workshop is delivered using Github Pages and Just-The-Docs theme at https://aka.ms/apimlab or https://azure.github.io/apim-lab/.](azure.github.io/apim-lab/)
 
 ## Contributing
 
