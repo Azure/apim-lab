@@ -1,19 +1,10 @@
 ---
-title: Monitoring your API's
+title: Application Insights
 parent: Analytics and Monitoring
 has_children: false
-nav_order: 1
+nav_order: 2
 ---
 
-# Basic Monitoring with Azure Monitor
-
-Analytics is available in the Azure management portal from the Analytics blade.
-
-- Look at the dashboard and detailed :  Timeline , Geography , APIs , Operations , Products , Subscriptions , Users , Requests
-
-![](../../assets/images/APIMAnalytics.png)
-
-![](../../assets/images/APIMAnalytics2.png)
 
 
 # How to integrate Azure API Management with Azure Application Insights

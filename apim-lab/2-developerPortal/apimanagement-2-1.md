@@ -1,13 +1,10 @@
 ---
-title: Getting started
+title: Publishing Developer Portal
 parent: Developer Portal
 has_children: false
 nav_order: 1
 ---
 
-## Developer Portal
-
-The developer portal is an automatically generated, fully customizable website with the documentation of your APIs. It is where API consumers can discover your APIs, learn how to use them, request access, and try them out. 
 
 ### Publishing the developer portal
 
@@ -85,58 +82,7 @@ It's now time to test one of the published APIs. Open the APIs page and look at 
 
 ![](../../assets/images/APIMDevTryAPI2.png)
 
-### Customising the Developer Portal
-
-#### Site Configuration
-
-The developer portal is based on a fork of the Paperbits Web framework <https://paperbits.io/>, and is enriched with API Management-specific features.  The fork resides at <https://github.com/Azure/api-management-developer-portal>.
-
-It is possible to self-host, and manage your own developer portal outside of an API Management instance. It's an advanced option, which allows you to edit the portal's codebase and extend the provided core functionality. This is documented at <https://github.com/Azure/api-management-developer-portal/wiki>/ and <https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-developer-portal>.
-
-Before you make your portal available to the visitors, you should personalize the automatically generated content. Recommended changes include the layouts, styles, and the content of the home page. This is documented at <https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-developer-portal-customize>
-
-Video on customization is available at <https://www.youtube.com/watch?v=5mMtUSmfUlw>
-
-![](../../assets/images/APIMDevConfig.png)
-
-![](../../assets/images/APIDevConfig2.png)
-
-![](../../assets/images/APIMDevStyles.png)
-
-#### Email Configuration
-
-The templates for the email notifications are managed from the Azure Management Portal, directly on the blade's side menu.
-Look at the available notifications and notifications templates which are customizable
-
-![](../../assets/images/APIMNotifications.png)
-
-![](../../assets/images/APIMNotificationTemplates.png)
-
-![](../../assets/images/APIMNotificationEdit.png)
 
 
-### Product Management
-
-A product contains one or more APIs as well as a usage quota and the terms of use. Once a product is published, developers can subscribe to the product and begin to use the product's APIs.
-
-#### Product definition
-
-Again in the Azure Management portal, open the left menu `Products `
-
-![](../../assets/images/APIMProducts.png)
-
-Add a new product - for example a Gold tier - change its visibility (Published) and click on the [Create] button
-
-![](../../assets/images/APIMAddProduct.png)
-
-![](../../assets/images/APIMAddProduct2.png)
-
-Set Access Controls to allow access to developers and guests
-
-![](../../assets/images/APIMAddProductsAccess.png)
-
-Once saved, see the new Gold Tier product in the Developer portal
-
-![](../../assets/images/APIMAddProductsDevPortal.png)
 
 
