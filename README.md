@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 <img style="float: left;" src="assets/images/APIM.png">
 
 # Azure API Management - Hands-on Lab Workshop

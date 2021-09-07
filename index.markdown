@@ -11,24 +11,6 @@ layout: home
 
 This hands-on-lab will guide you through the different concepts around Azure API Management, from the creation, to the DevOps, including good practices in terms of versioning, security and so on.
 
-Index
-
-- [Lab Prerequisites](apim-lab/0-labPrerequisites/apimanagement-prerequisites.md)
-- [Part 1 - Create an API Management instance](apim-lab/1-apimCreation/apimanagement-1.md)
-- [Part 2 - Developer Portal and Product Management](apim-lab/2-developerPortal/apimanagement-2.md)
-- [Part 3 - Adding API's](apim-lab/3-addingApis/apimanagement-3.md)
-- [Part 4 - Policy Expressions](apim-lab/4-policyExpressions/apimanagement-4.md)
-- [Part 5 - Versioning and Revisions](apim-lab/5-versionsRevisions/apimanagement-5.md)
-- [Part 6 - Analytics and Monitoring](apim-lab/6-analyticsMonitoring/apimanagement-6.md)
-- [Part 7 - Security](apim-lab/7-security/apimanagement-7.md)
-- [Part 8 - DevOps](apim-lab/8-devops/apimanagement-8.md)
-
-Additional Topics
-
-- [Deploy your own Colours web/api](apim-lab/9-additionalTopics/apimanagement-A.md)
-- [API Proxy to Serverless](apim-lab/9-additionalTopics/apimanagement-B.md)
-- [Self-hosted Gateway](apim-lab/9-additionalTopics/apimanagement-C.md)
-- [AAD - Integration, Work In progress](apim-lab/9-additionalTopics/apimanagement-D.md) 
 
 Slides
 
@@ -48,8 +30,16 @@ Authors
 
 [Based on the original APIM Lab by Mark Harrison.](https://github.com/markharrison/Lab_APIM_Original)
 
+# Support
 
-## Contributing
+## How to file issues and get help  
+
+This project uses GitHub Issues to track bugs and feature requests. Please search the existing 
+issues before filing new issues to avoid duplicates.  For new issues, file your bug or 
+feature request as a new Issue.
+
+
+# Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
@@ -63,7 +53,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-## Trademarks
+# Trademarks
 
 This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
 trademarks or logos is subject to and must follow 
