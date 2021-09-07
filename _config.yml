@@ -96,3 +96,10 @@ back_to_top_text: "Back to top"
 
 ga_tracking: UA-177508304-1
 ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
+# Aux links for the upper right navigation
+aux_links:
+  "Apim Lab on GitHub":
+    - "//github.com/Azure/apim-lab"
+
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: true
