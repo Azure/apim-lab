@@ -7,9 +7,12 @@ layout: home
 
 <img style="float: left;" src="assets/images/APIM.png">
 
-# Azure API Management - Hands-on Lab Workshop
+#  About this workshop
 
-This hands-on-lab will guide you through the different concepts around Azure API Management, from the creation, to the DevOps, including good practices in terms of versioning, security and so on.
+
+This hands-on-lab will guide you through the different concepts around Azure API Management, from the creation to the DevOps, including good practices in terms of versioning, security and so on. It is designed to bring customers and partners to a 200-level understanding of Azure Api Management. This is meant to be a hands on lab experience, all instructions are provided, but a basic level of understanding of apis is expected(http operations, networking basics, openapi, rest, soap, oauth2 and other concepts).
+
+[Based on the original APIM Lab by Mark Harrison.](https://github.com/markharrison/Lab_APIM_Original)
 
 
 Slides
@@ -20,15 +23,18 @@ Diagrams
 
 - [Azure API Management Architecture Design Session](assets/diagrams/apimADSv1.drawio)
 
-Authors
 
-- [Mark Harrison](http://github.com/markharrison)
-- [David Barkol](https://github.com/dbarkol)
-- [Osvaldo Dailbert](https://github.com/odaibert)
-- [Fernando Mejía](https://github.com/feranto)
-- [Louis-Guillaume MORAND](https://github.com/lgmorand)
 
-[Based on the original APIM Lab by Mark Harrison.](https://github.com/markharrison/Lab_APIM_Original)
+# Contributors
+
+<ul class="list-style-none">
+{% for contributor in site.github.contributors %}
+  <li class="d-inline-block mr-1">
+     <a href="{{ contributor.html_url }}"><img src="{{ contributor.avatar_url }}" width="32" height="32" alt="{{ contributor.login }}"/></a>
+  </li>
+{% endfor %}
+</ul>
+
 
 # Support
 
