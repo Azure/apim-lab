@@ -5,8 +5,6 @@
 layout: home
 ---
 
-<img style="float: left;" src="assets/images/APIM.png">
-
 #  About this workshop
 
 
