@@ -1,9 +1,3 @@
----
-title: About this workshop
-has_children: false
-nav_order: 0
----
-
 <img src="assets/images/APIM.png">
 
 #  About this workshop
