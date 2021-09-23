@@ -27,7 +27,7 @@ Close the import panel and select **Update connector**.
 
 ### Connect to the backing data source
 
-1. Download the **FanClubMembers.xlsx** workbook and save it to your OneDrive for Business account.
+1. Download the [**FanClubMembers.xlsx workbook**](FanClubMembers.xlsx) and save it to your OneDrive for Business account.
 2. Back in the Power Apps Editor, in the left pane, select **Home**.
 3. Under **Start from data** , select **Other data sources** and then select **New** from the left pane.
 4. Select **OneDrive for Business** data source, and then **Phone layout**.
