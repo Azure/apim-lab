@@ -38,9 +38,6 @@ An Event Hubs namespace provides a unique scoping container, in which you create
       
       ![Home page for the namespace](../../assets/images/namespace-home-page.png)       
 
-      > [!NOTE]
-      > Azure Event Hubs provides you with a Kafka endpoint. This endpoint enables your Event Hubs namespace to natively understand [Apache Kafka](https://kafka.apache.org/intro) message protocol and APIs. With this capability, you can communicate with your event hubs as you would with Kafka topics without changing your protocol clients or running your own clusters. Event Hubs supports [Apache Kafka versions 1.0](https://kafka.apache.org/10/documentation.html) and later. For more information, see [Use Event Hubs from Apache Kafka applications](event-hubs-for-kafka-ecosystem-overview.md).
-
 
 ## Create and Event Hub
 
@@ -153,7 +150,5 @@ You can use any expression that returns a string as the value for the `log-to-ev
 
 Click **Save** to save the updated policy configuration. As soon as it is saved the policy is active and events are logged to the designated Event Hub.
 
-> [!NOTE]
-> The maximum supported message size that can be sent to an event hub from this API Management policy is 200 kilobytes (KB). If a message that is sent to an event hub is larger than 200 KB, it will be automatically truncated, and the truncated message will be transferred to event hubs.
 
 
