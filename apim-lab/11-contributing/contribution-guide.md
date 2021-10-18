@@ -10,8 +10,8 @@ If you'd like to contribute to this workshop, please read the following guidelin
 # What Can I Do?
 
 - [Submit an issue or suggestion](Submit-issue-suggestion.md)
-- [Minor update or fix to an existing challenge](minor-update-fix.md)
-- [Add a new challenge to the workshop](new-challenge.md)
+- [Minor update or fix to an existing challenge and adding a new challenge](minor-update-fix.md)
+
 
 
 # Contributing
@@ -28,10 +28,3 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-# Support
-
-## How to file issues and get help  
-
-This project uses GitHub Issues to track bugs and feature requests. Please search the existing 
-issues before filing new issues to avoid duplicates.  For new issues, file your bug or 
-feature request as a new Issue.
