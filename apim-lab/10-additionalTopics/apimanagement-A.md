@@ -5,7 +5,6 @@ has_children: false
 nav_order: 1
 ---
 
-[Home](README.md)
 
 ## Additional Topics - Provision your own instance of ColorWeb/ColorAPI
 

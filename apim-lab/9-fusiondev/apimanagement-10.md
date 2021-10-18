@@ -5,7 +5,6 @@ has_children: false
 nav_order: 1
 ---
 
-# APIM Workshop - Power App Exercise
 
 In this exercise, we will be using the Star Wars API in Azure API Management that we created in a previous exercise. We will be creating a Power Apps Canvas App that will serve as a member tracking application for the premier Star Wars Fan Club. We will use a sample data from an Excel worksheet to provide the information for the fan club members and to generate the application. We will then export the Star Wars API from API Management as a Power Platform Custom Connector so that the Canvas App can access real-time Star Wars information. For each of the Fan Club members, we can search the Star Wars API character data and show information about their favorite character in the Canvas App.
 
