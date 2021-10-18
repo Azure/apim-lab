@@ -2,7 +2,7 @@
 title: Minor update or fix, new challenge
 parent: Contributing
 has_children: false
-nav_order: 2
+nav_order: 3
 ---
 
 # Typos, minor updates, or fixes to existing challenges 

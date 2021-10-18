@@ -2,7 +2,7 @@
 title: Testing changes locally with Github Codespaces
 parent: Contributing
 has_children: false
-nav_order: 0
+nav_order: 4
 ---
 
 # Inner loop, testing your changes using Github Codespaces
