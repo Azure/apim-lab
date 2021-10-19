@@ -15,7 +15,7 @@ Slides
 
 Diagrams
 
-- [Azure API Management Architecture Design Session](assets/diagrams/apimADSv1.drawio)
+- [Azure API Management Architecture Design Session](assets/diagrams/apimADSv2.drawio)
 
 
 
