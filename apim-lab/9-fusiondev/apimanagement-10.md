@@ -5,14 +5,15 @@ has_children: false
 nav_order: 1
 ---
 
+The *premier* Star Wars Fan club is growing and the club officers would like to upgrade from their existing member tracking worksheet to a mobile application that would be available to their members all over the world. The members would also like to see information about their favorite Star Wars movies and characters in the application that would update as new shows and movies are released.
 
-In this exercise, we will be using the Star Wars API in Azure API Management that we created in a previous exercise. We will be creating a Power Apps Canvas App that will serve as a member tracking application for the premier Star Wars Fan Club. We will use a sample data from an Excel worksheet to provide the information for the fan club members and to generate the application. We will then export the Star Wars API from API Management as a Power Platform Custom Connector so that the Canvas App can access real-time Star Wars information. For each of the Fan Club members, we can search the Star Wars API character data and show information about their favorite character in the Canvas App.
+In this exercise, you will be using [Star Wars API](https://swapi.dev/) with Azure API Management instance that you created [in part three](https://azure.github.io/apim-lab/apim-lab/3-addingApis/apimanagement-3-1.html) of this lab. The Excel worksheet of member profiles will serve as the primary backing data source and will be used to generate a base application. You will export the Star Wars API from API Management as a Power Platform Custom Connector so that the Canvas App can access real-time Star Wars character information. For each of the Fan Club members, you can then search the Star Wars API character data and show information about their favorite character in the Canvas App.
 
 *Note: This exercise requires access to Power Apps Premium connectors. Sign up for a [free Developer Plan](https://powerapps.microsoft.com/en-us/developerplan/).*
 
 ### Create a custom connector
 
-From the existing Star Wars API in Azure API Management, click the ellipsis **...** and select the **Create Power Connector** option to generate a custom connector in your Power Platform environment.
+From the existing Star Wars API Api in Azure API Management, click the ellipsis **...** and select the **Create Power Connector** option to generate a custom connector in your Power Platform environment.
 
 ![](https://user-images.githubusercontent.com/1610195/134442238-785e77fd-0230-433a-95ab-ac479a1427e6.png)
 
