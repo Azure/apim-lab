@@ -6,11 +6,11 @@ nav_order: 3
 ---
 
 
-## Create and Event Hubs namespace
+## Create an Event Hubs namespace
 
 An Event Hubs namespace provides a unique scoping container, in which you create one or more event hubs. To create a namespace in your resource group using the portal, do the following actions:
 
-1. In the Azure portal, and select **Create a resource** at the top left of the screen.
+1. In the Azure portal select **Create a resource** at the top left of the screen.
 1. Select **All services** in the left menu, and select **star (`*`)** next to **Event Hubs** in the **Analytics** category. Confirm that **Event Hubs** is added to **FAVORITES** in the left navigational menu. 
     
    ![Search for Event Hubs](../../assets/images/select-event-hubs-menu.png)
@@ -39,7 +39,7 @@ An Event Hubs namespace provides a unique scoping container, in which you create
       ![Home page for the namespace](../../assets/images/namespace-home-page.png)       
 
 
-## Create and Event Hub
+## Create an Event Hub
 
 To create an event hub within the namespace, do the following actions:
 
