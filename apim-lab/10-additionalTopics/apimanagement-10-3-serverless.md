@@ -2,7 +2,7 @@
 title: API Proxy to Serverless
 parent: Additional Topics
 has_children: false
-nav_order: 1
+nav_order: 3
 ---
 
 ## Additional Topics - API Proxy to Serverless

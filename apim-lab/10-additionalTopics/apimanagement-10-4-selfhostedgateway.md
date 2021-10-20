@@ -2,7 +2,7 @@
 title: Self-hosted Gateway
 parent: Additional Topics
 has_children: false
-nav_order: 1
+nav_order: 4
 ---
 
 ## Additional Topics - Self-hosted Gateway
