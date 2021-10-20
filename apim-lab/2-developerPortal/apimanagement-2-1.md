@@ -8,7 +8,7 @@ nav_order: 1
 
 ### Publishing the developer portal
 
-The developer portal uses role based access, when deploying Azure APIM for the first time, you need to first access the developer portal using the admin role, this will trigger its activation, and can be done with the following link in the `Overview` blade of the apim instance:
+The developer portal uses role based access, **when deploying Azure APIM for the first time, you need to first access the developer portal using the admin role, this will trigger its activation**, and can be done with the following link in the `Overview` blade of the apim instance:
 
 ![](../../assets/images/devportalPublish.png)
 
@@ -31,7 +31,7 @@ After publishing the portal and enabling CORS, we should access the developer po
 
 ### User Experience
 
-Let's experience how your users will navigate through your portal, in order to do this, *** we recommend opening a private tab in your browser or using another browser, to avoid seeing the admin/edit version of the portal. *** 
+Let's experience how your users will navigate through your portal, in order to do this, **we recommend opening a private tab in your browser or using another browser, to avoid seeing the admin/edit version of the portal.** 
 
 #### Anonymous User
 
