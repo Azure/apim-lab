@@ -93,7 +93,7 @@ Here we will se this form, where we can add the domain name of our frontend `htt
 
 After enabling CORS in APIM lets go back to our frontend `https://markcolorweb.azurewebsites.net` . Here lets do the following:
 
-- Click on the hamburguer menu, in the top left corner
+- Click on the hamburger menu, in the top left corner
 - Click on the config menu item
 - You will see a text box for the API URL , you need to set up your own APIM URL which contains the key in the following format:
   - <https://YOURAPIM.azure-api.net/color/api/RandomColor?key=> *Starter-Key*
