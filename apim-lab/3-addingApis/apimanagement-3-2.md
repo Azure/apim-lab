@@ -98,7 +98,7 @@ After enabling CORS in APIM lets go back to our frontend `https://markcolorweb.a
 - You will see a text box for the API URL , you need to set up your own APIM URL which contains the key in the following format:
   - <https://YOURAPIM.azure-api.net/color/api/RandomColor?key=> *Starter-Key*
   - <https://YOURAPIM.azure-api.net/color/api/RandomColor?key=> *Unlimited-Key*
-
+- After setting the API URL correctly, we can go back to the homepage and click `start` to see how the frontend is calling the api 
 
 ![](../../assets/images/APIMColorWebConfig.png)
 
