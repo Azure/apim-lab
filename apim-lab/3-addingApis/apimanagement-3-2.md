@@ -91,12 +91,19 @@ Here we will se this form, where we can add the domain name of our frontend `htt
 ![](../../assets/images/apim-policy-cors-all-apis2.png)  
 
 
+After enabling CORS in APIM lets go back to our frontend `https://markcolorweb.azurewebsites.net` . Here lets do the following:
 
-Via the menu - there is a configuration page to specify the API endpoint
+- Click on the hamburguer menu, in the top left corner
+- Click on the config menu item
+- You will see a text box for the API URL , you need to set up your own APIM URL which contains the key in the following format:
+  - <https://YOURAPIM.azure-api.net/color/api/RandomColor?key=> *Starter-Key*
+  - <https://YOURAPIM.azure-api.net/color/api/RandomColor?key=> *Unlimited-Key*
+
 
 ![](../../assets/images/APIMColorWebConfig.png)
 
-Open Developer portal, go in the Profile page and get API keys for Starter and Unlimited products
+The subscription keys can be fetched from the Developer Portal,  Open Developer portal, go in the Profile page and get API keys for Starter and Unlimited products
+
 - Open Notepad - make note of URLs
   - <https://YOURAPIM.azure-api.net/color/api/RandomColor?key=> *Starter-Key*
   - <https://YOURAPIM.azure-api.net/color/api/RandomColor?key=> *Unlimited-Key*
