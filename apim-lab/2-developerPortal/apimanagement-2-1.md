@@ -76,7 +76,7 @@ The "Unlimited" being in "submitted" state (=needs approval), you can, in Azure 
 
 It's now time to test one of the published APIs. Open the APIs page and look at the Echo API
   - Notice the developer information
-  - Test the Echo API using the GET verb 
+  - Test the Echo API using the POST verb 
 
 ![](../../assets/images/APIMDevTryAPI.png)
 
