@@ -8,8 +8,11 @@ nav_order: 1
 
 ### Publishing the developer portal
 
-Accessing from the link in the Overview blade of the Azure Management Portal, will display the developer portal in admin / edit mode and you can customize it.
-Using the left-side menu `Portal Overview` Icon - select the `Publish` button.  It will then be available for users to access.
+The developer portal uses role based access, when deploying Azure APIM for the first time, you need to first access the developer portal using the admin role, this will trigger its activation, and can be done with the following link in the `Overview` blade of the apim instance:
+
+![](../../assets/images/devportalPublish.png)
+
+Once you have accessed the dev portal in admin mode. Now, we can proceed with its publishing for anonymous and authenticaded roles. Using the left-side menu `Portal Overview` Icon - select the `Publish` button.  It will then be available for users to access.
 
 ![](../../assets/images/apim-developerportal-publish.png)
 
@@ -28,7 +31,7 @@ After publishing the portal and enabling CORS, we should access the developer po
 
 ### User Experience
 
-Let's experience how your users will navigate through your portal
+Let's experience how your users will navigate through your portal, in order to do this, *** we recommend opening a private tab in your browser or using another browser, to avoid seeing the admin/edit version of the portal. *** 
 
 #### Anonymous User
 
