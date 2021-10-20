@@ -39,7 +39,7 @@ For Microsoft Teams
 ```xml
 <!-- Outbound -->
 <choose>
-    <when condition="@(context.Response.StatusCode >= 299)">
+    <when condition="@(context.Response.StatusCode >= 200)">
         <send-one-way-request mode="new">
             <set-url>https://outlook.office.com/webhook/78f54a63-f217-451a-b263-f1f5c0e866f0@72f988bf-86f1-41af-91ab-2d7cd011db47/IncomingWebh00k/34228a8ccbe94e368d3ac4782adda9b2/4e01c743-d419-49b7-88c6-245e5e31664a</set-url>
             <set-method>POST</set-method>
