@@ -21,7 +21,7 @@ In this section we provide you with a template architecture diagram for your api
 | <a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fapim-lab%2Fmain%2Fassets%2Fdiagrams%2FapimADSv2.drawio" target="_blank">Edit As New</a> 
 
 Download Diagram:
-- [drawio](../../assets/diagramas/apimADSv2.drawio)
-- [drawio editable svg](../../assets/diagramas/apimADSv2.svg)
-- [drawio editable png](../../assets/diagramas/apimADSv2.png)
-- [Visio](../../assets/diagramas/apimADSv2.vsdx)
+- [drawio](../../assets/diagrams/apimADSv2.drawio)
+- [drawio editable svg](../../assets/diagrams/apimADSv2.svg)
+- [drawio editable png](../../assets/diagrams/apimADSv2.png)
+- [Visio](../../assets/diagrams/apimADSv2.vsdx)
