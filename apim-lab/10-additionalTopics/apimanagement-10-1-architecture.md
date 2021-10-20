@@ -1,5 +1,5 @@
 ---
-title: Provision your own instance of ColorWeb/ColorAPI
+title: Architecture Design Session
 parent: Additional Topics
 has_children: false
 nav_order: 1
@@ -10,5 +10,5 @@ nav_order: 1
 
 
 
-![](../../assets/images/apimADSv3.png)
+![](../../assets/images/apimADSv2.png)
 <a href="../../assets/html/edit-diagram.html?repo=Azure%2Fapim-lab&path=assets%2Fdiagrams%2FapimADSv2.png" target="_blank">Edit</a>
