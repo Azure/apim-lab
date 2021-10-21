@@ -1,11 +1,10 @@
 ---
-title: Apim Devops Kit
+title: Azure Devos + Apim Devops Kit
 parent: DevOps
 has_children: false
 nav_order: 1
 ---
 
-THIS PART IS UNDER CONSTRUCTION. LAST UPDATE 06/15/2020.
 
 Please see [aka.ms/apimdevops](http://aka.ms/apimdevops) for more guidance and tools around automating deployment across multiple API Management environments.
 
@@ -17,10 +16,11 @@ The following instructions demonstrate how to deploy the contents of this exampl
 
 To execute this solution you will need:
 
+- [Dotnet core 3.1](https://dotnet.microsoft.com/download) Installed in your local machine
+- [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) installed on your local machine 
 - Azure API Management DevOps Toolkit [here](http://github.com/Azure/azure-api-management-devops-resource-kit)
 - Azure DevOps Account
 - An Azure DevOps Repo configured ([how to configure an Azure DevOps Repo](https://docs.microsoft.com/en-us/azure/devops/repos/get-started/sign-up-invite-teammates?view=azure-devops))
-- Three API Management deployed (DEV, QA and PROD) ([how to deploy a Create a new Azure API Management service instance](https://docs.microsoft.com/en-us/azure/api-management/get-started-create-service-instance))
 - Some API(s) on your API Management ([Add an API manually](https://docs.microsoft.com/en-us/azure/api-management/add-api-manually))
 
 ## Architecture
@@ -46,18 +46,15 @@ Below are the steps to run the extractor from source code:
 - Clone this repository and navigate to {path\_to\_folder}/src/APIM\_ARMTemplate/apimtemplate
 - Restore its packages using
 
-``` 
+```
 dotnet restore 
 ```
 
 - Make sure you have signed in using Azure CLI and have switched to the subscription containing the API Management instance from which the configurations will be extracted.
 
 ```
-
 az login
-
 az account set \--subscription \<subscription\_id\>
-
 ```
 
 **Extractor Arguments**
@@ -66,7 +63,7 @@ You have two choices when specifying your settings:
 
 1\. By using a JSON file with key-values where the keys matches the table below. Use the \`extractorConfig\` argument:
 
-\`extract \--extractorConfig c:/temp/extractSettings.json\`. [See more examples.](#extractorParameterFileExamples)
+\`extract \--extractorConfig c:/temp/extractSettings.json\`. 
 
 2\. Pass the arguments on the command line. For instance \`extract \--sourceApimName my-feature-apim \--destinationApimName company-stable-apim \--resourceGroup my-feature-rg \--fileFolder c:\\temp\\apim-extract \--apiName MyFeatureV1Api\`.
 
@@ -76,7 +73,7 @@ So, run the application with:
 
 ```
 
-dotnet run extract --sourceApimName <DEV-APIM-NAME> --destinationApimName <DESTINATION-APIM-NAME> --resourceGroup <RESOURCE-GROUP-NAME> --fileFolder c:\\temp\\apim-extract.
+dotnet run extract --sourceApimName <DEV-APIM-NAME> --destinationApimName <DESTINATION-APIM-NAME> --resourceGroup <RESOURCE-GROUP-NAME> --fileFolder apim-extract
 
 ```
 
