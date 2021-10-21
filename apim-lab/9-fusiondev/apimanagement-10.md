@@ -22,7 +22,7 @@ From the existing Star Wars API Api in Azure API Management, click the ellipsis 
 1. Go to [https://make.powerapps.com](https://make.powerapps.com/) and sign in with your organizational account.
 2. Select **Data** from the left pane, and then select **Custom Connectors** to see your generated custom connector to your API Management API.
 3. From here, select the pencil icon to edit the custom connector.
-4. In the **Definition** screen, we need to define a search query string so that the Power App can search for records. In the **Request** section, select **+ Import from sample** and enter a sample request URL with the search query string:
+4. On the **Definition** screen, we need to define a search query string for people so that the Power App can search for character records by name. Select the `GetPeople` action, and in the **Request** section, select **+ Import from sample**. Enter a sample request URL with the search query string:
 
 `https://apim-star-wars-xxxx.azure-api.net/sw/people?search=Luke`
 
