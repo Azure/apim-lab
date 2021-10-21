@@ -11,7 +11,7 @@ nav_order: 5
 
 ### Mock responses
 
-Mocking provides a way to return sample responses even when the backend is not available. This enables app developers to not be help up if the backend is under development.
+Mocking provides a way to return sample responses even when the backend is not available. This enables app developers to not be held up if the backend is under development.
 
 - Open the Star Wars API and select [Add Operation]
 - Create a new operation called GetFilm
