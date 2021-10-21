@@ -50,31 +50,43 @@ Below are the steps to run the extractor from source code:
 dotnet restore 
 ```
 
-- Make sure you have signed in using Azure CLI and have switched to the subscription containing the API Management instance from which the configurations will be extracted.
+- Make sure you have signed in using Azure CLI and have switched to the subscription containing the API Management instance from which the configurations will be extracted. Ensure you are using the correct Azure subscription: 
 
-```
-az login
-az account set \--subscription \<subscription\_id\>
-```
+   ```
+   # View subscriptions
+   az account list
+   ```
+
+   ```
+   # Verify selected subscription
+   az account show
+   ```
+
+   ```
+   # Set correct subscription (if needed)
+   az account set --subscription <subscription_id>
+
+   # Verify correct subscription is now set
+   az account show
+   ```
+
 
 **Extractor Arguments**
 
 You have two choices when specifying your settings:
 
-1\. By using a JSON file with key-values where the keys matches the table below. Use the \`extractorConfig\` argument:
+- By using a JSON file with key-values where the keys matches the table below. Use the `extractorConfig` argument:
 
-\`extract \--extractorConfig c:/temp/extractSettings.json\`. 
+`extract --extractorConfig c:/temp/extractSettings.json` 
 
-2\. Pass the arguments on the command line. For instance \`extract \--sourceApimName my-feature-apim \--destinationApimName company-stable-apim \--resourceGroup my-feature-rg \--fileFolder c:\\temp\\apim-extract \--apiName MyFeatureV1Api\`.
+- Pass the arguments on the command line. For instance `extract --sourceApimName my-feature-apim --destinationApimName company-stable-apim --resourceGroup my-feature-rg --fileFolder c:\\temp\\apim-extract --apiName MyFeatureV1Api`
 
 For this example, we will only use the option \#2
 
 So, run the application with:
 
 ```
-
-dotnet run extract --sourceApimName <DEV-APIM-NAME> --destinationApimName <DESTINATION-APIM-NAME> --resourceGroup <RESOURCE-GROUP-NAME> --fileFolder apim-extract
-
+dotnet run extract --sourceApimName famc-apimlab2 --resourceGroup famc-apimlab2 --destinationApimName famc-apimlab2-prod  --fileFolder apim-extract
 ```
 
 Where:
