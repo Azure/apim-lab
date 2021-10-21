@@ -12,7 +12,7 @@ In Authorization code grant type, User is challenged to prove their identity pro
 ![Authorization Code Flow](../../assets/images/convergence-scenarios-native.svg)
 
 
-### Register an application (backend-app) in Azure AD to represent the Colors API​
+### Register an application (backend-app) in Azure AD to represent the Basic Calculator API​
 
 To protect an API with Azure AD, first register an application in Azure AD that represents the API. The following steps use the Azure portal to register the application.
 
@@ -35,13 +35,13 @@ To protect an API with Azure AD, first register an application in Azure AD that 
 ![backend app registration3](../../assets/images/authflow3.png)
 
 - Select Expose an API and set the Application ID URI with the default value. Record this value for later.
-- Select the Add a scope button to display the Add a scope page. Then create a new scope that's supported by the API (for example, Colors.Read).
+- Select the Add a scope button to display the Add a scope page. Then create a new scope that's supported by the API (for example, Calculator.Read).
 - Select the Add scope button to create the scope. Repeat this step to add all scopes supported by your API.
 - When the scopes are created, make a note of them for use in a subsequent step.
 
 ![backend app registration4](../../assets/images/authflow4.png)
 
-### Register another application (client-app) in Azure AD to represent a client application that needs to call the API.​
+### Register another application (client-app) in Azure AD to represent the Developer Portal( client application)​
 
 Every client application that calls the API needs to be registered as an application in Azure AD. In this example, the client application is the Developer Console in the API Management developer portal. In this case we will register another application in Azure AD to represent the Developer Console:
 
@@ -113,10 +113,79 @@ Now that you have configured an OAuth 2.0 authorization server, the Developer Co
 The next step is to enable OAuth 2.0 user authorization for your API. This enables the Developer Console to know that it needs to obtain an access token on behalf of the user, before making calls to your API.
 
 - Go to APIs menu under the APIM
-- Select the API you want to protect and Go to Settings.
+- Select the `Basic Calculator API` and Go to `Settings`.
 - Under Security, choose OAuth 2.0, select the OAuth 2.0 server you configured earlier and select save.
+
+![authcode13](../../assets/images/authflow13.png)
+
+- Publish the developer portal again to refresh this changes
+
+![](../../assets/images/apim-developerportal-publish.png)
+
 
 #### Calling the API from the Developer Portal
 
+Now that the OAuth 2.0 user authorization is enabled on your API, the Developer Console will obtain an access token on behalf of the user, before calling the API.
+
+- Copy the developer portal url from the overview blade of apim
+
+![authcode14](../../assets/images/authflow14.png)
+
+- Browse to any operation under the Basic Calculator API in the developer portal and select Try it. This brings you to the Developer Console.
+- Note a new item in the Authorization section, corresponding to the authorization server you just added.
+
+![authcode15](../../assets/images/authflow15.png)
+
+- Select Authorization code from the authorization drop-down list, and you are prompted to sign in to the Azure AD tenant. If you are already signed in with the account, you might not be prompted.
+
+![authcode16](../../assets/images/authflow16.png)
+
+- After successful sign-in, an Authorization header is added to the request, with an access token from Azure AD. The following is a sample token (Base64 encoded):
+
+![authcode17](../../assets/images/authflow17.png)
+
+Select Send to call the API successfully with 200 ok response.
+
+![authcode18](../../assets/images/authflow18.png)
 
 ### Validate-jwt policy to pre-authorize requests with AD token:
+
+At this point we can call the APIs with the obtained bearer token. However, what if someone calls your API without a token or with an invalid token? For example, try to call the API without the Authorization header, the call will still go through. This is because the API Management does not validate the access token, It simply passes the Authorization header to the back-end API.
+
+To pre-Authorize requests, we can use `validate-jwt` Policy by validating the access tokens of each incoming request. If a request does not have a valid token, API Management blocks it.
+
+We will now configure the Validate JWT policy to pre-authorize requests in API Management, by validating the access tokens of each incoming request. If a request does not have a valid token, API Management blocks it.
+
+- Browses to the APIs from the left menu of APIM
+- Click on `Basic Calculator Api` and open the inbound policy to add the validate-jwt policy(It checks the audience claim in an access token and returns an error message if the token is not valid.) and save it.
+
+![authcode19](../../assets/images/authflow19.png)
+
+``` xml
+<validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized. Access token is missing or invalid.">
+    <openid-config url="https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration" />
+    <audiences>
+        <audience>YOUR-BACKENDAPP-SCOPE-ID</audience>
+    </audiences>
+</validate-jwt>
+```
+
+- Go back to the developer portal and send the api with invalid token.
+- You would observe the 401 unauthorized.
+
+![authcode20](../../assets/images/authflow20.png)
+
+- Modify the token from authorization header to the valid token and send the api again to observe the 200-ok response.
+
+#### Understanding validate-jwt Policy
+
+![authcode21](../../assets/images/authflow21.png)
+
+In this section, we will be focusing on understanding how `validate-jwt` policy works (the image in the right side is the decoded JWT Token)
+
+- The validate-jwt policy supports the validation of JWT tokens from the security viewpoint, It validates a JWT (JSON Web Token) passed via the HTTP Authorization header
+- If the validation fails, a 401 code is returned. The policy requires an openid-config endpoint to be specified via an openid-config element. API Management expects to browse this endpoint when evaluating the policy as it has information which is used internally to validate the token.
+Please Note : OpenID config URL differs for the v1 and v2 endpoints.
+- The required-claims section contains a list of claims expected to be present on the token for it to be considered valid. The specified claim value in the policy must be present in the token for validation to succeed.
+    
+The claim value should be the Application ID of the Registered Azure AD Backend-APP.
