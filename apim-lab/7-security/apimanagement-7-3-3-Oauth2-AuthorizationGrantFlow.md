@@ -161,6 +161,11 @@ We will now configure the Validate JWT policy to pre-authorize requests in API M
 
 ![authcode19](../../assets/images/authflow19.png)
 
+- You will need to get the id of your scope, you set from you backend-app registration. Normally this comes in the form `api://d183fdbe-fc28-4ef7-9ca1-e7b4a4cd1ff8/Calculator.read` , we need to use the id `d183fdbe-fc28-4ef7-9ca1-e7b4a4cd1ff8` as audience
+
+![backend app registration4](../../assets/images/authflow4.png)
+
+
 ``` xml
 <validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized. Access token is missing or invalid.">
     <openid-config url="https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration" />
