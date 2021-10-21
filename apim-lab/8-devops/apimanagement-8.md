@@ -1,5 +1,5 @@
 ---
-title: Azure Devos + Apim Devops Kit
+title: Azure Devops + Apim Devops Kit
 parent: DevOps
 has_children: false
 nav_order: 1
