@@ -77,13 +77,12 @@ You have two choices when specifying your settings:
 
 - By using a JSON file with key-values where the keys matches the table below. Use the `extractorConfig` argument:
 
-`extract --extractorConfig c:/temp/extractSettings.json` 
+    `extract --extractorConfig c:/temp/extractSettings.json` 
 
-- Pass the arguments on the command line. For instance `extract --sourceApimName my-feature-apim --destinationApimName company-stable-apim --resourceGroup my-feature-rg --fileFolder c:\\temp\\apim-extract --apiName MyFeatureV1Api`
+- Or you can also pass the arguments on the command line. For instance 
+    `extract --sourceApimName my-feature-apim --destinationApimName company-stable-apim --resourceGroup my-feature-rg --fileFolder c:\\temp\\apim-extract --apiName MyFeatureV1Api`
 
-For this example, we will only use the option \#2
-
-So, run the application with:
+- For this example, we will pass the arguments on the command line.  So, run the application with:
 
 ```
 dotnet run extract --sourceApimName famc-apimlab2 --resourceGroup famc-apimlab2 --destinationApimName famc-apimlab2-prod  --fileFolder apim-extract
