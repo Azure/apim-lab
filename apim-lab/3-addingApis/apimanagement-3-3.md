@@ -57,7 +57,7 @@ First we will need to enable CORS for the domain name of the frontend. To achiev
 
 ![](../../assets/images/apim-policy-cors-all-apis.png)  
 
-Here we will se this form, where we can add the domain name of our frontend `https://markcolorweb.azurewebsites.net` or the `*` for all domains:
+Here we will see this form where we can add the domain name of our frontend `https://markcolorweb.azurewebsites.net` or the `*` for all domains:
 
 ![](../../assets/images/apim-policy-cors-all-apis2.png)  
 

@@ -12,7 +12,7 @@ The developer portal uses role based access, **when deploying Azure APIM for the
 
 ![](../../assets/images/devportalPublish.png)
 
-Once you have accessed the dev portal in admin mode. Now, we can proceed with its publishing for anonymous and authenticaded roles. Using the left-side menu `Portal Overview` Icon - select the `Publish` button.  It will then be available for users to access.
+After having accessed the dev portal in admin mode, you can now proceed with publishing to allow for anonymous and authenticated roles. Using the left-side menu `Portal Overview` Icon - select the `Publish` button.  It will then be available for users to access.
 
 ![](../../assets/images/apim-developerportal-publish.png)
 
