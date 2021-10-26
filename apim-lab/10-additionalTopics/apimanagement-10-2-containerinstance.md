@@ -1,32 +1,33 @@
 ---
-title: Provision your own instance of ColorWeb/ColorAPI
+title: Provision your own instance of ColoursWeb/ColoursAPI
 parent: Additional Topics
 has_children: false
 nav_order: 2
 ---
 
 
-## Additional Topics - Provision your own instance of ColorWeb/ColorAPI
+## Additional Topics - Provision your own instance of ColoursWeb/ColoursAPI
 
-Some of the demos use the ColorWeb web application and the ColorAPI api application. In this lab we will show you how to deploy your own instances of the Color Web and Color API.
+Some of the demos use the ColourWeb web application and the ColourAPI API application. In this lab we will show you how to deploy your own instances of the Colours Web and Colours API.  Note - ColoursWeb / ColoursAPI is new version of ColorsWeb/ColorsAPI  ... do not mix the web client and API versions. 
 
 ![](../../assets/images/APIMColorWebUnlimited.png)
 
-The code for the ColorWeb / ColorAPI applications is available here:
+The code for the ColourWeb / ColourAPI applications is available here:
 
-- [ColorWeb](https://github.com/markharrison/ColoursWeb)
-- [ColorApi](https://github.com/markharrison/ColoursAPI)
+- [ColourWeb](https://github.com/markharrison/ColoursWeb)
+- [ColourApi](https://github.com/markharrison/ColoursAPI)
 
-Docker Containers exist for these applications and so provides an easy deployment option ( IMPORTANT : due to the new pull restrictions on Docker images, in this lab we will be using the github registry):
+Docker Containers exist for these applications and so provides an easy deployment option ( IMPORTANT : due to the new pull restrictions on Docker Hub images, in this lab we will be using the GitHub registry):
 
-- Github
+- Github (Colours)
   - docker pull ghcr.io/markharrison/coloursapi:latest
   - docker pull ghcr.io/markharrison/coloursweb:latest
-- DockerHub
+- DockerHub (Colors)
   - docker pull markharrison/colorweb:latest
   - docker pull markharrison/colorapi:latest
 
 With the container we can deploy to multiple hosting options : VM's, App Services, ACI and also AKS. In this lab we are going to show you how to do it with [Azure Container Instances](https://docs.microsoft.com/en-us/azure/container-instances/).
+
 
 # Deploying Web and API containers with Azure Container Instances
 
@@ -96,7 +97,7 @@ With the container we can deploy to multiple hosting options : VM's, App Service
       aci-color-web-fernando22287.eastus.azurecontainer.io  Succeeded
       ```
 
-      Once we have a "Succeeded" message we proceed to navigate to the FQDN. And we should see our home page for our Colors Web:
+      Once we have a "Succeeded" message we proceed to navigate to the FQDN. And we should see our home page for our Colours Web:
 
       ![](../../assets/images/APIMACICOLORWEB.png)
 
@@ -132,6 +133,6 @@ With the container we can deploy to multiple hosting options : VM's, App Service
     aci-color-api-fernando22287.eastus.azurecontainer.io  Succeeded
     ```
 
-    Once we have a "Succeeded" message we proceed to navigate to the FQDN. And we should see our home page for our Colors Web:
+    Once we have a "Succeeded" message we proceed to navigate to the FQDN. And we should see our home page (Swagger UI) for our Colours API:
 
     ![](../../assets/images/APIMACICOLORAPI.png)
