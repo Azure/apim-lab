@@ -8,7 +8,7 @@ nav_order: 2
 
 ## Additional Topics - Provision your own instance of ColoursWeb/ColoursAPI
 
-Some of the demos use the ColourWeb web application and the ColourAPI API application. In this lab we will show you how to deploy your own instances of the Colours Web and Colours API.  Note - ColoursWeb / ColoursAPI is new version of ColorsWeb/ColorsAPI  ... do not mix the Web Client and API versions. 
+Some of the demos use the ColourWeb web application and the ColourAPI API application. In this lab we will show you how to deploy your own instances of the Colours Web and Colours API.  Note - ColoursWeb / ColoursAPI is new version of ColorsWeb/ColorsAPI  ... do not mix the web client and API versions. 
 
 ![](../../assets/images/APIMColorWebUnlimited.png)
 
@@ -97,7 +97,7 @@ With the container we can deploy to multiple hosting options : VM's, App Service
       aci-color-web-fernando22287.eastus.azurecontainer.io  Succeeded
       ```
 
-      Once we have a "Succeeded" message we proceed to navigate to the FQDN. And we should see our home page for our Colors Web:
+      Once we have a "Succeeded" message we proceed to navigate to the FQDN. And we should see our home page for our Colours Web:
 
       ![](../../assets/images/APIMACICOLORWEB.png)
 
@@ -133,6 +133,6 @@ With the container we can deploy to multiple hosting options : VM's, App Service
     aci-color-api-fernando22287.eastus.azurecontainer.io  Succeeded
     ```
 
-    Once we have a "Succeeded" message we proceed to navigate to the FQDN. And we should see our home page for our Colors Web:
+    Once we have a "Succeeded" message we proceed to navigate to the FQDN. And we should see our home page (Swagger UI) for our Colours API:
 
     ![](../../assets/images/APIMACICOLORAPI.png)
