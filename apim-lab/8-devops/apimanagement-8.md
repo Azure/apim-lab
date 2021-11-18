@@ -14,14 +14,21 @@ The following instructions demonstrate how to deploy the contents of this exampl
 
 ## Pre-reqs
 
-To execute this solution you will need:
+There are two options to execute te apim devops kit, locally with .net and azure cli or using the azure cloude shell. Please select your prefered option:
 
+
+Local
 - [Dotnet core 3.1](https://dotnet.microsoft.com/download) Installed in your local machine
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) installed on your local machine 
-- Azure API Management DevOps Toolkit [here](http://github.com/Azure/azure-api-management-devops-resource-kit)
+
+Azure Cloud Shell
+- [How to enable Cloudeshell](https://newhelptech.wordpress.com/2019/05/18/step-by-step-how-to-enable-azure-cloud-shell-in-microsoft-azure/)
+
+Optional(if you want to deploy with a build pipeline):
+
 - Azure DevOps Account
 - An Azure DevOps Repo configured ([how to configure an Azure DevOps Repo](https://docs.microsoft.com/en-us/azure/devops/repos/get-started/sign-up-invite-teammates?view=azure-devops))
-- Some API(s) on your API Management ([Add an API manually](https://docs.microsoft.com/en-us/azure/api-management/add-api-manually))
+
 
 ## Architecture
 
