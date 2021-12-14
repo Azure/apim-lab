@@ -6,36 +6,37 @@ nav_order: 1
 ---
 
 
-### Publishing the developer portal
+### Publishing the Developer Portal
 
-The developer portal uses role based access, **when deploying Azure APIM for the first time, you need to first access the developer portal using the admin role, this will trigger its activation**, and can be done with the following link in the `Overview` blade of the apim instance:
+The Developer Portal uses role-based access. **When deploying Azure APIM for the first time, you need to first access the Developer Portal using the admin role, which will trigger its activation**, and can be done with the following link in the `Overview` blade of the APIM instance:
 
 ![](../../assets/images/devportalPublish.png)
 
-After having accessed the dev portal in admin mode, you can now proceed with publishing to allow for anonymous and authenticated roles. Using the left-side menu `Portal Overview` Icon - select the `Publish` button.  It will then be available for users to access.
+After having accessed the Developer Portal in admin mode, you can now proceed with publishing to allow for anonymous and authenticated roles. Using the left-side menu `Portal Overview` icon - select the `Publish` button.  It will then be available for users to access.
 
 ![](../../assets/images/apim-developerportal-publish.png)
 
-### Enabling CORS for the developer portal
+### Enabling CORS for the Developer Portal
 
-Cross-origin resource sharing is a mechanism that allows resources on a web page to be requested from another domain, outside the domain from which the first resource was served. CORS is required to let portal visitors use the interactive console in the API reference pages and should be enabled for domains, including custom domains.
+Cross-origin resource sharing (CORS) is a mechanism that allows resources on a web page to be requested from another domain, outside the domain from which the first resource was served. CORS is required to let portal visitors use the interactive console in the API reference pages and should be enabled for domains, including custom domains.
 
-CORS is enabled by using policies, we will go deep on this topic in part 4. For now we will enable this using a builtin UI. To do this, using the left-side menu `Portal Overview` Icon - select the `Enable CORS` button.
+CORS is enabled by using policies. We will go deep on this topic in part 4. For now we will enable this using a built-in UI. To do this, using the left-side menu `Portal Overview` icon - select the `Enable CORS` button.
 
 ![](../../assets/images/apim-developerportal-CORS.png)
 
-After publishing the portal and enabling CORS, we should access the developer portal located at: {apim-service-name}.developer.azure-api.net
+After publishing the portal and enabling CORS, we should access the developer portal located at:  
+`{apim-service-name}.developer.azure-api.net`
 
 ![](../../assets/images/APIMDeveloperPortal.png)
 
 
 ### User Experience
 
-Let's experience how your users will navigate through your portal, in order to do this, **we recommend opening a private tab in your browser or using another browser, to avoid seeing the admin/edit version of the portal.** 
+Let's experience how your users will navigate through your portal. In order to do this, **we recommend opening a private tab in your browser or using another browser to avoid seeing the admin/edit version of the portal.** 
 
 #### Anonymous User
 
-As an unauthenticated user (=open URL in a new browser), look around the developer portal, and check the Products.
+As an unauthenticated user (i.e. opening the URL in a new browser), look around the Developer Portal, and check the Products.
 
 > Notice the difference between the Starter & Unlimited products
 
@@ -47,7 +48,7 @@ You can also check the APIs. As you can see, all operations exposed are describe
 
 #### Register for an account
 
-Let's sign up for an account (If logged in as Administrator - log out)
+Let's sign up for an account. If you are presently logged in as Administrator, please log out.
 
 ![](../../assets/images/APIMDevSignup.png)
 
@@ -58,7 +59,6 @@ Check acceptance email and confirm to activate account
 Sign into account
 
 ![](../../assets/images/APIMDevSignin.png)
-
 
 Select Starter Product and subscribe to a "Starter" subscription
   - Check email - subscription has been accepted and some key information are provided
