@@ -10,23 +10,10 @@ An instance can take some time to provision. Expect ~45-75 minutes. Therefore, p
 
 [![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.ApiManagement)
 
-Use appropriate values and hit **Review + Create**, followed by **Create** to provision the service.
+Using either your own or [Azure's common naming convention](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming), fill in each required field and press `Review + Create`, followed by `Create` to provision the service. Once started, it is not necessary to remain on this page or in the Azure Portal. If you entered your email address, you will receive a provisioning completion email.
 
-- The service name must be unique. Recommendations are to include your initials, numeric date, etc.
-- For demo purposes, use the Developer tier.
+Please note that the **service name must be unique**. We recommend to include your initials and the numeric date.
+
+Please use the **Developer** tier, which provides [all relevant features at the lowest cost](https://azure.microsoft.com/en-us/pricing/details/api-management/#pricing). 
 
 ![Deploy blade](../../assets/images/APIMDeployBlade.png)
-
-![API Management](../../assets/images/APIManagement.png)
-
-Once the service has been provisioned, there will be:
-
-- Publisher Administration
-- Developer portal
-- Gateway
-
-The link to the Developer Portal is at the top of the Overview blade.
-
-![](../../assets/images/APIMOverviewBlade.png)
-
-
