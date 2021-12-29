@@ -7,56 +7,57 @@ nav_order: 1
 
 
 
-#### APIs
+## APIs
 
-On the left menu, open the [APIs] blade. You will see all APIs, the possibility to add new ones but also to customize existing ones
+On the left menu, open the `APIs` blade. You will see all APIs, the possibility to add new ones, but also to customize existing ones.
 
-![](../../assets/images/APIMListAPIs.png)
+![](../../assets/images/APIMAPIs.png)
 
-![](../../assets/images/APIMAddAPIs.png)
+### Add API from Scratch
 
-#### Add API from scratch
+Instead of developing an API, for this lab you will use the existing [*Star Wars API*](https://swapi.dev):
 
-Instead of coding an API, for this lab you will use the existing *Star Wars API* <https://swapi.dev>. 
+1) Click on _Add API_.
+1) Click on _HTTP - Manually define an HTTP API_.
+1) Select the _Full option in the _Create an HTTP API_ dialog.
+1) Enter _Display name_, _Name_, and _Description_.
+1) Assign `https://swapi.dev/api` to the _Web service URL_.
+1) Keep the _URL scheme_ at `HTTPS` as we strive to enforce HTTPS only.
+1) Set the _API URL suffix_ to `sw`. This allows us to compartmentalize the APIM URLs for distinct APIs.
+1) Assign `Starter` and `Unlimited` products.
+1) Press **Create**.
 
-- Click on [Add API]
-  - Select [Add Blank API]
-  - Select the [Full] option at the top of the dialog
-  - Enter Display name, name and description
-  - Enter back end Web Service - this is <https://swapi.dev/api>
-  - Set API URL suffice to "sw"
-  - Assign Products - Starter and Unlimited
-  - Create
+**A note about API versioning**: While it is conventionally a good idea to version APIs from the onset, we are omitting this step here for brevity.
 
 ![](../../assets/images/APIMAddBlankAPI.png)
 
-Once created, select [Start Wars API]
+Once created, inside the _Star Wars_ API press **+ Add operation** to declare two new operations:
 
-![](../../assets/images/APIMAddStarWars.png)
-
-Lets declare two operations
-  - **GetPeople** GET /people/  ... use lowercase
-  - **GetPeopleById** GET /people/{id}/  ... use lowercase
-
-![](../../assets/images/APIMAddSWGetPeople.png)
-
-![](../../assets/images/APIMAddSWGetPeopleById.png)
+1) **GetPeople**
+    - Display name: **GetPeople**
+    - Name: **getpeople**
+    - URL: **GET /people/**
+2) **GetPeopleById**
+    - Display name: **GetPeopleById**
+    - Name: **getpeoplebyid**
+    - URL: **GET /people/{id}/**
 
 ![](../../assets/images/APIMAddSWOperations.png)
 
-Switch now to the Developer Portal
-  - Sign in as a developer with a subscription
-  - Select [Start Wars API]
+## Access Star Wars API from Developer Portal
+
+Switch now to the Developer Portal and sign in as a developer with a subscription. Select _Explore APIs_. You should see both _Echo API_ and _Star Wars_.
+
+![](../../assets/images/apim-developerportal-apis-echo-star-wars.png)
+
+Click on _Star Wars_. Try the `GetPeople` operation. Observe a successful `200` response.
 
 ![](../../assets/images/APIMSWTryIt1.png)
 
-- Try the "GetPeople" operation
-- Try the "GetPeopleById" operation ... with id = 2
+Now try the `GetPeopleById` operation with `id = 2`
 
 ![](../../assets/images/APIMSWTryIt2.png)
 
-Examine Response and more detailed Trace information
-  - Response 200 successful
-  - Information about C-3PO in the Response body payload.
-
+Examine the successful `200` response with `C-3PO`'s details in the response body payload.
+  
 ![](../../assets/images/APIMSWTryIt3.png)

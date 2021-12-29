@@ -38,6 +38,8 @@ Let's experience how your users will navigate through your portal. In order to d
 
 Navigate to `https://{apim-service-name}.developer.azure-api.net`.
 
+Keep this browser session open as we will use it frequently throughout our labs.
+
 ![](../../assets/images/apim-developerportal-unauthenticated-launch.png)
 
 #### Anonymous User
