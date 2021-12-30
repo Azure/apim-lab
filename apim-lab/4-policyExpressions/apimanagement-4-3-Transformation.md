@@ -6,129 +6,127 @@ nav_order: 3
 ---
 
 
-## Colors API 
+## Color API 
 
 ### Transformation - replace string
 
-The find-and-replace policy finds a request or response substring and replaces it with a different substring.
+The *find-and-replace* policy finds a substring in a request or response and replaces it with a different string.
 
-- Open the Colors API, then open the ApiRandomColor operation 'Code View'
-- Add the outbound policy to change from "blue" to "yellow"
-- Invoke the API using the Starter product key and examine the response
-- Invoke the API using the Unlimited product key and examine the response
+- Open the *Color* API, then open the `ApiRandomColorGet` operation.
+- Enter the *Policy code editor* in the *Outbound processing* section.
+- Place the cursor after the `<base />` element in the `<outbound>` section.
+- Press *Show snippets*, then select the *Find and replace string in body* transformation policy.
 
+  ![](../../assets/images/replacepolicy1.png)
 
-```xml
-<find-and-replace from="blue" to="yellow" />
+- Fill in the `from` and `to` values accordingly:
+  ```xml
+  <find-and-replace from="blue" to="yellow" />
+  ```
 
-```
+  ![](../../assets/images/replacepolicy2.png)
 
-With Starter key and Unlimited key:
+- Save the policy, then invoke the API using the Unlimited subscription key.
 
-![](../../assets/images/replacepolicy.png)
+  ![](../../assets/images/replacepolicy3.png)
+
+---
 
 ## Star Wars API
 
 ### Transformation - conditional
 
-Another C# example to manipulate the response body, depending on the product - with this expression a subscriber of the Starter product will only get back a subset of the information.  Other products will get the full information.
+Policies can be applied very granularly. In this example, you are modifying the *Star Wars* API to return a limited set of information if the caller is using the *Starter* subscription. Other products, such as the *Unlimited* subscription, will receive the full response.  
 
-- Open the Star Wars API, then open the GetPeopleById operation 'Code View'
-- Add the outbound policy to conditionally change the response body
-- Invoke the API using the Starter product key and examine the response
-- Invoke the API using the Unlimited product key and examine the response
+The [context variable](https://docs.microsoft.com/en-us/azure/api-management/api-management-policy-expressions#ContextVariables) that is implicitly available in every policy expression provides access to the `Response` and `Product` below. 
 
-Not the inbound header is set to ensure that the Response Body is not encoded as that causes the JSON parsing to fail.
+- Open the *Star Wars* API, then open the *GetPeopleById* operation.
+- Similarly to the *Color* API, add the outbound policy to conditionally change the response body.  
+Note that the inbound `Accept-Encoding` header is set to `deflate` to ensure that the response body is not encoded as that causes the JSON parsing to fail.  
 
-```xml
-<!-- Inbound -->
-        <set-header name="Accept-Encoding" exists-action="override">
-            <value>deflate</value>
-        </set-header>
-<!-- Outbound -->
-<choose>
-    <when condition="@(context.Response.StatusCode == 200 && context.Product.Name.Equals("Starter"))">
-        <set-body>@{
-                var response = context.Response.Body.As<JObject>();
-                foreach (var key in new [] {"hair_color", "skin_color", "eye_color", "gender"}) {
-                    response.Property(key).Remove();
-                }
-                return response.ToString();
-            }
-        </set-body>
-    </when>
-</choose>
+  ```xml
+  <!-- Inbound -->
+  <set-header name="Accept-Encoding" exists-action="override">
+      <value>deflate</value>
+  </set-header>
+  <!-- Outbound -->
+  <choose>
+      <when condition="@(context.Response.StatusCode == 200 && context.Product.Name.Equals("Starter"))">
+          <set-body>@{
+                  var response = context.Response.Body.As<JObject>();
+                  foreach (var key in new [] {"hair_color", "skin_color", "eye_color", "gender"}) {
+                      response.Property(key).Remove();
+                  }
+                  return response.ToString();
+              }
+          </set-body>
+      </when>
+  </choose>
+  ```
 
-```
+- Test the API on the *Test* tab with *id* 1 and apply the appropriate *Starter* or *Unlimited* product scope. Examine the different responses.
 
-With Starter key:
+- With *Starter* product scope:
 
-![](../../assets/images/APIMResponseCondStarter.png)
+  ![](../../assets/images/APIMResponseCondStarter.png)
 
-With Unlimited key:
+- With *Unlimited* product scope. Notice the four properties in red that are not included in the *Starter* scope response.
 
-![](../../assets/images/APIMResponseCondUnlimited.png)
+  ![](../../assets/images/APIMResponseCondUnlimited.png)
+
+---
 
 ## Calculator API 
 
 ### Transformation - XML to JSON
 
-A frequent requirement is to transform content, especially with legacy APIs
+A frequent requirement is to transform content, especially to maintain compatibility with legacy APIs. For this lab we are going back to the *Calculator* API that returned an XML response. 
 
-Remember the Calc API that returned XML
-- Open the Calculator API 'Code View'
-- Add the outbound policy to transform the response's body to JSON
-- Invoke the API and examine the response - note that its now JSON
+- Add an outbound policy to the *Add two integers* operation on the *Calculator* API to transform the response body to JSON.
 
-```xml
-<!-- Outbound -->
-<xml-to-json kind="direct" apply="always" consider-accept-header="false" />
-```
+  ```xml
+  <!-- Outbound -->
+  <xml-to-json kind="direct" apply="always" consider-accept-header="false" />
+  ```
 
-![](../../assets/images/APIMResponseXMLtoJSON.png)
+- Test the API and examine the response. Note that it's now JSON.
 
+  ![](../../assets/images/APIMResponseXMLtoJSON.png)
 
 ### Delete response headers
 
-A frequent requirement is to remove headers - example those that might leak potential security information
+A frequent requirement is to remove headers, especially ones that return security-related or superfluous information.
 
-- Open the Calculator API 'Code View'
-- Add the outbound policy to delete the response headers
-- Invoke the API and examine the response
+- Add an outbound policy to the same *Calculator* API operation to remove specific response headers.
 
-```xml
-<!-- Outbound -->
-<set-header name="x-aspnet-version" exists-action="delete" />
-<set-header name="x-powered-by" exists-action="delete" />
-```
+  ```xml
+  <!-- Outbound -->
+  <set-header name="x-aspnet-version" exists-action="delete" />
+  <set-header name="x-powered-by" exists-action="delete" />
+  ```
 
-Before:
-![](../../assets/images/APIMResponseDeleteHeaders.png)
+- Invoke the API and examine the response, which now no longer contains the two headers. See above screenshot for how it looked prior.
 
-After policy applied:
-![](../../assets/images/APIMResponseDeleteHeaders2.png)
+  ![](../../assets/images/APIMResponseDeleteHeaders.png)
 
 ### Amend what's passed to the backend
 
-Policy expressions can include C# code. Can access a number of .NET Framework types and their members .NET Framework type.  A variable named `context` is implicitly available and its members provide information pertinent to the API request.
+Query string parameters and headers can be easily modified prior to sending the request on to the backend. 
 
-More info <https://docs.microsoft.com/en-us/azure/api-management/api-management-policy-expressions>
+- Back in the same *Calculator* API operation, add inbound policies to modify the query string and headers. 
 
-- Open the Calculator API 'Code View'
-- Add the inbound policy to amend the query string and header
-- Invoke the API - use the Trace function to examine what was passed to the backend
+  ```xml
+  <!-- Inbound -->
+  <set-query-parameter name="x-product-name" exists-action="override">
+      <value>@(context.Product.Name)</value>
+  </set-query-parameter>
+  <set-header name="x-request-context-data" exists-action="override">
+      <value>@(context.Deployment.Region)</value>
+  </set-header>
+  ```
 
-```xml
-<!-- Inbound -->
-<set-query-parameter name="x-product-name" exists-action="override">
-    <value>@(context.Product.Name)</value>
-</set-query-parameter>
-<set-header name="x-request-context-data" exists-action="override">
-    <value>@(context.User.Id)</value>
-    <value>@(context.Deployment.Region)</value>
-</set-header>
-```
+- Test the call by using either the *Starter* or *Unlimited* product, then inspect the result on the *Trace* tab.
 
-Note - this trace below was from the Developer portal.  I got errors when testing from the Azure Management portal, as the [User Id] is unable to be evaluated.
+  ![](../../assets/images/APIMTraceAmendBackend1.png)
 
-![](../../assets/images/APIMTraceAmendBackend.png)
+  ![](../../assets/images/APIMTraceAmendBackend2.png)

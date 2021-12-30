@@ -11,38 +11,29 @@ nav_order: 5
 
 ### Mock responses
 
-Mocking provides a way to return sample responses even when the backend is not available. This enables app developers to not be held up if the backend is under development.
+Mocking in APIM is a useful mechanism for API consumers to interact with APIs without waiting for the backend to be ready. 
 
-- Open the Star Wars API and select [Add Operation]
-- Create a new operation called GetFilm
-- In the Response configuration tab, set Sample data as below
+- Open the Star Wars API and select **+ Add Operation**
+- Create a new GET operation:
+  - Display name: **GetFilm**
+  - Name: **getfilm**
+  - URL: **/film**
+- In the *Responses* configuration tab, press **+ Add response**, return `200 OK` with a representation with content type `application/json` and this sample data:
 
-![](../../assets/images/APIMMockingFrontend.png)
-
-![](../../assets/images/APIMMockingFrontend2.png)
-
-![](../../assets/images/APIMMockingFrontend3.png)
-
-```json
-{
-  "count": 1,
-  "films": [   { "title": "A New Hope",  "blah": "xxx"    }   ]
-}
-```
+  ```json
+  {
+    "count": 1,
+    "films": [{ "title": "A New Hope", "release-date": "05/25/1977" }]
+  }
+  ```
+  
+  ![](../../assets/images/APIMMockingFrontend.png)
 
 - Open the Inbound processing 'Code View'
-- Enable mocking and specify a 200 OK response status code
+- Add *Mock Response* under *Other policies* after the `<base /> tag.
 
-![](../../assets/images/APIMMockingInbound.png)
+  ![](../../assets/images/APIMMockingInbound.png)
 
-- Select the 200 OK response ... Save
+- Invoke the API to receive a `200` success with the mocked film data.
 
-![](../../assets/images/APIMMockingInbound2.png)
-
-- Mocking is now enabled
-
-![](../../assets/images/APIMMockingInbound3.png)
-
-- Invoke the API ... should get a 200 success with the mocked data
-
-![](../../assets/images/APIMMockingResponse.png)
+  ![](../../assets/images/APIMMockingResponse.png)
