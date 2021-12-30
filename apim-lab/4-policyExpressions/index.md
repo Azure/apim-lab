@@ -7,40 +7,44 @@ nav_order: 5
 
 ## Policy Expressions
 
-Policy Expressions are used to control traffic to and modify the behavior of the Backend API. Using C# statements and an ability to access the API context, as well as your API Management service configuration, Policy Expressions are a powerful way to modify the behavior of the API at runtime.
+Policy Expressions are used to control traffic to and modify the behavior of the Backend API. At the time of this writing, [APIM policy expressions support C# 7](https://docs.microsoft.com/en-us/azure/api-management/api-management-policy-expressions). Please note that a specific subset of .NET Framework types, not the entire Framework, are made available. This is to cover the most frequently-needed types and operations without introducing bloat into APIM.  
 
-Don't hesitate to read the [documentation](https://docs.microsoft.com/en-us/azure/api-management/api-management-policies)
+Using C# statements and an ability to access the API context, as well as your API Management service configuration, Policy Expressions are a powerful way to modify the behavior of the API at runtime.
 
-We had a brief look earlier at setting CORS policies.  Lets dive in a bit deeper.
+Don't hesitate to read the [APIM policies documentation](https://docs.microsoft.com/en-us/azure/api-management/api-management-policies).
 
-Policies can be applied at multiple scopes and follow this hierarchy:
+We had a brief look earlier at setting CORS policies. Lets dive in a bit deeper:
+
+Policies can be applied at multiple scopes and follow this hierarchy. It is important to understand at what level to apply policy to appropriately yield security, robustness, and flexibility.
 
 ![](../../assets/images/apim-policy-scopes.png)
 
 
 ### Getting Started - Frontend/Inbound/Outbound/Backend
 
-Select an API e.g. Color API
-- Notice you can configure the Frontend, Inbound processing, Outbound processing, Backend
-  - Just select the Pencil icon to edit each part
-- Also notice, the configuration can be scoped to the API (All operations) or to an individual operation
+Select an API (e.g. *Color*). Policy can be configured for *Inbound processing*, *Backend*, and *Outbound processing*. Most commonly, policies are applied in the *Inbound processing* section. Select the pencil icon to visually edit any section or the `</>` code brackets to edit the underlying XML. The configuration can be scoped to the API (All operations) or to an individual operation.
+
+The *Frontend* section allows for editing of the OpenAPI / Swagger definition.
 
 ![](../../assets/images/APIMPolicyEditor.png)
 
-Edit the Frontend ...
-  - If editing an Operation - this gives a choice of the 'Code View' editor or Forms-based editor
-  - If editing an API - the only option is the 'Code View' editor
-  - The 'Code View' editor allows amendments to the Swagger (OpenAPI) definition
+Editing the Frontend:
+  - If editing an operation, there is a choice of the *Code View* or *Forms-based* editor.
+  - If editing an API, the only option is the *Code View* editor.
+  - The *Code View* editor allows amendments to the OpenAPI / Swagger definition.
 
 ![](../../assets/images/APIMFrontendCodeEditor.png)
 
 ![](../../assets/images/APIMFrontendFormEditor.png)
 
-- Edit Inbound processing / Outbound processing / Backend
-  - Have a choice of the 'Code View' editor or selecting an [Add Policy] Form
+Editing *Inbound processing / Outbound processing / Backend*:
 
-![](../../assets/images/APIMInboundProcessing.png)
+- Using the *Code Editor*:
 
 ![](../../assets/images/APIMInboundCodeEditor.png)
+
+- Using the *Form Editor*:
+
+![](../../assets/images/APIMInboundProcessing.png)
 
 ![](../../assets/images/APIMInboundFormEditor.png)
