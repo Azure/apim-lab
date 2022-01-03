@@ -6,7 +6,6 @@ nav_order: 5
 ---
 
 
-
 ## Star Wars API
 
 ### Mock responses

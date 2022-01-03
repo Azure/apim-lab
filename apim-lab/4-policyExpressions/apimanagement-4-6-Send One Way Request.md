@@ -6,12 +6,11 @@ nav_order: 6
 ---
 
 
-
 ## Calculator API
 
 ### Send a message to Microsoft Teams channel
 
-> It can also be done with Slack
+> You can also send messages to other products such as Slack.
 
 APIM integrates well with [external services](https://docs.microsoft.com/en-us/azure/api-management/api-management-sample-send-request) via HTTP-based interaction.  
 
@@ -22,13 +21,13 @@ For Microsoft Teams
 - First, open Teams and enable a Webhook connector for your team.
   - Get the URL of the webhook.
 
-![](../../assets/images/APIMTeamsWebHook1.png)
-
-![](../../assets/images/APIMTeamsWebHook2.png)
-
-![](../../assets/images/APIMTeamsWebHook3.png)
-
-![](../../assets/images/APIMTeamsWebHook4.png)
+    ![](../../assets/images/APIMTeamsWebHook1.png)
+    
+    ![](../../assets/images/APIMTeamsWebHook2.png)
+    
+    ![](../../assets/images/APIMTeamsWebHook3.png)
+    
+    ![](../../assets/images/APIMTeamsWebHook4.png)
 
 - Format the required payload. The payload sent to a Teams channel uses the [MessageCard](https://docs.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-reference) JSON schema. You can experiment with different cards in the [MessageCard Playground](https://messagecardplayground.azurewebsites.net/).
   

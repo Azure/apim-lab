@@ -6,7 +6,6 @@ nav_order: 4
 ---
 
 
-
 ## Calculator API
 
 ### Named Values collection

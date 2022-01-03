@@ -6,30 +6,30 @@ nav_order: 3
 ---
 
 
-### Product Management
+## Product Management
 
 A product contains one or more APIs as well as a usage quota and the terms of use. Once a product is published, developers can subscribe to the product and begin to use the product's APIs.
 
-#### Product definition
+### Product definition
 
-In the Azure Portal, open the resource menu item `Products`.
+- In the Azure Portal, open the resource menu item `Products`.
 
-![](../../assets/images/APIMProducts.png)
+  ![](../../assets/images/APIMProducts.png)
 
-Let's add a new product tier called `Gold Tier`. 
+- Let's add a new product tier called `Gold Tier`. 
 
-![](../../assets/images/APIMAddProduct.png)
+  ![](../../assets/images/APIMAddProduct.png)
 
-![](../../assets/images/APIMAddProduct2.png)
+  ![](../../assets/images/APIMAddProduct2.png)
 
-Next, we'll change the access control by clicking on `Gold Tier` and selecting `Access control` in the left pane.
+- Next, we'll change the access control by clicking on *Gold Tier* and selecting *Access control* in the left pane.
 
-![](../../assets/images/APIMAddProductsAccess.png)
+  ![](../../assets/images/APIMAddProductsAccess.png)
 
-Press `Add group`, check `Developers` and `Guests`, then press `Select`. The two added roles are shown now.
+  Press *Add group*, check *Developers* and *Guests*, then press *Select*. The two added roles are shown now.
 
-![](../../assets/images/APIMAddProductsAccess2.png)
+  ![](../../assets/images/APIMAddProductsAccess2.png)
 
-Back in the private browsing session, browse to `Products` and observe the new `Gold Tier`. 
+  Back in the private browsing session, browse to *Products* and observe the new *Gold Tier*. 
 
-![](../../assets/images/APIMAddProductsDevPortal.png)
+  ![](../../assets/images/APIMAddProductsDevPortal.png)
