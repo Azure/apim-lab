@@ -23,3 +23,6 @@ This repo has a github codespace dev container defined, this container is based 
 - Run the website in github codespaces using the built-in task:
     - the ".vscode" folder contains a tasks.json file with all the tasks necessary 
     - For example, Pressing  ⇧⌘B on a mac, or running Run Build Task from the global Terminal menu will run the website locally in github codespace. [See Vscode docs for other OS key bindings](https://code.visualstudio.com/docs/editor/tasks).
+
+
+![Enabling Codespace](../../assets/gifs/codespace.gif)
