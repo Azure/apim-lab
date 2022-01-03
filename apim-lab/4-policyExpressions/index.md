@@ -33,18 +33,18 @@ Editing the Frontend:
   - If editing an API, the only option is the *Code View* editor.
   - The *Code View* editor allows amendments to the OpenAPI / Swagger definition.
 
-![](../../assets/images/APIMFrontendCodeEditor.png)
+    ![](../../assets/images/APIMFrontendCodeEditor.png)
 
-![](../../assets/images/APIMFrontendFormEditor.png)
+    ![](../../assets/images/APIMFrontendFormEditor.png)
 
 Editing *Inbound processing / Outbound processing / Backend*:
 
 - Using the *Code Editor*:
 
-![](../../assets/images/APIMInboundCodeEditor.png)
+  ![](../../assets/images/APIMInboundCodeEditor.png)
 
 - Using the *Form Editor*:
 
-![](../../assets/images/APIMInboundProcessing.png)
+  ![](../../assets/images/APIMInboundProcessing.png)
 
-![](../../assets/images/APIMInboundFormEditor.png)
+  ![](../../assets/images/APIMInboundFormEditor.png)

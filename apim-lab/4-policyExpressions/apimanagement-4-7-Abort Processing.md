@@ -6,7 +6,6 @@ nav_order: 7
 ---
 
 
-
 ## Calculator API
 
 ### Aborting the processing
