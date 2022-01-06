@@ -5,14 +5,17 @@ has_children: false
 nav_order: 1
 ---
 
-# Basic Monitoring with Azure Monitor
 
-Analytics is available in the Azure management portal from the Analytics blade.
+## Basic Monitoring with Azure Monitor
 
-- Look at the dashboard and detailed :  Timeline , Geography , APIs , Operations , Products , Subscriptions , Users , Requests
+Analytics is available on the _Analytics_ blade in APIM.
 
-![](../../assets/images/APIMAnalytics.png)
+- The dashboard has several tabs on it. For example, here are _Timeline_, _Geography_, and _APIs_:
 
-![](../../assets/images/APIMAnalytics2.png)
+  ![](../../assets/images/APIMAnalytics.png)
+
+  ![](../../assets/images/APIMAnalytics2.png)
+
+  ![](../../assets/images/APIMAnalytics3.png)
 
 
