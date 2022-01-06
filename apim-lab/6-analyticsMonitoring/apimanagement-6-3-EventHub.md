@@ -171,3 +171,5 @@ Once your logger is configured in API Management, you can configure your log-to-
 1. In the Azure portal open the Event Hub you created earlier. You should see recent events. If not, give it a minute, then refresh.
 
     ![Event Hub APIM events](../../assets/images/event-hub-apim-events.png)
+
+> What to do with the data that is now in Event Hub is beyond the scope of this lab as this lab primarily focused on APIM to Event Hub integration. 
