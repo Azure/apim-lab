@@ -8,33 +8,47 @@ nav_order: 2
 
 ### Caching
 
-API Management can be configured for response caching - this can significantly reduce API latency, bandwidth consumption, and web service load for data that does not change frequently.
+API Management can be configured for response caching which can significantly reduce API latency, bandwidth consumption, and web service load for data that does not change frequently.
 
-Using the Azure Management portal - set a caching Policy on the RandomColor API call
-  - Set a caching duration of 15 seconds
-  - Simple caching configuration is not yet implemented in the Azure Management portal - we see shall see later how it can be done using policy expressions
+Using the Azure Management portal, navigate to the *Color* API and set a set a caching policy for the `ApiRandomColor` GET:
+  - Press *Add policy*.
 
-![](../../assets/images/APIMEnableCaching.png)
+    ![](../../assets/images/APIMEnableCaching.png)
 
-![](../../assets/images/APIMEnableCaching2.png)
+  - Select *Cache responses*.
 
-![](../../assets/images/APIMEnableCaching3.png)
+    ![](../../assets/images/APIMEnableCaching2.png)
 
-- Configure Color Website to use Unlimited URL
-- Select [Start]
-- Notice that for each 15 seconds period - the same color is set
+  - Set a caching duration of `15` seconds.
+    > Simple caching configuration is not yet implemented in the Azure Management portal. We shall see later how it can be done using policy expressions.
 
-![](../../assets/images/APIMColorWebCaching.png)
+    ![](../../assets/images/APIMEnableCaching3.png)
 
+- Configure the Color website from lab 3 to use the Unlimited subscription URL.
+- Select *Start*.
+- Notice that for each 15 second period the same color is set.
 
-Look at RandomColor API, switch to 'Code View' and check the caching policies (set from earlier)
+  ![](../../assets/images/APIMColorWebCaching.png)
 
-```xml
-<!-- Inbound -->
-<cache-lookup vary-by-developer="false"
-              vary-by-developer-groups="false"
-              downstream-caching-type="none" />
+- Looking at the *ApiRandomColor* GET API policies in the *Code View*, you'll see the caching policy defined:
 
-<!-- Outbound -->
-<cache-store duration="15" />
-```
+  ```xml
+  <policies>
+      <inbound>
+          <base />
+          <cache-lookup vary-by-developer="false"
+            vary-by-developer-groups="false"
+            downstream-caching-type="none" />
+      </inbound>
+      <backend>
+          <base />
+      </backend>
+      <outbound>
+          <base />
+          <cache-store duration="15" />
+      </outbound>
+      <on-error>
+          <base />
+      </on-error>
+  </policies>
+  ```

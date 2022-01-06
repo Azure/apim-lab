@@ -6,86 +6,108 @@ nav_order: 1
 ---
 
 
-### Publishing the Developer Portal
+## Publishing the Developer Portal
 
-The Developer Portal uses role-based access. **When deploying Azure APIM for the first time, you need to first access the Developer Portal using the admin role, which will trigger its activation**, and can be done with the following link in the `Overview` blade of the APIM instance:
+The APIM Developer Portal uses role-based access control (RBAC). After creating the APIM instance, you need to first **access the Developer Portal using the admin role**, which will trigger its activation.
 
-![](../../assets/images/devportalPublish.png)
+- Click the *Developer portal* link in the *Overview* blade of the APIM instance:
 
-After having accessed the Developer Portal in admin mode, you can now proceed with publishing to allow for anonymous and authenticated roles. Using the left-side menu `Portal Overview` icon - select the `Publish` button.  It will then be available for users to access.
+  ![](../../assets/images/devportalPublish.png)
 
-![](../../assets/images/apim-developerportal-publish.png)
+  ![](../../assets/images/apim-developerportal-admin-launch.png)
 
-### Enabling CORS for the Developer Portal
+- You can now proceed with publishing the Developer Portal to allow anonymous and authenticated roles. Back in the Azure Portal, locate _Developer Portal_ in the left-hand resource menu, then click on *Portal overview*. Press the *Publish* button and confirm with *Yes* in the popup. The portal will then be available for users to access.
+
+  ![](../../assets/images/apim-developerportal-publish.png)
+
+- You will see confirmation once the Developer Portal has been published.
+
+  ![](../../assets/images/apim-developerportal-published.png)
+
+---
+
+## Enabling CORS for the Developer Portal
 
 Cross-origin resource sharing (CORS) is a mechanism that allows resources on a web page to be requested from another domain, outside the domain from which the first resource was served. CORS is required to let portal visitors use the interactive console in the API reference pages and should be enabled for domains, including custom domains.
 
-CORS is enabled by using policies. We will go deep on this topic in part 4. For now we will enable this using a built-in UI. To do this, using the left-side menu `Portal Overview` icon - select the `Enable CORS` button.
+- CORS is enabled by using policies. We will go deeper on this topic in part 4. For now we will enable this using a built-in UI by pressing the *Enable CORS* button.
 
-![](../../assets/images/apim-developerportal-CORS.png)
+  ![](../../assets/images/apim-developerportal-CORS.png)
 
-After publishing the portal and enabling CORS, we should access the developer portal located at:  
-`{apim-service-name}.developer.azure-api.net`
+  ![](../../assets/images/apim-developerportal-CORS-enabled.png)
 
-![](../../assets/images/APIMDeveloperPortal.png)
+---
 
-
-### User Experience
+## User Experience
 
 Let's experience how your users will navigate through your portal. In order to do this, **we recommend opening a private tab in your browser or using another browser to avoid seeing the admin/edit version of the portal.** 
 
-#### Anonymous User
+- Navigate to `https://{apim-service-name}.developer.azure-api.net`.
 
-As an unauthenticated user (i.e. opening the URL in a new browser), look around the Developer Portal, and check the Products.
+  > Keep this browser session open as we will use it frequently throughout our labs.
 
-> Notice the difference between the Starter & Unlimited products
+  ![](../../assets/images/apim-developerportal-unauthenticated-launch.png)
 
-![](../../assets/images/APIMDevPortalProducts.png)
+### Anonymous User
 
-You can also check the APIs. As you can see, all operations exposed are described and can also be tested directly within the portal.
+- As an unauthenticated user, have a look around the portal by checking out the APIs and products.
 
-![](../../assets/images/APIMDevPortalAPIs.png)
+  > Notice the difference between the Starter & Unlimited products.
 
-#### Register for an account
+  ![](../../assets/images/APIMDevPortalProducts.png)
 
-Let's sign up for an account. If you are presently logged in as Administrator, please log out.
+- Check out the APIs. As you can see, all operations exposed are described and can also be tested directly within the portal.
 
-![](../../assets/images/APIMDevSignup.png)
+  ![](../../assets/images/APIMDevPortalAPIs.png)
 
-Check acceptance email and confirm to activate account
+### Register for an account
 
-![](../../assets/images/APIMDevSignupEmail.png)
+- Let's sign up for an account by pressing the *Sign up* link in the upper right-hand corner. The email can be your personal or a work email for this lab. 
 
-Sign into account
+  ![](../../assets/images/APIMDevSignup.png)
 
-![](../../assets/images/APIMDevSignin.png)
+- Check your inbox for the acceptance email and confirm to activate your account.
 
-Select Starter Product and subscribe to a "Starter" subscription
-  - Check email - subscription has been accepted and some key information are provided
+  ![](../../assets/images/APIMDevSignupEmail.png)
 
-Select Unlimited Product and subscribe to an "Unlimited" subscription
-  - Check email - the subscription requires approval 
+### Sign into account
 
-![](../../assets/images/APIMDevSubscribe.png)
+- Back in the private browser, sign in with your new credentials.
 
-Check the user profile page - see products and keys
-  - Note that the Unlimited subscription is not yet *Active* as this request has not yet been approved (status=submitted)
+  ![](../../assets/images/APIMDevSignin.png)
 
-![](../../assets/images/APIMDevSubscribe2.png)
+- Click on *Products*, then *Starter*.
+- Enter `Starter` as the subscription name, then press *Subscribe*. You should receive a confirmation email shortly.
 
-The "Unlimited" being in "submitted" state (=needs approval), you can, in Azure Portal, go in the `subcriptions` blade to approve it.
+  ![](../../assets/images/APIMDevSubscribe.png)
 
-#### Try an API
+- Next, click back on *Products*, then *Unlimited*.
+- Enter `Unlimited` as the subscription name, then press *Subscribe*.
+  > Note that the `Unlimited` subscription requires admin approval.
+- You should receive an email confirming your subscription request.
 
-It's now time to test one of the published APIs. Open the APIs page and look at the Echo API
+### Approving Subscriptions
+
+- Back in the Azure Portal, navigate to the *Subscriptions* blade to see the two new subscriptions that were just added.
+
+  ![](../../assets/images/apim-subscriptions.png)
+
+- Enter the menu for the submitted *Unlimited* subscription, then press *Activate subscription*. - Provide additional comments, if you like, then confirm the activation. By default, this will send an activation confirmation email to the user.
+
+  ![](../../assets/images/apim-activate-subscription.png)
+
+- Back in the private browser, refresh the profile page to see the activated *Unlimited* subscription.
+
+  ![](../../assets/images/apim-subscriptions-activated.png)
+
+### Try an API
+
+It's now time to test one of the published APIs. 
+
+- Open the *APIs* page and look at the *Echo API*:
   - Notice the developer information
-  - Test the Echo API using the POST verb 
+  - Test the Echo API using the POST verb by pressing *Try it*, using the defaults, then pressing *Send* at the bottom. You should see a successful `200` response.
 
-![](../../assets/images/APIMDevTryAPI.png)
+  ![](../../assets/images/APIMDevTryAPI.png)
 
-![](../../assets/images/APIMDevTryAPI2.png)
-
-
-
-
-
+  ![](../../assets/images/APIMDevTryAPI2.png)
