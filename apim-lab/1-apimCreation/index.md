@@ -1,5 +1,5 @@
 ---
-title: Azure Apim Creation
+title: Lab 1 - Azure Apim Creation
 has_children: false
 nav_order: 2
 ---

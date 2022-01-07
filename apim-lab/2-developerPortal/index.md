@@ -1,5 +1,5 @@
 ---
-title: Developer Portal
+title: Lab 2 - Developer Portal
 has_children: true
 nav_order: 3
 ---
