@@ -1,5 +1,5 @@
 ---
-title: Policy Expressions
+title: Lab 4 - Policy Expressions
 has_children: true
 nav_order: 5
 ---
