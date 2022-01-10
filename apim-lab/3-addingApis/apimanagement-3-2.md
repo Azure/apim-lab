@@ -14,14 +14,14 @@ As a demo we will use an API that offers a simple calculator service : [Calc API
 
 ![](../../assets/images/APIMCalcAPI.png)
 
-1) On the left menu, open the *APIs* blade. 
-1) Under *Create from definition* select *OpenAPI*.
-1) Select the *Full* option in the *Create from OpenAPI specification* dialog.
-1) Enter `http://calcapi.cloudapp.net/calcapi.json` as the *OpenAPI specification* value. You should subsequently see *Display name*, *Name*, and *Description* populate.
-1) The backend service only runs on `HTTP`, but we need to **set URL scheme to `Both`** to allow for APIM ingress to occur on HTTPS for callers such as the Developer Portal.
-1) Set the *API URL suffix* to `calc`.
-1) Assign *Starter* and *Unlimited* products.
-1) Press **Create**.
+1) On the left menu, open the *APIs* blade.  
+2) Under *Create from definition* select *OpenAPI*.  
+3) Select the *Full* option in the *Create from OpenAPI specification* dialog.  
+4) Enter `http://calcapi.cloudapp.net/calcapi.json` as the *OpenAPI specification* value. You should subsequently see *Display name*, *Name*, and *Description* populate.  
+5) The backend service only runs on `HTTP`, but we need to **set URL scheme to `Both`** to allow for APIM ingress to occur on HTTPS for callers such as the Developer Portal.  
+6) Set the *API URL suffix* to `calc`.  
+7) Assign *Starter* and *Unlimited* products.  
+8) Press **Create**.  
 
 ![](../../assets/images/APIMAddCalcAPI1.png)
 

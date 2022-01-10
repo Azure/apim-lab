@@ -18,23 +18,23 @@ Before you can use Azure Application Insights, you first need to create an insta
     
     ![App Insights create](../../assets/images/apim-app-insights-instance-1.png)
 
-1. Click **+ Create**, then fill in the form. You may need to create a new Log Analytics Workspace if you don't already have one.
+2. Click **+ Create**, then fill in the form. You may need to create a new Log Analytics Workspace if you don't already have one.
 
     ![App Insights create](../../assets/images/apim-app-insights-instance-2.png)
 
-1. Click **Review + Create**, followed by **Create**.
+3. Click **Review + Create**, followed by **Create**.
 
 ### Create a connection between Azure Application Insights and Azure API Management service instance
 
 1. Navigate to your **APIM** instance in the **Azure portal**.
-1. Select **Application Insights** from the menu on the left.
-1. Click **+ Add**. 
+2. Select **Application Insights** from the menu on the left.
+3. Click **+ Add**. 
 
     ![App Insights logger](../../assets/images/apim-app-insights-logger-1.png)  
 
-1. Select the previously created **Application Insights** instance and provide a short description.
-1. Click **Create**.
-1. You have just created an Azure Application Insights logger with an instrumentation key. It should now appear in the list.  
+4. Select the previously created **Application Insights** instance and provide a short description.
+5. Click **Create**.
+6. You have just created an Azure Application Insights logger with an instrumentation key. It should now appear in the list.  
 
     ![App Insights logger](../../assets/images/apim-app-insights-logger-2.png)  
 
@@ -43,17 +43,17 @@ Before you can use Azure Application Insights, you first need to create an insta
 ### Enable Application Insights logging for your API
 
 1. Select **APIs** from the menu on the left.
-1. Click on the **Color** API.
-1. Go to the **Settings** tab from the top bar.
-1. Scroll down to the **Diagnostics Logs** section.
-1. On the **Application Insights** tab check the **Enable** box.
-1. In the **Destination** dropdown select the logger you just added in the **Application Insights** blade.
-1. Set sampling to **100** to capture all events.
-1. Check the **Always log errors** checkbox.
+2. Click on the **Color** API.
+3. Go to the **Settings** tab from the top bar.
+4. Scroll down to the **Diagnostics Logs** section.
+5. On the **Application Insights** tab check the **Enable** box.
+6. In the **Destination** dropdown select the logger you just added in the **Application Insights** blade.
+7. Set sampling to **100** to capture all events.
+8. Check the **Always log errors** checkbox.
 
     ![App Insights logger](../../assets/images/apim-app-insights-api-1.png)  
 
-1. Click **Save**.
+9. Click **Save**.
 
     > Overriding the default value **0** in the **Number of payload bytes to log** field may significantly decrease the performance of your APIs.
 
