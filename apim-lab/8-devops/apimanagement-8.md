@@ -51,25 +51,29 @@ After a developer creates and tests APIs in API management, it is time to extrac
 Below are the steps to run the extractor from source code:
 
 - Clone this repository and navigate to {path\_to\_folder}/src/APIM\_ARMTemplate/apimtemplate
+    ```bash
+    git clone https://github.com/Azure/azure-api-management-devops-resource-kit.git
+    cd src/APIM_ARMTemplate/apimtemplate
+    ```
 - Restore its packages using
 
-```
-dotnet restore 
-```
+    ```bash
+    dotnet restore 
+    ```
 
 - Make sure you have signed in using Azure CLI and have switched to the subscription containing the API Management instance from which the configurations will be extracted. Ensure you are using the correct Azure subscription: 
 
-   ```
+   ```bash
    # View subscriptions
    az account list
    ```
 
-   ```
+   ```bash
    # Verify selected subscription
    az account show
    ```
 
-   ```
+   ```bash
    # Set correct subscription (if needed)
    az account set --subscription <subscription_id>
 
@@ -89,23 +93,31 @@ You have two choices when specifying your settings:
 - Or you can also pass the arguments on the command line. For instance 
     `extract --sourceApimName my-feature-apim --destinationApimName company-stable-apim --resourceGroup my-feature-rg --fileFolder c:\\temp\\apim-extract --apiName MyFeatureV1Api`
 
+
+    Where:
+
+    **sourceApimName:** API Management where you created your API
+
+    **destinationApimName:** It\'s just a convention to set the DESTINATION-API-NAME in front of the generated files.
+
+    **resourceGroup:** Resource group where the DEV-APIM-NAME is hosted.
+
+    **fileFolder:**  <your_clone_devops_respository_filespec>  (NOTE: git clone and create the local repos before executing the dotnet run extract) 
+
+    ***For more information on how to run the application and parameters, [go to this page](https://github.com/Azure/azure-api-management-devops-resource-kit/blob/master/src/APIM_ARMTemplate/README.md#extractor).***
+
 - For this example, we will pass the arguments on the command line.  So, run the application with:
 
-```
-dotnet run extract --sourceApimName famc-apimlab2 --resourceGroup famc-apimlab2 --destinationApimName famc-apimlab2-prod  --fileFolder apim-extract
-```
+    ```bash
+    dotnet run extract --sourceApimName <YOURAPIMINSTANCE> --resourceGroup <YOURAPIMRESOURCEGROUP> --destinationApimName <NEWAPIMINSTANCE>  --fileFolder apim-extract
+    ```
 
-Where:
+    i.e.
+    ```bash
+    dotnet run extract --sourceApimName famc-apimlab2 --resourceGroup famc-apimlab2 --destinationApimName famc-apimlab2-prod  --fileFolder apim-extract 
+    ```
 
-**DEV-APIM-NAME:** API Management where you created your API
 
-**DESTINATION-APIM-NAME:** It\'s just a convention to set the DESTINATION-API-NAME in front of the generated files.
-
-**RESOURCE-GROUP-NAME:** Resource group where the DEV-APIM-NAME is hosted.
-
-**--fileFolder  <your_clone_devops_respository_filespec>  (NOTE: git clone and create the local repos before executing the dotnet run extract) 
-
-***For more information on how to run the application and parameters, [go to this page](https://github.com/Azure/azure-api-management-devops-resource-kit/blob/master/src/APIM_ARMTemplate/README.md#extractor).***
 
 After executing the command above, you will see something similar to this:
 
