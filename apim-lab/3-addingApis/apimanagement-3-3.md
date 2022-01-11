@@ -1,6 +1,6 @@
 ---
 title: Calling Apis
-parent: Adding API's
+parent: Adding APIs
 has_children: false
 nav_order: 3
 ---

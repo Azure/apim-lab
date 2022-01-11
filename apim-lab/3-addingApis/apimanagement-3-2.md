@@ -1,6 +1,6 @@
 ---
 title: Import API using swagger
-parent: Adding API's
+parent: Adding APIs
 has_children: false
 nav_order: 2
 ---

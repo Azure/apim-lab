@@ -1,6 +1,6 @@
 ---
 title: Add API from scratch
-parent: Adding API's
+parent: Adding APIs
 has_children: false
 nav_order: 1
 ---

@@ -1,6 +1,6 @@
 ---
 title: Application Insights
-parent: Analytics and Monitoring
+parent: Analytics & Monitoring
 has_children: false
 nav_order: 2
 ---
