@@ -18,18 +18,20 @@ The ability to terminate a response gracefully is of importance in a number of c
 - Replace the condition with some more meaningful code
 
   ```xml
-  <!-- Inbound -->
-  <choose>
-      <when condition="@(true)">
-          <return-response response-variable-name="existing response variable">
-              <set-status code="500" reason="Internal Server Error" />
-              <set-header name="failure" exists-action="override">
-                  <value>failure</value>
-              </set-header>
-              <set-body>I'm sorry, Dave. I'm afraid I can't do that.</set-body>
-          </return-response>
-      </when>
-  </choose>
+  <inbound>
+      <base />
+      <choose>
+          <when condition="@(true)">
+              <return-response response-variable-name="existing response variable">
+                  <set-status code="500" reason="Internal Server Error" />
+                  <set-header name="failure" exists-action="override">
+                      <value>failure</value>
+                  </set-header>
+                  <set-body>I'm sorry, Dave. I'm afraid I can't do that.</set-body>
+              </return-response>
+          </when>
+      </choose>
+  </inbound>
   ```
 
   ![](../../assets/images/APIMResponseAbort.png)

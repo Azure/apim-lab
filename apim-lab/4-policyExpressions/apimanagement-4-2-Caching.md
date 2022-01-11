@@ -36,9 +36,7 @@ Using the Azure Management portal, navigate to the *Color* API and set a set a c
   <policies>
       <inbound>
           <base />
-          <cache-lookup vary-by-developer="false"
-            vary-by-developer-groups="false"
-            downstream-caching-type="none" />
+          <cache-lookup vary-by-developer="false" vary-by-developer-groups="false" downstream-caching-type="none" />
       </inbound>
       <backend>
           <base />

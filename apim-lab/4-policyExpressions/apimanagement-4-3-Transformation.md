@@ -20,8 +20,13 @@ The *find-and-replace* policy finds a substring in a request or response and rep
   ![](../../assets/images/replacepolicy1.png)
 
 - Fill in the `from` and `to` values accordingly:
-  ```xml
-  <find-and-replace from="blue" to="yellow" />
+
+  ```xml  
+  <outbound>
+      <base />
+      <find-and-replace from="blue" to="yellow" />
+      <cache-store duration="15" />
+  </outbound>
   ```
 
   ![](../../assets/images/replacepolicy2.png)
@@ -45,23 +50,37 @@ The [context variable](https://docs.microsoft.com/en-us/azure/api-management/api
 Note that the inbound `Accept-Encoding` header is set to `deflate` to ensure that the response body is not encoded as that causes the JSON parsing to fail.  
 
   ```xml
-  <!-- Inbound -->
-  <set-header name="Accept-Encoding" exists-action="override">
-      <value>deflate</value>
-  </set-header>
-  <!-- Outbound -->
-  <choose>
-      <when condition="@(context.Response.StatusCode == 200 && context.Product.Name.Equals("Starter"))">
-          <set-body>@{
-                  var response = context.Response.Body.As<JObject>();
-                  foreach (var key in new [] {"hair_color", "skin_color", "eye_color", "gender"}) {
-                      response.Property(key).Remove();
-                  }
-                  return response.ToString();
-              }
-          </set-body>
-      </when>
-  </choose>
+  <policies>
+      <inbound>
+          <base />
+          <set-header name="Accept-Encoding" exists-action="override">
+              <value>deflate</value>
+          </set-header>
+      </inbound>
+      <backend>
+          <base />
+      </backend>
+      <outbound>
+          <base />
+              <choose>
+                  <when condition="@(context.Response.StatusCode == 200 && context.Product.Name.Equals("Starter"))">
+                      <set-body>@{
+                              var response = context.Response.Body.As<JObject>();
+
+                              foreach (var key in new [] {"hair_color", "skin_color", "eye_color", "gender"}) {
+                                  response.Property(key).Remove();
+                              }
+
+                              return response.ToString();
+                          }
+                      </set-body>
+                  </when>
+              </choose>
+          </outbound>
+      <on-error>
+          <base />
+      </on-error>
+  </policies>
   ```
 
 - Test the API on the *Test* tab with *id* 1 and apply the appropriate *Starter* or *Unlimited* product scope. Examine the different responses.
@@ -85,8 +104,10 @@ A frequent requirement is to transform content, especially to maintain compatibi
 - Add an outbound policy to the *Add two integers* operation on the *Calculator* API to transform the response body to JSON.
 
   ```xml
-  <!-- Outbound -->
-  <xml-to-json kind="direct" apply="always" consider-accept-header="false" />
+  <outbound>
+      <base />
+      <xml-to-json kind="direct" apply="always" consider-accept-header="false" />
+  </outbound>
   ```
 
 - Test the API and examine the response. Note that it's now JSON.
@@ -100,9 +121,12 @@ A frequent requirement is to remove headers, especially ones that return securit
 - Add an outbound policy to the same *Calculator* API operation to remove specific response headers.
 
   ```xml
-  <!-- Outbound -->
-  <set-header name="x-aspnet-version" exists-action="delete" />
-  <set-header name="x-powered-by" exists-action="delete" />
+  <outbound>
+      <base />
+      <xml-to-json kind="direct" apply="always" consider-accept-header="false" />
+      <set-header name="x-aspnet-version" exists-action="delete" />
+      <set-header name="x-powered-by" exists-action="delete" />
+  </outbound>
   ```
 
 - Invoke the API and examine the response, which now no longer contains the two headers. See above screenshot for how it looked prior.
@@ -116,13 +140,15 @@ Query string parameters and headers can be easily modified prior to sending the 
 - Back in the same *Calculator* API operation, add inbound policies to modify the query string and headers. 
 
   ```xml
-  <!-- Inbound -->
-  <set-query-parameter name="x-product-name" exists-action="override">
-      <value>@(context.Product.Name)</value>
-  </set-query-parameter>
-  <set-header name="x-request-context-data" exists-action="override">
-      <value>@(context.Deployment.Region)</value>
-  </set-header>
+  <inbound>
+      <base />
+      <set-query-parameter name="x-product-name" exists-action="override">
+          <value>@(context.Product.Name)</value>
+      </set-query-parameter>
+      <set-header name="x-request-context-data" exists-action="override">
+          <value>@(context.Deployment.Region)</value>
+      </set-header>
+  </inbound>
   ```
 
 - Test the call by using either the *Starter* or *Unlimited* product, then inspect the result on the *Trace* tab.

@@ -28,14 +28,25 @@ nav_order: 4
   - Value: `{{"{{TimeNow"}}}}`
   - Action: **override**  
 - The corresponding XML in the *Code editor* view should look like this: 
-  ```xml
-  <!-- Inbound -->
-  <set-header name="x-request-received-time" exists-action="override">
-      <value>{{"{{TimeNow"}}}}</value>
-  </set-header>
+
+  ```xml    
+  <inbound>
+      <base />
+      <set-query-parameter name="x-product-name" exists-action="override">
+          <value>@(context.Product.Name)</value>
+      </set-query-parameter>
+      <set-header name="x-request-context-data" exists-action="override">
+          <value>@(context.Deployment.Region)</value>
+      </set-header>
+      <set-header name="x-request-received-time" exists-action="override">
+          <value>{{"{{TimeNow"}}}}</value>
+      </set-header>
+  </inbound>
   ```
+
 - Test the operation by selecting the *Starter* or *Unlimited* product scope. 
 - Examine the backend trace to find the added header with the evaluated named value:
+
   ```json
   {
     "name": "x-request-received-time",
