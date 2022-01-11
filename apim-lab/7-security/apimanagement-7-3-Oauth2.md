@@ -2,7 +2,7 @@
 title: Oauth2
 parent: Security
 has_children: true
-nav_order: 3
+nav_order: 2
 ---
 
 # OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform

@@ -2,7 +2,7 @@
 title: Managed Identities
 parent: Security
 has_children: false
-nav_order: 2
+nav_order: 3
 ---
 
 ## Security

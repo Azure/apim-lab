@@ -12,10 +12,22 @@ nav_order: 1
 JSON Web Tokens are an open-industry standard method for representing claims securely between two parties. More info at <https://jwt.io/>
 
 - Use the following sites
-  - <https://jwt.io/> to create a JWT
-    - Use a key that matches the value in the policy expression e.g. 123412341234123412341234
-  - <https://www.unixtimestamp.com/index.php>
-    - i.e. 01/01/2020  = 1577836800
+  - <https://www.unixtimestamp.com/index.php>, in this website we need to get a date in the future using the epoch unix timestamp, be sure to get a timestamp at least 1 hour in the future, otherwise the JWT will not work.
+    - i.e. 01/11/2029  = 1862842300
+  - <https://jwt.io/> to create a JWT. Please add the following to your JWT
+    - In the payload area use a similar payload to this one:
+    ```json
+      {
+        "sub": "1234567890",
+        "name": "John Doe",
+        "admin" : true,
+        "exp": 1862842300
+      }
+    ```
+    - In the signature area use a key that matches the value in the policy expression e.g. `123412341234123412341234`, also be sure to check the option that says **secret base64 encoded**.
+
+    - Your configuration should be similar as in this image:
+
 
 ![](../../assets/images/APIMJWT.png)
 
