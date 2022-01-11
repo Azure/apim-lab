@@ -1,6 +1,6 @@
 ---
 title: Import API using swagger
-parent: Adding API's
+parent: Adding APIs
 has_children: false
 nav_order: 2
 ---
@@ -18,7 +18,8 @@ As a demo we will use an API that offers a simple calculator service : [Calc API
 2) Under *Create from definition* select *OpenAPI*.  
 3) Select the *Full* option in the *Create from OpenAPI specification* dialog.  
 4) Enter `http://calcapi.cloudapp.net/calcapi.json` as the *OpenAPI specification* value. You should subsequently see *Display name*, *Name*, and *Description* populate.  
-5) The backend service only runs on `HTTP`, but we need to **set URL scheme to `Both`** to allow for APIM ingress to occur on HTTPS for callers such as the Developer Portal.  
+    > Note the intentional use of `http` instead of `https` as this backend does not presently support `https`.  
+5) While the backend service only runs on `HTTP`, we need to **set URL scheme to `Both`** to allow for APIM ingress to occur on HTTPS for callers such as the Developer Portal.  
 6) Set the *API URL suffix* to `calc`.  
 7) Assign *Starter* and *Unlimited* products.  
 8) Press **Create**.  

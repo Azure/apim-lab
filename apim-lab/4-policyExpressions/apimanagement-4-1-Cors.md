@@ -15,20 +15,28 @@ We have already configured the *cors* policy for our APIs in labs 2 & 3. Below i
 ![](../../assets/images/apim-policy-cors-all-apis.png)  
 
 ```xml
-<!-- Inbound -->
-<cors allow-credentials="true">
-    <allowed-origins>
-        <origin>https://apim-sk-12212021.developer.azure-api.net</origin>
-        <origin>https://markcolorweb.azurewebsites.net</origin>
-    </allowed-origins>
-    <allowed-methods preflight-result-max-age="300">
-        <method>*</method>
-    </allowed-methods>
-    <allowed-headers>
-        <header>*</header>
-    </allowed-headers>
-    <expose-headers>
-        <header>*</header>
-    </expose-headers>
-</cors>
+<policies>
+    <inbound>
+        <cors allow-credentials="true">
+            <allowed-origins>
+                <origin>https://apim-sk-12212021.developer.azure-api.net</origin>
+                <origin>https://markcolorweb.azurewebsites.net</origin>
+            </allowed-origins>
+            <allowed-methods preflight-result-max-age="300">
+                <method>*</method>
+            </allowed-methods>
+            <allowed-headers>
+                <header>*</header>
+            </allowed-headers>
+            <expose-headers>
+                <header>*</header>
+            </expose-headers>
+        </cors>
+    </inbound>
+    <backend>
+        <forward-request />
+    </backend>
+    <outbound />
+    <on-error />
+</policies>
 ```

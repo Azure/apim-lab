@@ -1,6 +1,6 @@
 ---
 title: Logging with Event Hub
-parent: Analytics and Monitoring
+parent: Analytics & Monitoring
 has_children: false
 nav_order: 3
 ---

@@ -1,6 +1,6 @@
 ---
 title: Basic with Azure Monitor
-parent: Analytics and Monitoring
+parent: Analytics & Monitoring
 has_children: false
 nav_order: 1
 ---

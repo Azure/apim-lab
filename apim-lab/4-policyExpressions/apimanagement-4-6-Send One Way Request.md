@@ -32,37 +32,37 @@ For Microsoft Teams
 - Format the required payload. The payload sent to a Teams channel uses the [MessageCard](https://docs.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-reference) JSON schema. You can experiment with different cards in the [MessageCard Playground](https://messagecardplayground.azurewebsites.net/).
   
 - Open the Calculator API 'Code View'.
-- Add the `send-one-way-request` policy to *Outbound processing*. 
-  - Replace the webhook and payload as required.
+- Add the `send-one-way-request` policy to *Outbound processing* and replace the webhook and payload as required.
 
   ```xml
-  <!-- Outbound -->
-  <choose>
-    <when condition="@(context.Response.StatusCode >= 299)">
-      <send-one-way-request mode="new">
-        <set-url>
-          https://outlook.office.com/webhook/78f54a63-f217-451a-b263-f1f5c0e866f0@72f988bf-86f1-41af-91ab-2d7cd011db47/IncomingWebh00k/34228a8ccbe94e368d3ac4782adda9b2/4e01c743-d419-49b7-88c6-245e5e31664a
-        </set-url>
-        <set-method>POST</set-method>
-        <set-body>@{
-          return new JObject(
-            new JProperty("@type","MessageCard"),
-            new JProperty("@context", "http://schema.org/extensions"),
-            new JProperty("summary","Summary"),
-            new JProperty("themeColor", "0075FF"),
-            new JProperty("sections",
-              new JArray (
-                new JObject (
-                  new JProperty("text","Error - details: [link]  (http://azure1.org)")
+  <outbound>
+      <base />
+      <choose>
+        <when condition="@(context.Response.StatusCode >= 299)">
+          <send-one-way-request mode="new">
+            <set-url>
+              https://outlook.office.com/webhook/78f54a63-f217-451a-b263-f1f5c0e866f0@72f988bf-86f1-41af-91ab-2d7cd011db47/IncomingWebh00k/34228a8ccbe94e368d3ac4782adda9b2/4e01c743-d419-49b7-88c6-245e5e31664a
+            </set-url>
+            <set-method>POST</set-method>
+            <set-body>@{
+              return new JObject(
+                new JProperty("@type","MessageCard"),
+                new JProperty("@context", "http://schema.org/extensions"),
+                new JProperty("summary","Summary"),
+                new JProperty("themeColor", "0075FF"),
+                new JProperty("sections",
+                  new JArray (
+                    new JObject (
+                      new JProperty("text","Error - details: [link]  (http://azure1.org)")
+                    )
+                  )
                 )
-              )
-            )
-          ).ToString();
-        }</set-body>
-      </send-one-way-request>
-    </when>
-  </choose>
-  
+              ).ToString();
+            }</set-body>
+          </send-one-way-request>
+        </when>
+      </choose>
+  </outbound>  
   ```
 
 - For demo purposes, amend the condition so it always fires (i.e. `StatusCode = 200`).

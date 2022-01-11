@@ -1,6 +1,6 @@
 ---
 title: Revisions
-parent: Versions And Revisions
+parent: Versions & Revisions
 has_children: false
 nav_order: 2
 ---

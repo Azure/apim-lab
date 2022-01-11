@@ -1,5 +1,5 @@
 ---
-title: Versions And Revisions
+title: Versions & Revisions
 has_children: true
 nav_order: 6
 ---
