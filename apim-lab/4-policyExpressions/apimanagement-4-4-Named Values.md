@@ -6,36 +6,39 @@ nav_order: 4
 ---
 
 
-
 ## Calculator API
 
 ### Named Values collection
 
-Named Values (aka Properties) are a collection of key/value pairs that are global to the service instance. These properties can be used to manage constant string values across all API configurations and policies.  Values can be expressions or secrets (never displayed).
+*Named Values* (aka *Properties*) are a collection of key/value pairs that are global to the service instance. These properties can be used to manage `string` constants across all API configurations and policies. Values can be expressions, secrets (encrypted by APIM), or Key Vault, which links to a corresponding secret in Azure Key Vault.
 
-- Set a property called `TimeNow`
-  - e.g. `@(DateTime.Now.ToString())`
+- Open the `Named values` blade in the resource menu and press **+ Add**.
+- Create the new property:
+  - Name: **TimeNow**
+  - Display name: **TimeNow**
+  - Type: **Plain**
+  - Value: `@(DateTime.Now.ToString())`
 
-![](../../assets/images/APIMNamedValues.png)
+    ![](../../assets/images/APIMNamedValues.png)
 
-- Open the Calculator API 'Code View'
-- Add the inbound policy to add the header
-- Test the API within the Azure Management portal
-  - Add a Header called [Ocp-Apim-Trace] set to true
-  - Examine the response and the [Trace] tab
-
-```xml
-<!-- Inbound -->
-<set-header name="timeheader" exists-action="override">
-    <value>{{"{{TimeNow"}}}}</value>
-</set-header>
-```
-
-![](../../assets/images/APIMTraceNV.png)
-
-![](../../assets/images/APIMTraceNV2.png)
-
-- Go to the URL specified in the HTTP Response - [ocp-apim-trace-location]
-  - Note that the [timeheader] field has been sent to the backend API
-
-![](../../assets/images/APIMTraceNV3.png)
+- Back in the *APIs* blade, open the *Add two integers* operation in the Calculator API. 
+- Amend the `set-header` policy by clicking on the pencil icon.
+- Create a new header by pressing **+ Add header**:
+  - Name: **x-request-received-time**
+  - Value: `{{TimeNow}}`
+  - Action: **override**  
+- The corresponding XML in the *Code editor* view should look like this: 
+  ```xml
+  <!-- Inbound -->
+  <set-header name="x-request-received-time" exists-action="override">
+      <value>{{TimeNow}}</value>
+  </set-header>
+  ```
+- Test the operation by selecting the *Starter* or *Unlimited* product scope. 
+- Examine the backend trace to find the added header with the evaluated named value:
+  ```json
+  {
+    "name": "x-request-received-time",
+    "value": "12/30/2021 6:10:47 PM"
+  }
+  ```
