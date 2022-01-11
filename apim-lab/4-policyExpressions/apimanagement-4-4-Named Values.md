@@ -25,13 +25,13 @@ nav_order: 4
 - Amend the `set-header` policy by clicking on the pencil icon.
 - Create a new header by pressing **+ Add header**:
   - Name: **x-request-received-time**
-  - Value: `{{TimeNow}}`
+  - Value: `{{"{{TimeNow"}}}}`
   - Action: **override**  
 - The corresponding XML in the *Code editor* view should look like this: 
   ```xml
   <!-- Inbound -->
   <set-header name="x-request-received-time" exists-action="override">
-      <value>{{TimeNow}}</value>
+      <value>{{"{{TimeNow"}}}}</value>
   </set-header>
   ```
 - Test the operation by selecting the *Starter* or *Unlimited* product scope. 
