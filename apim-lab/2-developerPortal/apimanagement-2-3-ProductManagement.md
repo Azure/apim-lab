@@ -14,22 +14,22 @@ A product contains one or more APIs as well as a usage quota and the terms of us
 
 - In the Azure Portal, open the resource menu item `Products`.
 
-  ![](../../assets/images/APIMProducts.png)
+  ![APIM Products](../../assets/images/apim-products.png)
 
 - Let's add a new product tier called `Gold Tier`. 
 
-  ![](../../assets/images/APIMAddProduct.png)
+  ![APIM Add Product](../../assets/images/apim-add-product-1.png)
 
-  ![](../../assets/images/APIMAddProduct2.png)
+  ![APIM Add Product](../../assets/images/apim-add-product-2.png)
 
 - Next, we'll change the access control by clicking on *Gold Tier* and selecting *Access control* in the left pane.
 
-  ![](../../assets/images/APIMAddProductsAccess.png)
+  ![APIM Add Product Access](../../assets/images/apim-add-product-access-1.png)
 
   Press *Add group*, check *Developers* and *Guests*, then press *Select*. The two added roles are shown now.
 
-  ![](../../assets/images/APIMAddProductsAccess2.png)
+  ![APIM Add Product Access](../../assets/images/apim-add-product-access-1.png)
 
   Back in the private browsing session, browse to *Products* and observe the new *Gold Tier*. 
 
-  ![](../../assets/images/APIMAddProductsDevPortal.png)
+  ![APIM Developer Portal Added Product](../../assets/images/apim-developer-portal-added-product.png)
