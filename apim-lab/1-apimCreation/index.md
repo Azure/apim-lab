@@ -19,4 +19,4 @@ Please note that the **service name must be unique**. We recommend to include yo
 
 Please use the **Developer** tier, which provides [all relevant features at the lowest cost](https://azure.microsoft.com/en-us/pricing/details/api-management/#pricing). 
 
-![Deploy blade](../../assets/images/APIMDeployBlade.png)
+![APIM deploy blade](../../assets/images/apim-deploy-blade.png)
