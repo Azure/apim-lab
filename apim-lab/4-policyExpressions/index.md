@@ -17,7 +17,7 @@ We had a brief look earlier at setting CORS policies. Lets dive in a bit deeper:
 
 Policies can be applied at multiple scopes and follow this hierarchy. It is important to understand at what level to apply policy to appropriately yield security, robustness, and flexibility.
 
-![](../../assets/images/apim-policy-scopes.png)
+![APIM Policy Scopes](../../assets/images/apim-policy-scopes.png)
 
 
 ### Getting Started - Frontend/Inbound/Outbound/Backend
@@ -26,25 +26,25 @@ Select an API (e.g. *Color*). Policy can be configured for *Inbound processing*,
 
 The *Frontend* section allows for editing of the OpenAPI / Swagger definition.
 
-![](../../assets/images/APIMPolicyEditor.png)
+![APIM Policy Editor](../../assets/images/apim-policy-editor.png)
 
 Editing the Frontend:
   - If editing an operation, there is a choice of the *Code View* or *Forms-based* editor.
   - If editing an API, the only option is the *Code View* editor.
   - The *Code View* editor allows amendments to the OpenAPI / Swagger definition.
 
-    ![](../../assets/images/APIMFrontendCodeEditor.png)
+    ![APIM Frontend Code Editor](../../assets/images/apim-frontend-code-editor.png)
 
-    ![](../../assets/images/APIMFrontendFormEditor.png)
+    ![APIM Frontend Form Editor](../../assets/images/apim-frontend-form-editor.png)
 
 Editing *Inbound processing / Outbound processing / Backend*:
 
 - Using the *Code Editor*:
 
-  ![](../../assets/images/APIMInboundCodeEditor.png)
+  ![APIM Inbound Code Editor](../../assets/images/apim-inbound-code-editor.png)
 
 - Using the *Form Editor*:
 
-  ![](../../assets/images/APIMInboundProcessing.png)
+  ![APIM Inbound Processing](../../assets/images/apim-inbound-processing.png)
 
-  ![](../../assets/images/APIMInboundFormEditor.png)
+  ![APIM Inbound Form Editor](../../assets/images/apim-inbound-form-editor.png)
