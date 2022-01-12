@@ -10,7 +10,7 @@ nav_order: 1
 
 - On the left menu, open the *APIs* blade. You will see all APIs, the possibility to add new ones, but also to customize existing ones.
 
-  ![](../../assets/images/APIMAPIs.png)
+  ![APIM APIs](../../assets/images/apim-apis.png)
 
 ### Add API from Scratch
 
@@ -28,7 +28,7 @@ Instead of developing an API, for this lab you will use the existing [*Star Wars
 
   > While it is conventionally a good idea to version APIs from the onset, we are omitting this step here for brevity of the labs.
 
-  ![](../../assets/images/APIMAddBlankAPI.png)
+  ![APIM Add Blank API](../../assets/images/apim-add-blank-api.png)
 
 - Once created, inside the *Star Wars* API press **+ Add operation** to declare two new operations:
 
@@ -41,23 +41,23 @@ Instead of developing an API, for this lab you will use the existing [*Star Wars
     - Name: **getpeoplebyid**
     - URL: **GET /people/{id}/**
 
-  ![](../../assets/images/APIMAddSWOperations.png)
+  ![APIM Star Wars API Add Operation](../../assets/images/apim-star-wars-api-add-operation.png)
 
 ### Access Star Wars API from Developer Portal
 
 - Switch now to the Developer Portal and sign in as a developer with a subscription. 
 - Select *Explore APIs*. You should see both *Echo API* and *Star Wars*.
 
-  ![](../../assets/images/apim-developerportal-apis-echo-star-wars.png)
+  ![APIM Developer Portal Echo & Star Wars APIs](../../assets/images/apim-developer-portal-apis-echo-star-wars.png)
 
 - Click on *Star Wars*. Try the *GetPeople* operation. Observe a successful `200` response.
 
-  ![](../../assets/images/APIMSWTryIt1.png)
+  ![APIM Developer Portal Star Wars Try It](../../assets/images/apim-developer-portal-star-wars-try-it-1.png)
 
 - Now try the *GetPeopleById* operation with `id = 2`
 
-  ![](../../assets/images/APIMSWTryIt2.png)
+  ![APIM Developer Portal Star Wars Try It](../../assets/images/apim-developer-portal-star-wars-try-it-2.png)
 
 - Examine the successful `200` response with `C-3PO`'s details in the response body payload.
   
-  ![](../../assets/images/APIMSWTryIt3.png)
+  ![APIM Developer Portal Star Wars Try It](../../assets/images/apim-developer-portal-star-wars-try-it-3.png)
