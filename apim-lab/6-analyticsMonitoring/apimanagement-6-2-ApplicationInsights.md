@@ -16,11 +16,11 @@ Before you can use Azure Application Insights, you first need to create an insta
 
 1. Open the **Azure portal** and navigate to **Application Insights**.
     
-    ![App Insights create](../../assets/images/apim-app-insights-instance-1.png)
+    ![App Insights Create Instance](../../assets/images/app-insights-create-instance-1.png)
 
 2. Click **+ Create**, then fill in the form. You may need to create a new Log Analytics Workspace if you don't already have one.
 
-    ![App Insights create](../../assets/images/apim-app-insights-instance-2.png)
+    ![App Insights Create Instance](../../assets/images/app-insights-create-instance-2.png)
 
 3. Click **Review + Create**, followed by **Create**.
 
@@ -30,13 +30,13 @@ Before you can use Azure Application Insights, you first need to create an insta
 2. Select **Application Insights** from the menu on the left.
 3. Click **+ Add**. 
 
-    ![App Insights logger](../../assets/images/apim-app-insights-logger-1.png)  
+    ![APIM App Insights Logger](../../assets/images/apim-app-insights-logger-1.png)  
 
 4. Select the previously created **Application Insights** instance and provide a short description.
 5. Click **Create**.
 6. You have just created an Azure Application Insights logger with an instrumentation key. It should now appear in the list.  
 
-    ![App Insights logger](../../assets/images/apim-app-insights-logger-2.png)  
+    ![APIM App Insights Logger](../../assets/images/apim-app-insights-logger-2.png)  
 
     > Behind the scenes, a [Logger](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/logger/createorupdate) entity is created in your API Management instance, containing the Instrumentation Key of the Application Insights instance.
 
@@ -51,7 +51,7 @@ Before you can use Azure Application Insights, you first need to create an insta
 7. Set sampling to **100** to capture all events.
 8. Check the **Always log errors** checkbox.
 
-    ![App Insights logger](../../assets/images/apim-app-insights-api-1.png)  
+    ![APIM API App Insights Logger](../../assets/images/apim-app-insights-api-1.png)  
 
 9. Click **Save**.
 
@@ -78,7 +78,7 @@ A failed request is a request which:
 - Go back to the **Application Insights** blade and click on the instance.
 If you go into your Application Insights instance, after few seconds, you should be able to see logs and metrics:
 
-  ![App Insights logger](../../assets/images/apim-app-insights-api-2.png)  
+  ![APIM API App Insights Logger](../../assets/images/apim-app-insights-api-2.png)  
 
 ### Performance implications and log sampling
 

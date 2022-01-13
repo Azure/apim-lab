@@ -19,7 +19,7 @@ nav_order: 4
   - Type: **Plain**
   - Value: `@(DateTime.Now.ToString())`
 
-    ![](../../assets/images/APIMNamedValues.png)
+    ![APIM Named Values](../../assets/images/apim-named-values.png)
 
 - Back in the *APIs* blade, open the *Add two integers* operation in the Calculator API. 
 - Amend the `set-header` policy by clicking on the pencil icon.

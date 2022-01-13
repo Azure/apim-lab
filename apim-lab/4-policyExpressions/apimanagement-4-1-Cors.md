@@ -12,7 +12,7 @@ The [cors policy](<https://docs.microsoft.com/en-us/azure/api-management/api-man
 
 We have already configured the *cors* policy for our APIs in labs 2 & 3. Below is the resulting XML:
 
-![](../../assets/images/apim-policy-cors-all-apis.png)  
+![APIM Policy CORS All APIs](../../assets/images/apim-policy-cors-all-apis.png)  
 
 ```xml
 <policies>

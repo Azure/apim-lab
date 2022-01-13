@@ -18,11 +18,11 @@ Before you make your portal available to visitors, you should personalize the au
 
 A video on customization is available at <https://www.youtube.com/watch?v=5mMtUSmfUlw>.
 
-![](../../assets/images/APIMDevConfig.png)
+![APIM Developer Portal Config](../../assets/images/apim-developer-portal-config-1.png)
 
-![](../../assets/images/APIDevConfig2.png)
+![APIM Developer Portal Config](../../assets/images/apim-developer-portal-config-2.png)
 
-![](../../assets/images/APIMDevStyles.png)
+![APIM Developer Portal Styles](../../assets/images/apim-developer-portal-styles.png)
 
 ### Email Configuration
 
@@ -30,8 +30,8 @@ The templates for the email notifications are managed from the Azure Management 
 
 Look at the available notifications and notifications templates which are customizable.
 
-![](../../assets/images/APIMNotifications.png)
+![APIM Notifications](../../assets/images/apim-notifications.png)
 
-![](../../assets/images/APIMNotificationTemplates.png)
+![APIM Notification Templates](../../assets/images/apim-notification-templates.png)
 
-![](../../assets/images/APIMNotificationEdit.png)
+![APIM Notification Template Edit](../../assets/images/apim-notification-edit.png)

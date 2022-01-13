@@ -34,4 +34,4 @@ The ability to terminate a response gracefully is of importance in a number of c
   </inbound>
   ```
 
-  ![](../../assets/images/APIMResponseAbort.png)
+  ![APIM Policy Abort Response](../../assets/images/apim-policy-abort-response.png)

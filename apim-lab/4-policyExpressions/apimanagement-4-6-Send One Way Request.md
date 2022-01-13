@@ -21,13 +21,13 @@ For Microsoft Teams
 - First, open Teams and enable a Webhook connector for your team.
   - Get the URL of the webhook.
 
-    ![](../../assets/images/APIMTeamsWebHook1.png)
+    ![Teams Webhook](../../assets/images/teams-webhook-1.png)
     
-    ![](../../assets/images/APIMTeamsWebHook2.png)
+    ![Teams Webhook](../../assets/images/teams-webhook-2.png)
     
-    ![](../../assets/images/APIMTeamsWebHook3.png)
+    ![Teams Webhook](../../assets/images/teams-webhook-3.png)
     
-    ![](../../assets/images/APIMTeamsWebHook4.png)
+    ![Teams Webhook](../../assets/images/teams-webhook-4.png)
 
 - Format the required payload. The payload sent to a Teams channel uses the [MessageCard](https://docs.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-reference) JSON schema. You can experiment with different cards in the [MessageCard Playground](https://messagecardplayground.azurewebsites.net/).
   
@@ -72,4 +72,4 @@ For Microsoft Teams
 - Invoke the API and observe the `200` success response.
 - Look for a received message in your Teams channel:
 
-  ![](../../assets/images/APIMTeamsMessage.png)
+  ![Teams APIM Message](../../assets/images/teams-apim-message.png)

@@ -26,13 +26,13 @@ Mocking in APIM is a useful mechanism for API consumers to interact with APIs wi
   }
   ```
   
-  ![](../../assets/images/APIMMockingFrontend.png)
+  ![APIM Policy Mock Frontend](../../assets/images/apim-policy-mock-frontend.png)
 
 - Open the Inbound processing 'Code View'
 - Add *Mock Response* under *Other policies* after the `<base /> tag.
 
-  ![](../../assets/images/APIMMockingInbound.png)
+  ![APIM Policy Mock Inbound](../../assets/images/apim-policy-mock-inbound.png)
 
 - Invoke the API to receive a `200` success with the mocked film data.
 
-  ![](../../assets/images/APIMMockingResponse.png)
+  ![APIM Policy Mock Response](../../assets/images/apim-policy-mock-response.png)

@@ -12,7 +12,7 @@ Instead of importing operations one-by-one, you can also import a full API. The 
 
 As a demo we will use an API that offers a simple calculator service : [Calc API](http://calcapi.cloudapp.net/)
 
-![](../../assets/images/APIMCalcAPI.png)
+![APIM Calculator API](../../assets/images/apim-calc-api.png)
 
 1) On the left menu, open the *APIs* blade.  
 2) Under *Create from definition* select *OpenAPI*.  
@@ -24,22 +24,22 @@ As a demo we will use an API that offers a simple calculator service : [Calc API
 7) Assign *Starter* and *Unlimited* products.  
 8) Press **Create**.  
 
-![](../../assets/images/APIMAddCalcAPI1.png)
+![APIM Add Calculator API](../../assets/images/apim-add-calc-api-1.png)
 
 - Once the API is created, it will show in the list of APIs along with all of its operations.
 
-  ![](../../assets/images/APIMAddCalcAPI2.png)
+  ![APIM Add Calculator API](../../assets/images/apim-add-calc-api-2.png)
 
 - Back in the Developer Portal, try out the Calculator API via the *Add two integers* GET method, then examine the response.  
 > Accepting the defaults of `49` and `51` suffices. There's presently an issue where defaults are shown in a dropdown. If you wanted to change the values, add new `a` and `b` parameters and values, then remove the dropdown values.
 
-![](../../assets/images/APIMCalcTryIt1.png)
+![APIM Developer Portal Calculator API Try It](../../assets/images/apim-developer-portal-calc-api-try-it-1.png)
 
 We can inspect / edit the Open API definition by selecting the *Edit* icon from the Frontend block:
 
-![](../../assets/images/APIMCalcSwagger.png)
+![APIM Calculator API Swagger](../../assets/images/apim-calc-api-swagger-1.png)
 
-![](../../assets/images/APIMCalcSwagger2.png)
+![APIM Calculator API Swagger](../../assets/images/apim-calc-api-swagger-2.png)
 
 ---
 
@@ -49,4 +49,4 @@ We can inspect / edit the Open API definition by selecting the *Edit* icon from 
 
 This is likely a mixed-content CORS error in which you are attempting a call to an APIM endpoint that is only set up for *HTTP*. It fails as the Developer Portal runs on *HTTPS*. Please check the setup steps above for the _URL scheme_.
 
-![](../../assets/images/APIMCalcCORSError.png)
+![APIM Calculator CORS Error](../../assets/images/apim-calc-cors-error.png)

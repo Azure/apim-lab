@@ -17,7 +17,7 @@ The *find-and-replace* policy finds a substring in a request or response and rep
 - Place the cursor after the `<base />` element in the `<outbound>` section.
 - Press *Show snippets*, then select the *Find and replace string in body* transformation policy.
 
-  ![](../../assets/images/replacepolicy1.png)
+  ![APIM Policy Find & Replace](../../assets/images/apim-policy-find-and-replace-1.png)
 
 - Fill in the `from` and `to` values accordingly:
 
@@ -29,11 +29,11 @@ The *find-and-replace* policy finds a substring in a request or response and rep
   </outbound>
   ```
 
-  ![](../../assets/images/replacepolicy2.png)
+  ![APIM Policy Find & Replace](../../assets/images/apim-policy-find-and-replace-2.png)
 
 - Save the policy, then invoke the API using the Unlimited subscription key.
 
-  ![](../../assets/images/replacepolicy3.png)
+  ![APIM Policy Find & Replace](../../assets/images/apim-policy-find-and-replace-3.png)
 
 ---
 
@@ -87,11 +87,11 @@ Note that the inbound `Accept-Encoding` header is set to `deflate` to ensure tha
 
 - With *Starter* product scope:
 
-  ![](../../assets/images/APIMResponseCondStarter.png)
+  ![APIM Policy Transform Starter Product](../../assets/images/apim-policy-transform-starter-product.png)
 
 - With *Unlimited* product scope. Notice the four properties in red that are not included in the *Starter* scope response.
 
-  ![](../../assets/images/APIMResponseCondUnlimited.png)
+  ![APIM Policy Transform Unlimited Product](../../assets/images/apim-policy-transform-unlimited-product.png)
 
 ---
 
@@ -112,7 +112,7 @@ A frequent requirement is to transform content, especially to maintain compatibi
 
 - Test the API and examine the response. Note that it's now JSON.
 
-  ![](../../assets/images/APIMResponseXMLtoJSON.png)
+  ![APIM Policy Transform XML to JSON](../../assets/images/apim-policy-transform-xml-to-json.png)
 
 ### Delete response headers
 
@@ -131,7 +131,7 @@ A frequent requirement is to remove headers, especially ones that return securit
 
 - Invoke the API and examine the response, which now no longer contains the two headers. See above screenshot for how it looked prior.
 
-  ![](../../assets/images/APIMResponseDeleteHeaders.png)
+  ![APIM Policy Delete Response Header](../../assets/images/apim-policy-delete-response-header.png)
 
 ### Amend what's passed to the backend
 
@@ -153,6 +153,6 @@ Query string parameters and headers can be easily modified prior to sending the 
 
 - Test the call by using either the *Starter* or *Unlimited* product, then inspect the result on the *Trace* tab.
 
-  ![](../../assets/images/APIMTraceAmendBackend1.png)
+  ![APIM Policy Amend Backend Call](../../assets/images/apim-trace-amend-backend-1.png)
 
-  ![](../../assets/images/APIMTraceAmendBackend2.png)
+  ![APIM Policy Amend Backend Call](../../assets/images/apim-trace-amend-backend-2.png)
