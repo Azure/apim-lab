@@ -1,4 +1,4 @@
-<img src="assets/images/apimlogotransparent_s.png">
+<img src="assets/images/apim-logo-transparent.png">
 
 
 #  About this workshop
