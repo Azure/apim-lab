@@ -7,15 +7,16 @@ nav_order: 1
 
 ## Security
 
+In this lab, we are going to see how to use JSON Web Tokens with your APIs.
+
 ### JSON Web Tokens (JWT)
 
-JSON Web Tokens are an open-industry standard method for representing claims securely between two parties. More info at <https://jwt.io/>
+JSON Web Tokens are an open-industry standard method for representing claims securely between two parties. More info at <https://jwt.io>. 
 
-- Use the following sites
-  - <https://www.unixtimestamp.com/index.php>, in this website we need to get a date in the future using the epoch unix timestamp, be sure to get a timestamp at least 1 hour in the future, otherwise the JWT will not work.
-    - i.e. 01/11/2029  = 1862842300
-  - <https://jwt.io/> to create a JWT. Please add the following to your JWT
-    - In the payload area use a similar payload to this one:
+Use the following sites:
+- <https://www.unixtimestamp.com> to get a future date using the Epoch Unix Timestamp _at least one hour from the current time_ as the JWT will not work otherwise (e.g. 01/11/2029 = `1862842300`)
+
+- <https://jwt.io> to create a JWT with payload modeled after this one:
     ```json
       {
         "sub": "1234567890",
@@ -24,31 +25,26 @@ JSON Web Tokens are an open-industry standard method for representing claims sec
         "exp": 1862842300
       }
     ```
-    - In the signature area use a key that matches the value in the policy expression e.g. `123412341234123412341234`, also be sure to check the option that says **secret base64 encoded**.
+  - In the signature area use a key that matches the value in the policy expression (see below - e.g. `123412341234123412341234`). Also be sure to check the option that says **secret base64 encoded**.
 
-    - Your configuration should be similar as in this image:
+  - Your configuration should be similar to this:
 
+    ![](../../assets/images/jwt.png)
 
-![](../../assets/images/APIMJWT.png)
+### JSON Web Tokens (JWT) - validate
 
-In this lab, we are going to see how to use the token with your APIs
+- Open the Calculator API 'Code View',
+- Add the inbound policy to validate the JWT. The example shows the use of variables in an expression - useful if a value is repeated.
 
-#### JSON Web Tokens (JWT) - validate
-
-Open the Calculator API 'Code View'
-- Add the inbound policy to validate that JWT is valid
-  - The example shows the use of variables in an expression - useful if a value is repeated
-
-```xml
-<!-- Inbound -->
-<set-variable name="signingKey" value="123412341234123412341234" />
-<validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized">
-    <issuer-signing-keys>
-        <key>@((string)context.Variables["signingKey"])</key>
-    </issuer-signing-keys>
-</validate-jwt>
-
-```
+  ```xml
+  <!-- Inbound -->
+  <set-variable name="signingKey" value="123412341234123412341234" />
+  <validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized">
+      <issuer-signing-keys>
+          <key>@((string)context.Variables["signingKey"])</key>
+      </issuer-signing-keys>
+  </validate-jwt>
+  ```
 
 - Invoke the API ... should get a [401 Unauthorized error]
 - Invoke the API with a request header containing the security token (got above from <https://jwt.io/>) ... should get a 200 success
@@ -57,14 +53,14 @@ Open the Calculator API 'Code View'
 
 No JWT:
 
-![](../../assets/images/APIMRequestJWTnone.png)
+![](../../assets/images/apim-request-no-jwt.png)
 
 Valid JWT in the header:
 
 Note the bearer token in the Request payload.
 Make sure your JWT token has an expiry date in the future.
 
-![](../../assets/images/APIMRequestJWTvalid.png)
+![](../../assets/images/apim-request-valid-jwt.png)
 
 #### JSON Web Tokens (JWT) - check a claim exists
 
@@ -91,7 +87,7 @@ Make sure your JWT token has an expiry date in the future.
 
 Checking for admin claim:
 
-![](../../assets/images/APIMRequestJWTclaimvalid.png)
+![](../../assets/images/apim-request-valid-jwt-and-claim.png)
 
 Checking for adminx claim:
 
@@ -99,7 +95,7 @@ Checking for adminx claim:
                 <claim name="adminx" match="any">
 ```
 
-![](../../assets/images/APIMRequestJWTclaiminvalid.png)
+![](../../assets/images/apim-request-valid-jwt-invalid-request.png)
 
 #### JSON Web Tokens (JWT) - extract claim and pass to backend
 
@@ -123,5 +119,5 @@ Checking for adminx claim:
 </set-header>
 ```
 
-![Claim in header](../../assets/images/APIMHeaderJWTClaimBackend.png)
-![Claim in trace](../../assets/images/APIMTraceJWTClaimBackend.png)
+![Claim in header](../../assets/images/apim-jwt-claim-in-header.png)
+![Claim in trace](../../assets/images/apim-jwt-claim-in-trace.png)

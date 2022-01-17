@@ -71,17 +71,17 @@ Every client application that calls the API needs to be registered as an applica
 - Then choose `My APIs`
 - Select the record for `backend-app-oauth`
 
-![client app registration5.1](../../assets/images/apimOauthgrants1.png)
+![client app registration5.1](../../assets/images/apim-oauth-grants-1.png)
 
 - Then select the `Delegated Permissions` option
 - Then mark the `Calculator.Read` checkbox
 - Then click the `Add Permissions` button
 
-![client app registration5.2](../../assets/images/apimOauthgrants2.png)
+![client app registration5.2](../../assets/images/apim-oauth-grants-2.png)
 
 - Finally click the `Grant admin consent for ...`
 
-![client app registration5.3](../../assets/images/apimOauthgrants3.png)
+![client app registration5.3](../../assets/images/apim-oauth-grants-3.png)
 
 
 ### Enable OAuth 2.0 in the Developer Console for Authorization Code Grant type

@@ -12,7 +12,7 @@ Based on the Microsoft Tech Community [blog post](https://techcommunity.microsof
 
 The API Management is a proxy to the backend APIs, it’s a good practice to implement security mechanism to provide an extra layer of security to avoid unauthorized access to APIs.
 
- ![Diagram showing APIM and OAuth 2.0](../../assets/images/oauth2APIM1.png)
+ ![Diagram showing APIM and OAuth 2.0](../../assets/images/oauth2-apim.png)
 
  In this Diagram we can see the OAUTH flow with API Management in which:
 
