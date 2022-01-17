@@ -17,7 +17,7 @@ In this section we provide you with a template architecture diagram for your api
 - What products are we going to define? 
 - What teams and processess need to be in place to manage the Azure Apim?
 
-![](../../assets/images/apimADSv2.png)
+![](../../assets/images/apim-architecture-design-session-v2.png)
 | <a href="https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fapim-lab%2Fmain%2Fassets%2Fdiagrams%2FapimADSv2.drawio" target="_blank">Edit As New</a> 
 
 Download Diagram:

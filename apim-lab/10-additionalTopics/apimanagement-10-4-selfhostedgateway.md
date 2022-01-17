@@ -29,23 +29,23 @@ To deploy a self-hosted gateway:
 - Select `+ Add`
 
 
-![](../../assets/images/APIMGWDeploy1.png)
+![](../../assets/images/apim-app-gateway-deploy-1.png)
 
 - Enter a Name and Location for the Gateway
 - Select the required APIs from those that are configured in the APIM instance
   - Our lab will use the Color API - this was configured in an earlier module
 - Select the `Add` button
 
-![](../../assets/images/APIMGWDeploy2.png)
+![](../../assets/images/apim-app-gateway-deploy-2.png)
 
 The added gateway will appear in the list ... this is the Gateway Deployment.
 
 
-![](../../assets/images/APIMGWDeploy3.png)
+![](../../assets/images/apim-app-gateway-deploy-3.png)
 
 - Click on the gateway in the list - a blade appears allowing further configuration
 
-![](../../assets/images/APIMGWDeploy4.png)
+![](../../assets/images/apim-app-gateway-deploy-4.png)
 
 - Select the `Deployment` option from the menu
   - There are scripts for deploying on Docker and Kuberenetes ... for this lab, we will be using the Docker option
@@ -56,29 +56,29 @@ The added gateway will appear in the list ... this is the Gateway Deployment.
 docker run -p 80:8080 -p 443:8081 --name OnPremiseGateway --env-file env.conf mcr.microsoft.com/azure-api-management/gateway:latest
 ```
 
-![](../../assets/images/APIMGWDeploy5.png)
+![](../../assets/images/apim-app-gateway-deploy-5.png)
 
 From a command line - elevated to Administrator (needed for Docker commands)
 
 - Navigate to the location where the *env.conf* is located
 - Run the Docker run command
 
-![](../../assets/images/APIGWMDeploy6.png)
+![](../../assets/images/apim-app-gateway-deploy-6.png)
 
 The first time this is executed, it will need to pull down the Docker image - and so there will be a small delay.  Subsequently - if restarted - it will just use the downloaded image.
 
-![](../../assets/images/APIMGWDeploy7.png)
+![](../../assets/images/apim-app-gateway-deploy-7.png)
 
 Once downloaded, the log output from the container will display a Sputnik logo (this was an internal code name) and some diagnostic logs.
 
-![](../../assets/images/APIMGWDeploy8.png)
+![](../../assets/images/apim-app-gateway-deploy-8.png)
 
 
-![](../../assets/images/APIMGWDeploy9.png)
+![](../../assets/images/apim-app-gateway-deploy-9.png)
 
 Note that in the Gateway blade we can see the status - it will show there is one healthy Gateway Node connected to the Deployment.   The Gateway Node will keep in sync, and be automatically updated should any of the Gateway Deployment config changes.
 
-![](../../assets/images/APIMGWDeploy10.png)
+![](../../assets/images/apim-app-gateway-deploy-10.png)
 
 ## Testing the API
 
@@ -88,15 +88,15 @@ Our Gateway Node is now deployed - and we can test that it works.
 - Open Notepad - make note of URLs including the key.  For our lab test, the machine name is just *localhost*
   - https://localhost/color/api/RandomColor?key=Unlimited-Key
 
-![](../../assets/images/APIMGWTest1.png)
+![](../../assets/images/apim-app-gateway-test-1.png)
 
 - Use a tool like [Postman](https://www.postman.com/) to test the API ... should see the random color appear in the response and this confirms everything is working properly
 - If tested with a browser, then a warning needs to accepted to proceed - this is because trusted TLS certificates have not been set up
 
-![](../../assets/images/APIMGWTest2.png)
+![](../../assets/images/apim-app-gateway-test-2.png)
 
 Diagnostics for the API call will be logged by the container.
 
-![](../../assets/images/APIMGWTest3.png)
+![](../../assets/images/apim-app-gateway-test-3.png)
 
 

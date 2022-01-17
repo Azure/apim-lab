@@ -10,8 +10,6 @@ nav_order: 2
 
 Some of the demos use the ColourWeb web application and the ColourAPI API application. In this lab we will show you how to deploy your own instances of the Colours Web and Colours API.  Note - ColoursWeb / ColoursAPI is new version of ColorsWeb/ColorsAPI  ... do not mix the web client and API versions. 
 
-![](../../assets/images/APIMColorWebUnlimited.png)
-
 The code for the ColourWeb / ColourAPI applications is available here:
 
 - [ColourWeb](https://github.com/markharrison/ColoursWeb)
@@ -34,7 +32,7 @@ With the container we can deploy to multiple hosting options : VM's, App Service
 1. Login to Azure Portal at http://portal.azure.com.
 2. Open the Azure Cloud Shell and choose Bash Shell (do not choose Powershell)
 
-   ![Azure Cloud Shell](../../assets/images/img-cloud-shell.png "Azure Cloud Shell")
+   ![Azure Cloud Shell](../../assets/images/azure-cloud-shell.png "Azure Cloud Shell")
 
 3. The first time Cloud Shell is started will require you to create a storage account. 
 4. We proceed to create a unique identifier suffix for resources created in this Lab:
