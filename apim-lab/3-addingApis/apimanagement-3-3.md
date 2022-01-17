@@ -49,11 +49,11 @@ First, we need to enable CORS for the domain name of the frontend. To achieve th
 - Inside the `Inbound processing` area you will see the `cors` policy, which we added in part 2 by pressing the `Enable Cors` button.
 - Click on the pencil icon next to that policy to edit it.
 
-  ![APIM Policy CORS All APIs](../../assets/images/apim-policy-cors-all-apis.png)  
+  ![APIM Policy CORS All APIs](../../assets/images/apim-policy-cors-all-apis-1.png)  
 
 - Here we will see this form where we can add the domain name of our frontend `https://markcolorweb.azurewebsites.net` or the `*` for all domains. Press *Add allowed origin*, enter the URL, then press *Save*.
 
-  ![APIM Policy CORS All APIs](../../assets/images/apim-policy-cors-all-apis2.png)
+  ![APIM Policy CORS All APIs](../../assets/images/apim-policy-cors-all-apis-2.png)
 
 - After enabling CORS in APIM lets go back to our frontend <https://markcolorweb.azurewebsites.net> and follow these steps:
 

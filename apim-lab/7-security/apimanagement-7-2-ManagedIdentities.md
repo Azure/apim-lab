@@ -14,7 +14,7 @@ In Azure, an Active Directory identity can be assigned to a managed resource suc
 
 #### Register API Management with Active Directory
 
-![Register APIM](../../assets/images/APIMSecurityRegisterPrincipal.png)
+![Register APIM](../../assets/images/apim-security-register-principal.png)
 
 #### Key Vault - Create Key Vault and add a secret
 
@@ -23,34 +23,34 @@ In Azure, an Active Directory identity can be assigned to a managed resource suc
   - Name:`favoritePerson`
   - Value: `3`
 
-![Create Key Vault](../../assets/images/APIMSecurityCreateKV.png)
+![Create Key Vault](../../assets/images/apim-security-create-key-vault.png)
 
 #### Key Vault - Access policy and principal assignment
 
 Create an access policy
 
-![Create Key Vault](../../assets/images/APIMSecurityKV1.jpg)
+![Create Key Vault](../../assets/images/apim-security-key-vault-1.jpg)
 
 Select the `Get` operation from the list of Secret permissions
 
-![Create Key Vault](../../assets/images/APIMSecurityKV2.jpg)
+![Create Key Vault](../../assets/images/apim-security-key-vault-2.jpg)
 
 Select the principal and search for the name of your API Management instance
 
-![Create Key Vault](../../assets/images/APIMSecurityKV3.jpg)
+![Create Key Vault](../../assets/images/apim-security-key-vault-3.jpg)
 
-![Create Key Vault](../../assets/images/APIMSecurityKV4.jpg)
+![Create Key Vault](../../assets/images/apim-security-key-vault-4.jpg)
 
 Remember to click **Save**
 
-![Create Key Vault](../../assets/images/APIMSecurityKV5.jpg)
+![Create Key Vault](../../assets/images/apim-security-key-vault-5.jpg)
 
 #### API Management, Key Vault and Managed Service Identity
 
 - Add a new operation to the Star Wars API
 - Update the policies for the new operation
 
-![New operation](../../assets/images/APIMSecurityAddOperation.png)
+![New operation](../../assets/images/apim-security-add-operation.png)
 
 ```xml
 <!-- Inbound -->

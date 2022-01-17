@@ -32,7 +32,7 @@ Optional(if you want to deploy with a build pipeline):
 
 ## Architecture
 
-![](../../assets/images/Architecture.png)
+![](../../assets/images/apim-devops-architecture.png)
 
 This is one example of how to use Azure DevOps Repo and Azure DevOps Pipelines to enable a Continuous Integration and Continuous Deployment (CI/CD) for API\'s on an Azure API Management Service. There're other ways to do this, but this is a \"Keep it Simple\" to help you start. (Planning to have another version using Github and Github Actions soon).
 
@@ -121,7 +121,7 @@ You have two choices when specifying your settings:
 
 After executing the command above, you will see something similar to this:
 
-![](../../assets/images/extractor.png)
+![](../../assets/images/apim-extractor.png)
 
 Then you see the JSON files extracted:
 
@@ -146,10 +146,10 @@ We will use a **Build Pipeline** to pull the extracted files from a repo and put
 2 - Configure the fields as show bellow:
 
 ![A screenshot of a cell phone Description automatically
-generated](../../assets/images/build-pipeline1.png)
+generated](../../assets/images/ado-build-pipeline1.png)
 
 ![A screenshot of a cell phone Description automatically
-generated](../../assets/images/build-pipeline2.png)
+generated](../../assets/images/ado-build-pipeline2.png)
 
 # Release Pipeline
 
@@ -169,19 +169,19 @@ You can use [this](https://docs.microsoft.com/en-us/azure/devops/pipelines/relea
 
 3 - Set set [Deployment mode to Incremental](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-tutorial-pipeline#create-a-devops-project)
 
-![](../../assets/images/release-qa-parameters.png)
+![](../../assets/images/ado-release-qa-parameters.png)
 
 When you finish the steps above, you will see something like this:
 
-![](../../assets/images/deploy-qa.png)
+![](../../assets/images/ado-deploy-qa.png)
 
 Clone your QA environment and update the **Resource Group** and **ApimServiceName** value on "Override template parameters" field to reflect your "production" APIM.
 
-![](../../assets/images/release-prod.png)
+![](../../assets/images/ado-release-prod.png)
 
 Now you will see your Release Pipeline like this:
 
-![](../../assets/images/release-pipeline.png)
+![](../../assets/images/ado-release-pipeline.png)
 
 By using a combination of manual deployment approvals, gates, and manual intervention within a release pipeline in Azure Pipelines, you can quickly and easily configure a release pipeline with all the control and auditing capabilities you require for your DevOps CI/CD processes. You will find more information on this [link](https://docs.microsoft.com/en-us/azure/devops/pipelines/release/deploy-using-approvals?view=azure-devops). 
 

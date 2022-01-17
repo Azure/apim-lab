@@ -28,7 +28,7 @@ A product contains one or more APIs as well as a usage quota and the terms of us
 
   Press *Add group*, check *Developers* and *Guests*, then press *Select*. The two added roles are shown now.
 
-  ![APIM Add Product Access](../../assets/images/apim-add-product-access-1.png)
+  ![APIM Add Product Access](../../assets/images/apim-add-product-access-2.png)
 
   Back in the private browsing session, browse to *Products* and observe the new *Gold Tier*. 
 
