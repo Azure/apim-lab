@@ -29,7 +29,7 @@ Use the following sites:
 
   - Your configuration should be similar to this:
 
-    ![](../../assets/images/jwt.png)
+    ![](../../assets/images/jwt-io.png)
 
 ### JSON Web Tokens (JWT) - validate
 

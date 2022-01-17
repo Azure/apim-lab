@@ -97,7 +97,7 @@ With the container we can deploy to multiple hosting options : VM's, App Service
 
       Once we have a "Succeeded" message we proceed to navigate to the FQDN. And we should see our home page for our Colours Web:
 
-      ![](../../assets/images/APIMACICOLORWEB.png)
+      ![](../../assets/images/apim-aci-color-web.png)
 
 8.  Now we proceed to create the ACI for the colors-api github container:
 
@@ -133,4 +133,4 @@ With the container we can deploy to multiple hosting options : VM's, App Service
 
     Once we have a "Succeeded" message we proceed to navigate to the FQDN. And we should see our home page (Swagger UI) for our Colours API:
 
-    ![](../../assets/images/APIMACICOLORAPI.png)
+    ![](../../assets/images/apim-aci-color-api.png)

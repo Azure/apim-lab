@@ -47,7 +47,7 @@ To create an event hub within the namespace, follow these steps:
 
 1. From the **Event Hubs** blade select **+ Event Hub**>
    
-    ![Add Event Hub](../../assets/images/event-hub-create.png)
+    ![Add Event Hub](../../assets/images/event-hub-create-1.png)
 
 1. Type a name for your event hub, then select **Create**.
        
@@ -137,7 +137,7 @@ Once your logger is configured in API Management, you can configure your log-to-
 1. Select **Show snippets**.
 1. In the window on the right, select **Advanced policies** > **Log to EventHub**. This inserts the `log-to-eventhub` policy statement template.
 
-    ![APIM Add Log to Event Hub](../../assets/images/apim-add-log-to-event-hub.png)
+    ![APIM Add Log to Event Hub](../../assets/images/apim-add-log-to-event-hub-1.png)
 
 1. Replace the policy with this snippet:
 
