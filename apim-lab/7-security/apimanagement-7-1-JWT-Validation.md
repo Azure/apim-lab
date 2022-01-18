@@ -160,7 +160,7 @@ It may often be necessary to pass (specific) claims onto the backend API to info
 - Invoke the *Divide two integers* method with the `Authorization` header once more and observe the `200` Success.
 - Use the *Trace* feature to inspect what was passed to backend. You should see the new header and the correct value from the claims.
 
-  ![Claim in trace](../../assets/images/apim-jwt-claim-in-trace.png)
+  ![APIM JWT Claim in Trace](../../assets/images/apim-jwt-claim-in-trace.png)
 
 ### JSON Web Tokens (JWT) - Improvements
 
