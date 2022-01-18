@@ -1,6 +1,6 @@
 
 
-<img style="float: left;" src="assets/images/apim.png">
+<img src="assets/images/apim-logo-transparent.png">
 
 #  About this workshop
 
