@@ -17,18 +17,31 @@ From the existing Star Wars API Api in Azure API Management, click the ellipsis 
 
 ![](https://user-images.githubusercontent.com/1610195/134442238-785e77fd-0230-433a-95ab-ac479a1427e6.png)
 
+If you are unable to create a Power Connector from Azure API Management, you can also export an `OpenAPI v2 (JSON)` file that can be imported as a Custom Connector within Power Platform. You can find a sample [here](https://github.com/Azure/apim-lab/blob/updates/fusion-lab-update-testing/apim-lab/9-fusiondev/Star%20Wars%20API.swagger.json).
+
 ### View your custom connector in Power Platform
 
 1. Go to [https://make.powerapps.com](https://make.powerapps.com/) and sign in with your organizational account.
 2. Select **Data** from the left pane, and then select **Custom Connectors** to see your generated custom connector to your API Management API.
-3. From here, select the pencil icon to edit the custom connector.
-4. On the **Definition** screen, we need to define a search query string for people so that the Power App can search for character records by name. Select the `GetPeople` action, and in the **Request** section, select **+ Import from sample**. Enter a sample request URL with the search query string:
-
-`https://apim-star-wars-xxxx.azure-api.net/sw/people?search=Luke`
 
 <img width="1437" alt="" src="https://user-images.githubusercontent.com/1610195/134442341-a0dee5ef-a736-432b-88c9-100102980f58.png">
 
-Close the import panel and select **Update connector**.
+4. From here, select the pencil icon to edit the custom connector.
+5. On the **Definition** screen, we need to define a search query string for people so that the Power App can search for character records by name. Select the `GetPeople` action, and in the **Request** section, select **+ Import from sample**. Enter a sample request URL with the search query string:
+
+`https://apim-star-wars-xxxx.azure-api.net/sw/people?search=Luke`
+
+<img width="600" alt="" src="https://user-images.githubusercontent.com/1610195/150045275-6712d93f-eca2-4909-af92-4cd8e4589e9c.png">
+
+5. In the **Response** section of the `getpeople` action, select the `200` response and then select **+ Import from sample**. Copy and paste a sample JSON response into the `Body` section of the response. Close the import panel and select **Update connector**. 
+
+<img width="800" alt="" src="https://user-images.githubusercontent.com/1610195/150047267-5b7874dc-6f30-4c76-ad2e-9e1bc3bf6334.png">
+
+Repeat this import for the `getpeoplebyid` action.
+
+6. On the **Test** screen, create a new connection instance in the **Connections** section. You will then be redirected to the **Connections** area in Power Platform where your connection was created. Navigate back to the **Custom Connectors** page and edit the Star Wars API again. Return to the **Test** page and test each of the API actions.
+
+<img width="800" alt="" src="https://user-images.githubusercontent.com/1610195/150048076-f0c7e4ba-b3d4-4e05-a549-e5d6f19538f7.png">
 
 ## **Generate the Star Wars Fan Club Application**
 
