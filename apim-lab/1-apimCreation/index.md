@@ -33,17 +33,16 @@ Please do not modify other settings. Specifically, the *Virtual network* tab sho
 
 Once the APIM instance has been created, please verify that it functions correctly by following these steps:
 
-1) Navigate to the newly-created APIM instance in the Azure Portal.
-2) Select the *APIs* blade, then select the *Echo API*. 
-3) Press the *Test* tab, then select the *GET Retrieve resource* operation.
-4) Press *Send* to issue a simple request.
+1) Navigate to the newly-created APIM instance in the Azure Portal.  
+2) Select the *APIs* blade, then select the *Echo API*.   
+3) Press the *Test* tab, then select the *GET Retrieve resource* operation.  
+4) Press *Send* to issue a simple request.  
 
-   ![APIM Echo API Test Send](../../assets/images/apim-echo-api-test-1.png)
-    
+  ![APIM Echo API Test Send](../../assets/images/apim-echo-api-test-1.png)
 
-5) Observe the `200` Success response.
+5) Observe the `200` Success response.  
 
-   ![APIM Echo API Test Success](../../assets/images/apim-echo-api-test-2.png)
+  ![APIM Echo API Test Success](../../assets/images/apim-echo-api-test-2.png)
 
 At this time you have successfully verified that APIM is set up!
 
