@@ -38,11 +38,12 @@ Once the APIM instance has been created, please verify that it functions correct
 3) Press the *Test* tab, then select the *GET Retrieve resource* operation.
 4) Press *Send* to issue a simple request.
 
-    ![APIM Echo API Test Send](../../assets/images/apim-echo-api-test-1.png)
+   ![APIM Echo API Test Send](../../assets/images/apim-echo-api-test-1.png)
+    
 
 5) Observe the `200` Success response.
 
-    ![APIM Echo API Test Success](../../assets/images/apim-echo-api-test-2.png)
+   ![APIM Echo API Test Success](../../assets/images/apim-echo-api-test-2.png)
 
 At this time you have successfully verified that APIM is set up!
 
