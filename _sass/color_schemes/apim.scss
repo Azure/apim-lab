@@ -1,2 +1,14 @@
 // Custom scheme implemented as per these directions: https://github.com/pmarsceill/just-the-docs/blob/master/docs/customization.md#custom-schemes
-$content-width: 1024px
+$content-width: 1024px;
+
+// Make the blockquote visually more noticeable than the default Just the Docs styling provides
+blockquote {
+  background: $grey-lt-000;
+  border-left: 8px solid $blue-200;
+  margin: 10px 10px 20px 20px;
+  padding: 0.5em 10px;
+
+  p {
+    margin: 0;
+  }
+}
