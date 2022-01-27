@@ -25,6 +25,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 #baseurl: "" # the subpath of your site, e.g. /blog
 #url: "" # the base hostname & protocol for your site, e.g. http://example.com
 search_enabled: true
+# Custom scheme implemented as per these directions: https://github.com/pmarsceill/just-the-docs/blob/master/docs/customization.md#custom-schemes
 color_scheme: apim
 remote_theme: pmarsceill/just-the-docs
 search:
