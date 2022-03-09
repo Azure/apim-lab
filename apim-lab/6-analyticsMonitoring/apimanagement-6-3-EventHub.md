@@ -17,7 +17,8 @@ We can use Event Hubs with API Management to obtain analytics of our API usage.
 An Event Hubs namespace provides a unique scoping container in which you create one or more event hubs. To create a namespace in your resource group using the Azure portal, follow these steps:
 
 1. In the Azure portal select **Create a resource** at the top left of the screen.
-1. Search for **Event Hubs**, then click on the resource..
+1. Search for **Event Hubs**, then click on the resource.  
+    *If you cannot find it there, please try the same **Event Hubs** term in the top search bar.*
 
     ![Select Event Hubs in Portal](../../assets/images/event-hubs-select-in-portal.png)
 
@@ -73,7 +74,7 @@ To create an event hub within the namespace, follow these steps:
 
     ![Event Hub Send Policy](../../assets/images/event-hub-send-policy.png)
 
-1. Click on the new policy created and copy the **Connection string-primary key** to a notepad. Also copy the **Event Hub namespace**.
+1. Click on the new policy created and copy the **Connection string-primary key** to a notepad. Also copy the **Event Hub namespace**. You will use both values in the next section.
 
     ![Event Hub Connection](../../assets/images/event-hub-parameters.png)
 
@@ -102,18 +103,33 @@ API Management loggers are configured using the [API Management REST API](/rest/
 
     ```json
     {
-    "properties": {
-        "loggerType": "azureEventHub",
-        "description": "adding a new logger",
-        "credentials": {
-        "name": "<your event hub>",
-        "connectionString": "<your Connection string-primary key>"
+        "properties": {
+            "loggerType": "azureEventHub",
+            "description": "adding a new logger",
+            "credentials": {
+                "name": "<your event hub namespace>",
+                "connectionString": "<your Connection string-primary key>"
+            }
         }
-    }
     }
     ```
 
-    ![REST API Try It](../../assets/images/rest-api-try-it-body.png)
+1. Your request parameters might then look similar to this: 
+
+    > Note my deviation by intential masking my `SharedAccessKey`. Please do not alter your key.
+
+    ```json
+    {
+        "properties": {
+            "loggerType": "azureEventHub",
+            "description": "adding a new logger",
+            "credentials": {
+                "name": "eh-sjk-01062022/myeventhub",
+                "connectionString": "Endpoint=sb://eh-sjk-01062022.servicebus.windows.net/;SharedAccessKeyName=sendpolicy;SharedAccessKey=********;EntityPath=myeventhub"
+            }
+        }
+    }
+    ```
 
 1. Press **Run**.
 1. You should get a **201** response, confirming that the resource has been created.
@@ -167,7 +183,7 @@ Once your logger is configured in API Management, you can configure your log-to-
 
 # Verify Events are logged in Event Hub
 
-1. Issue a handful of test API calls from within APIM.
+1. Issue a handful of test Echo API calls from within APIM (e.g. **Get Retrieve Resource** operation).
 1. In the Azure portal open the Event Hub you created earlier. You should see recent events. If not, give it a minute, then refresh.
 
     ![Event Hub APIM events](../../assets/images/event-hub-apim-events.png)
