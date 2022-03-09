@@ -15,7 +15,7 @@ Azure API Management allows for easy integration with Azure Application Insights
 Before you can use Azure Application Insights, you first need to create an instance of the service.
 
 1. Open the **Azure portal** and navigate to **Application Insights**.
-    
+
     ![App Insights Create Instance](../../assets/images/app-insights-create-instance-1.png)
 
 2. Click **+ Create**, then fill in the form. You may need to create a new Log Analytics Workspace if you don't already have one.
@@ -28,15 +28,15 @@ Before you can use Azure Application Insights, you first need to create an insta
 
 1. Navigate to your **APIM** instance in the **Azure portal**.
 2. Select **Application Insights** from the menu on the left.
-3. Click **+ Add**. 
+3. Click **+ Add**.
 
-    ![APIM App Insights Logger](../../assets/images/apim-app-insights-logger-1.png)  
+    ![APIM App Insights Logger](../../assets/images/apim-app-insights-logger-1.png)
 
 4. Select the previously created **Application Insights** instance and provide a short description.
 5. Click **Create**.
-6. You have just created an Azure Application Insights logger with an instrumentation key. It should now appear in the list.  
+6. You have just created an Azure Application Insights logger with an instrumentation key. It should now appear in the list.
 
-    ![APIM App Insights Logger](../../assets/images/apim-app-insights-logger-2.png)  
+    ![APIM App Insights Logger](../../assets/images/apim-app-insights-logger-2.png)
 
     > Behind the scenes, a [Logger](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/logger/createorupdate) entity is created in your API Management instance, containing the Instrumentation Key of the Application Insights instance.
 
@@ -51,7 +51,7 @@ Before you can use Azure Application Insights, you first need to create an insta
 7. Set sampling to **100** to capture all events.
 8. Check the **Always log errors** checkbox.
 
-    ![APIM API App Insights Logger](../../assets/images/apim-app-insights-api-1.png)  
+    ![APIM API App Insights Logger](../../assets/images/apim-app-insights-api-1.png)
 
 9. Click **Save**.
 
@@ -73,12 +73,17 @@ A failed request is a request which:
 - triggered an *on-error* section of the API policies, or
 - has a response HTTP status code matching 4xx or 5xx.
 
+### Generating Test Requests
+
+Any request you make to the Color API in APIM will be subject to being received by Application Insights (recall the 100% sampling). To generate a large amount of requests quickly, you can invoke the API via the [Color](https://markcolorweb.azurewebsites.net) website. As we are presently caching the output for 15 seconds, you may get a lot of requests with the same color. Please feel free to disable the output caching in the Color API if you would like to see more variety.
+
 ### Viewing Azure Application Insights Data
 
-- Go back to the **Application Insights** blade and click on the instance.
-If you go into your Application Insights instance, after few seconds, you should be able to see logs and metrics:
+- Go back to the **Application Insights** blade and click on the Application Insights instance.
+- In the Application Insights instance, you should be able to see logs and metrics after a few seconds.
+- Open the **Transaction search** to see details on a transactional level:
 
-  ![APIM API App Insights Logger](../../assets/images/apim-app-insights-api-2.png)  
+  ![APIM API App Insights Logger](../../assets/images/apim-app-insights-api-2.png)
 
 ### Performance implications and log sampling
 
