@@ -22,7 +22,7 @@ Local
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) installed on your local machine 
 
 Azure Cloud Shell
-- [How to enable Cloudeshell](https://newhelptech.wordpress.com/2019/05/18/step-by-step-how-to-enable-azure-cloud-shell-in-microsoft-azure/)
+- [How to enable Cloudshell](https://newhelptech.wordpress.com/2019/05/18/step-by-step-how-to-enable-azure-cloud-shell-in-microsoft-azure/)
 
 Optional(if you want to deploy with a build pipeline):
 
