@@ -32,14 +32,15 @@ Instead of developing an API, for this lab you will use the existing [*Star Wars
 
 - Once created, inside the *Star Wars* API press **+ Add operation** to declare two new operations:
 
-1) **GetPeople**
-    - Display name: **GetPeople**
-    - Name: **getpeople**
-    - URL: **GET /people/**
-2) **GetPeopleById**
-    - Display name: **GetPeopleById**
-    - Name: **getpeoplebyid**
-    - URL: **GET /people/{id}/**
+  1) **GetPeople**  
+    - Display name: **GetPeople**  
+    - Name: **getpeople**  
+    - URL: **GET /people/**  
+
+  2) **GetPeopleById**  
+    - Display name: **GetPeopleById**  
+    - Name: **getpeoplebyid**  
+    - URL: **GET /people/{id}/**  
 
   ![APIM Star Wars API Add Operation](../../assets/images/apim-star-wars-api-add-operation.png)
 
