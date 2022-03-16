@@ -50,7 +50,6 @@ Where the `{tenant}` can take one of four different values:
 
 To learn how to interact with these endpoints, choose a particular app type in the Protocols section and follow the links for more info.
 
-> [!TIP]
 > Any app registered in Azure AD can use the Microsoft identity platform, even if they don't sign in personal accounts.  This way, you can migrate existing applications to the Microsoft identity platform and MSAL without re-creating your application.
 
 ## Tokens
