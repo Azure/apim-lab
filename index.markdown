@@ -11,7 +11,8 @@ This hands-on-lab will guide you through the different concepts around Azure API
 
 Slides
 
-- [Azure API Management Slides](assets/slides/APIM.pptx)
+- [Azure API Management Slides - Basic](assets/slides/APIM.pptx)
+- [Azure API Management Grand Tour Slides - 116 slides](assets/slides/Grand%20tour%20of%20Azure%20API%20Management.pdf)
 
 Diagrams
 
