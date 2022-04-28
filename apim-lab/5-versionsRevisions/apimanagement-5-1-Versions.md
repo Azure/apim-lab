@@ -32,6 +32,8 @@ Proper version management not only helps organize your API, it also aids in API 
 
 ### Test the new version
 
+> Sometimes, the version creation takes just a little bit of time. If you do not see it immediately, please keep refreshing and ensure you select the appropriate version as per below instructions.
+
 - Open the Developer Portal.
 - Select APIs and choose the `v2` version of the Star Wars API.
 
