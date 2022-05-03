@@ -22,7 +22,7 @@ nav_order: 4
     ![APIM Named Values](../../assets/images/apim-named-values.png)
 
 - Back in the *APIs* blade, open the *Add two integers* operation in the Calculator API. 
-- Amend the `set-header` policy by clicking on the pencil icon.
+- Amend the inbound `set-header` policy by clicking on the pencil icon.
 - Create a new header by pressing **+ Add header**:
   - Name: **x-request-received-time**
   - Value: `{{"{{TimeNow"}}}}`
@@ -33,7 +33,7 @@ nav_order: 4
   <inbound>
       <base />
       <set-query-parameter name="x-product-name" exists-action="override">
-          <value>@(context.Product.Name)</value>
+          <value>@(context?.Product?.Name ?? "none")</value>
       </set-query-parameter>
       <set-header name="x-request-context-data" exists-action="override">
           <value>@(context.Deployment.Region)</value>

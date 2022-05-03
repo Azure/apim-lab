@@ -12,6 +12,8 @@ Instead of importing operations one-by-one, you can also import a full API. The 
 
 As a demo we will use an API that offers a simple calculator service : [Calc API](http://calcapi.cloudapp.net/)
 
+> This is an older API and only available via `HTTP`. APIM provides means for fronting access to it via `HTTPS`, which further demonstrates how APIM can help with a secure, uniform facade while the backend implementation can be reworked and upgraded.
+
 ![APIM Calculator API](../../assets/images/apim-calc-api.png)
 
 1) On the left menu, open the *APIs* blade.  
@@ -27,6 +29,8 @@ As a demo we will use an API that offers a simple calculator service : [Calc API
 ![APIM Add Calculator API](../../assets/images/apim-add-calc-api-1.png)
 
 - Once the API is created, it will show in the list of APIs along with all of its operations.
+
+> Ensure that the backend shows as `HTTP`. If that is not the case, navigate to the *Settings* tab and update the *Web service URL* accordingly.
 
   ![APIM Add Calculator API](../../assets/images/apim-add-calc-api-2.png)
 

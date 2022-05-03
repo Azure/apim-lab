@@ -12,11 +12,11 @@ nav_order: 7
 
 The ability to terminate a response gracefully is of importance in a number of cases such as error handling or business logic. Using the `return-response` policies short-circuits the request and yields a response that often does not originate from the backend. Consider what general situations may make sense without shifting too much business logic into APIM.
 
-- Open the Calculator API 'Code View'.
-- Add the inbound policy to test for a condition and return an error.
+- Open the *Add two integers* operation in the Calculator API.
+- Open the 'Code View'.
+- Add the inbound policy to test for a condition (just `true` for our example) and return an error.
 - Invoke the API with the Authorization header as before. 
 - Observe the 500 error.
-- Replace the condition with more meaningful code.
 
   ```xml
   <inbound>
