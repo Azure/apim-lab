@@ -16,7 +16,8 @@ This example shows a fire-and-forget [send-one-way-request](https://docs.microso
 
 The following policy and payload applies for both examples in this lab. **Please ensure that you replace the value in `<set-url>` with your webhook target URL.** You will identify the URL in either example below.
 
-- Open the Calculator API 'Code View'.
+- Open the *Add two integers* operation in the Calculator API.
+- Open the 'Code View'.
 - Add the `send-one-way-request` policy to *Outbound processing* and replace the webhook and payload as required. For demo purposes we are going to use the payload for a Teams message (even for Webhook.site) and also send the message on every successful request.
 
   ```xml

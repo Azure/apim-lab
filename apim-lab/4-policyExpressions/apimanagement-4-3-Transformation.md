@@ -15,7 +15,7 @@ The *find-and-replace* policy finds a substring in a request or response and rep
 - Open the *Color* API, then open the `ApiRandomColorGet` operation.
 - Enter the *Policy code editor* in the *Outbound processing* section.
 - Place the cursor after the `<base />` element in the `<outbound>` section.
-- Press *Show snippets*, then select the *Find and replace string in body* transformation policy.
+- Press *Show snippets*, then select the *Find and replace string in body* transformation policy.  
 
   ![APIM Policy Find & Replace](../../assets/images/apim-policy-find-and-replace-1.png)
 
@@ -46,7 +46,7 @@ Policies can be applied very granularly. In this example, you are modifying the 
 The [context variable](https://docs.microsoft.com/en-us/azure/api-management/api-management-policy-expressions#ContextVariables) that is implicitly available in every policy expression provides access to the `Response` and `Product` below. 
 
 - Open the *Star Wars* API, then open the *GetPeopleById* operation.
-- Similarly to the *Color* API, add the outbound policy to conditionally change the response body.  
+- Similarly to the *Color* API, we will add the outbound policy to conditionally change the response body. Replace the existing entries in the operation with the entire `<policies>` code below.  
 Note that the inbound `Accept-Encoding` header is set to `deflate` to ensure that the response body is not encoded as that causes the JSON parsing to fail.  
 
   ```xml
@@ -62,21 +62,21 @@ Note that the inbound `Accept-Encoding` header is set to `deflate` to ensure tha
       </backend>
       <outbound>
           <base />
-              <choose>
-                  <when condition="@(context.Response.StatusCode == 200 && context.Product.Name.Equals("Starter"))">
-                      <set-body>@{
-                              var response = context.Response.Body.As<JObject>();
+          <choose>
+              <when condition="@(context.Response.StatusCode == 200 && context.Product.Name.Equals("Starter"))">
+                  <set-body>@{
+                          var response = context.Response.Body.As<JObject>();
 
-                              foreach (var key in new [] {"hair_color", "skin_color", "eye_color", "gender"}) {
-                                  response.Property(key).Remove();
-                              }
-
-                              return response.ToString();
+                          foreach (var key in new [] {"hair_color", "skin_color", "eye_color", "gender"}) {
+                              response.Property(key).Remove();
                           }
-                      </set-body>
-                  </when>
-              </choose>
-          </outbound>
+
+                          return response.ToString();
+                      }
+                  </set-body>
+              </when>
+          </choose>
+      </outbound>
       <on-error>
           <base />
       </on-error>

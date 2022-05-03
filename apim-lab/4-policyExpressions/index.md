@@ -19,6 +19,15 @@ Policies can be applied at multiple scopes and follow this hierarchy. It is impo
 
 ![APIM Policy Scopes](../../assets/images/apim-policy-scopes.png)
 
+### APIM Portal Oddities
+
+> The APIM Portal is good, but it's not perfect.  
+
+There are two things to pay particular attention to:
+
+- When switching away from the *Test* tab, all values and settings you made for the previous test will be reset. You will need to set every test up from scratch, unfortunately.
+
+- When switching to the *Design* tab to make API operation changes, note that *All operations* is always selected regardless of whether you were testing a specific operation prior. This can cause confusion when adding policies in our labs to specific operations as they can erroneously be added to *All operations*.
 
 ### Getting Started - Frontend/Inbound/Outbound/Backend
 
