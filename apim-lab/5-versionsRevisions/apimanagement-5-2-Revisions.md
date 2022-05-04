@@ -10,21 +10,21 @@ nav_order: 2
 
 ### Add a new revision
 
-- Select the Star Wars API v2.
-- Select the _Revisions_ tab.
+- Select the *Star Wars* API v2.
+- Select the *Revisions* tab.
 - Add a new revision with description `Adding a caching policy.`
 
   ![APIM Revisions Menu](../../assets/images/apim-revisions-menu.png)
   ![APIM Revision Create](../../assets/images/apim-revisions-create.png)
 
-  > The new revision is online but not yet current. The previous revision continues to remain the active default. Having added the new revision has not resulted in change for your consumers.
+  > The new revision is online but not yet current. The previous revision continues to remain the active default. Having added the new revision has not resulted in any change for your API consumers.
 
   ![APIM Created Revision](../../assets/images/apim-created-revision.png)
 
 ### Add caching
 
-- Select the `GetPeople` operation.
-  > _Revision 2_ automatically became the active revision you are now making changes in. You can also switch between revisions, but be aware that changes to the _Current_ revisions are live immediately.
+- Switch to the *Design* tab, then select the `GetPeople` operation.
+  > *Revision 2* automatically became the active revision you are now making changes in. You can also switch between revisions, but **be aware that changes to the *Current* revision are live immediately**.
 
   ![APIM Revision Add Caching](../../assets/images/apim-revision-add-caching-1.png)
 
@@ -47,7 +47,7 @@ nav_order: 2
 ### Make current revision
 
 - Select the _Revisions_ tab.
-- Make `rev2` the current revision.
+- Click on the ellipsis for `rev2` and make it the current revision.
 
   ![APIM Revision Make Current](../../assets/images/apim-revision-make-current-1.png)
 
@@ -55,7 +55,7 @@ nav_order: 2
 
   ![APIM Revision Make Current](../../assets/images/apim-revision-make-current-2.png)
 
-- The new revision is now the current one. Note that the URL reflects the URL the consumer calls. The old revision is still online and can be accessed with the `rev` qualifier. 
+- The new revision is now the current/live one. When you test now, note that the URL no longer contains a specific revision. The old revision is still online and can now be accessed with the `rev` qualifier. 
 
   > Unlike versioning, revisioning requires no URL updates for the API consumer.
 

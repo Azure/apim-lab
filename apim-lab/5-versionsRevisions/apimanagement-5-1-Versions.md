@@ -14,8 +14,9 @@ Proper version management not only helps organize your API, it also aids in API 
 
 ### Add a new version
 
-- Select the Star Wars API.
-- Add a new version:
+- Select the *Star Wars* API.
+- Click on the ellipsis and select *Add version*.
+- Add a new version with these values, then press **Create**:
   - Version identifier: **v2**  
   - Versioning scheme: **Path**
   - Full API version name: **star-wars-v2**
@@ -34,8 +35,7 @@ Proper version management not only helps organize your API, it also aids in API 
 
 > Sometimes, the version creation takes just a little bit of time. If you do not see it immediately, please keep refreshing and ensure you select the appropriate version as per below instructions.
 
-- Open the Developer Portal.
-- Select APIs and choose the `v2` version of the Star Wars API.
+- In the Developer Portal select the `v2` version of the *Star Wars* API.
 
   ![APIM Developer Portal Versions](../../assets/images/apim-developer-portal-versions.png)
 

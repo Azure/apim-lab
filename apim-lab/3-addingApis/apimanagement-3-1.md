@@ -14,7 +14,7 @@ nav_order: 1
 
 ### Add API from Scratch
 
-Instead of developing an API, for this lab you will use the existing [*Star Wars API*](https://swapi.dev):
+Instead of developing an API, for this lab you will use the existing [*Star Wars* API](https://swapi.dev):
 
 1) Click on *Add API*.  
 2) Click on *HTTP - Manually define an HTTP API*.  
