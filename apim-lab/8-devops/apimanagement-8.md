@@ -8,7 +8,7 @@ nav_order: 1
 
 Please see [aka.ms/apimdevops](http://aka.ms/apimdevops) for more guidance and tools around automating deployment across multiple API Management environments.
 
-# Continuos Integration and Continuos Deployment using Azure DevOps
+# Continuous Integration and Continuous Deployment using Azure DevOps
 
 The following instructions demonstrate how to deploy the contents of this example repository using Azure DevOps Repos and Azure DevOps Pipelines.
 
