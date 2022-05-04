@@ -19,7 +19,7 @@ Use the following sites:
 
 - <https://jwt.io> to create a JWT with payload. In the **Decoded** section make these changes:
   - Leave the **Header** as is.
-  - Use the following **Payload**:
+  - Use the following **Payload** format and replace the `exp` value with your newly-created Unix timestamp:
 
     ```json
     {
@@ -74,7 +74,7 @@ Use the following sites:
 
 ### JSON Web Tokens (JWT) - Check that a Claim Exists
 
-Not only is it important that a JWT is valid, but as we use it for authorization, we must also assert that the token contains expected claims before granting access to our APIs.
+Not only is it important that a JWT is valid, but, as we use it for authorization, we must also assert that the token contains expected claims before granting access to our APIs.
 
 - Open the *Calculator* API and select *All operations*.
 - Modify the inbound `validate-jwt` policy to not only validate the JWT but ensure that a specific `admin` claim exists. Recall that we set `admin`: `true` in our JWT token on <https://jwt.io> above.
