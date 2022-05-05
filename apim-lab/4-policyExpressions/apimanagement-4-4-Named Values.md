@@ -33,7 +33,7 @@ nav_order: 4
   <inbound>
       <base />
       <set-query-parameter name="x-product-name" exists-action="override">
-          <value>@(context?.Product?.Name ?? "none")</value>
+          <value>@(context.Product?.Name ?? "none")</value>
       </set-query-parameter>
       <set-header name="x-request-context-data" exists-action="override">
           <value>@(context.Deployment.Region)</value>
