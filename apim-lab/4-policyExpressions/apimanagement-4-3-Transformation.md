@@ -63,7 +63,7 @@ Note that the inbound `Accept-Encoding` header is set to `deflate` to ensure tha
       <outbound>
           <base />
           <choose>
-              <when condition="@(context.Response.StatusCode == 200 && context.Product.Name.Equals("Starter"))">
+              <when condition="@(context.Response.StatusCode == 200 && context.Product?.Name != "Unlimited")">
                   <set-body>@{
                           var response = context.Response.Body.As<JObject>();
 
@@ -85,7 +85,7 @@ Note that the inbound `Accept-Encoding` header is set to `deflate` to ensure tha
 
 - Test the API on the *Test* tab with *id* 1 and apply the appropriate *Starter* or *Unlimited* product scope. Examine the different responses.
 
-- With *Starter* product scope:
+- With *Starter* or *None* product scope:
 
   ![APIM Policy Transform Starter Product](../../assets/images/apim-policy-transform-starter-product.png)
 
@@ -143,7 +143,7 @@ Query string parameters and headers can be easily modified prior to sending the 
   <inbound>
       <base />
       <set-query-parameter name="x-product-name" exists-action="override">
-          <value>@(context.Product.Name)</value>
+          <value>@(context.Product?.Name ?? "none")</value>
       </set-query-parameter>
       <set-header name="x-request-context-data" exists-action="override">
           <value>@(context.Deployment.Region)</value>
