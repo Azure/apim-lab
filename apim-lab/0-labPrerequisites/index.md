@@ -16,8 +16,8 @@ Please check that you have the following requirements to complete the hands-on l
 - During part 3 of this lab, we will add existing APIs to our API Management instance. The following APIs/websites should be available:
   - [Color API](https://markcolorapi.azurewebsites.net/swagger/), in case this website is down you can deploy your own API using the following [instructions](../10-additionalTopics/apimanagement-10-2-containerinstance.md)
   - [Colors website](https://markcolorweb.azurewebsites.net/), in case this website is down you can deploy your own website using the following [instructions](../10-additionalTopics/apimanagement-10-2-containerinstance.md)
-  - [Star Wars api](https://swapi.dev/)
-  - [Calculator api](http://calcapi.cloudapp.net/calcapi.json)
+  - [Star Wars API](https://swapi.dev/)
+  - [Calculator API](http://calcapi.cloudapp.net/calcapi.json)
 - For part 8 you need to have access to a valid [Azure DevOps](https://dev.azure.com) organization.
 
 **An API Management instance can take some time to provision.** Please follow the steps outlined in APIM Creation prior to the workshop.
