@@ -1,3 +1,9 @@
+---
+title: About this workshop
+nav_order: 1
+---
+
+
 <img src="assets/images/apim-logo-transparent.png">
 
 
