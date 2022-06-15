@@ -62,7 +62,7 @@ Let's experience how your users will navigate through your portal. In order to d
 
 ### Register for an account
 
-- Let's sign up for an account by pressing the *Sign up* link in the upper right-hand corner. The email can be your personal or a work email for this lab. 
+- Let's sign up for an account by pressing the *Sign up* link in the upper right-hand corner. The email can be your personal or a work email for this lab, but please be sure to use an email other than the one associated with your Azure subscription. 
 
   ![APIM Developer Portal Sign-up](../../assets/images/apim-developer-portal-signup.png)
 
