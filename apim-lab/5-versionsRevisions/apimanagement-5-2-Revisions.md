@@ -28,7 +28,21 @@ nav_order: 2
 
   ![APIM Revision Add Caching](../../assets/images/apim-revision-add-caching-1.png)
 
-- Add a 10-second caching policy for the GET operation.
+- Add a 10-second caching policy for the GET operation via the Code editor.
+
+  ```xml
+  <inbound>
+      <base />
+      <cache-lookup vary-by-developer="false" vary-by-developer-groups="false" allow-private-response-caching="false" must-revalidate="false" downstream-caching-type="none" />
+  </inbound>
+  <backend>
+      <base />
+  </backend>
+  <outbound>
+      <base />
+      <cache-store duration="10" />
+  </outbound>
+  ```
 
   ![APIM Revision Add Caching](../../assets/images/apim-revision-add-caching-2.png)
 
