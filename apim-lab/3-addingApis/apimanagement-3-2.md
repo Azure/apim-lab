@@ -1,5 +1,5 @@
 ---
-title: Import API using swagger
+title: Import API using OpenAPI
 parent: Adding APIs
 has_children: false
 nav_order: 2
@@ -17,14 +17,15 @@ As a demo we will use an API that offers a simple calculator service : [Calc API
 ![APIM Calculator API](../../assets/images/apim-calc-api.png)
 
 1) On the left menu, open the *APIs* blade.  
-2) Under *Create from definition* select *OpenAPI*.  
-3) Select the *Full* option in the *Create from OpenAPI specification* dialog.  
-4) Enter `http://calcapi.cloudapp.net/calcapi.json` as the *OpenAPI specification* value. You should subsequently see *Display name*, *Name*, and *Description* populate.  
+2) Click on *Add API*.  
+3) Under *Create from definition* select *OpenAPI*.  
+4) Select the *Full* option in the *Create from OpenAPI specification* dialog.  
+5) Enter `http://calcapi.cloudapp.net/calcapi.json` as the *OpenAPI specification* value. You should subsequently see *Display name*, *Name*, and *Description* populate.  
     > **Note the intentional use of `http` instead of `https` as this backend does not presently support `https`.**  
-5) While the backend service only runs on `HTTP`, we need to **set URL scheme to `Both`** to allow for APIM ingress to occur on HTTPS for callers such as the Developer Portal.  
-6) Set the *API URL suffix* to `calc`.  
-7) Assign *Starter* and *Unlimited* products.  
-8) Press **Create**.  
+6) While the backend service only runs on `HTTP`, we need to **set URL scheme to `Both`** to allow for APIM ingress to occur on HTTPS for callers such as the Developer Portal.  
+7) Set the *API URL suffix* to `calc`.  
+8) Assign *Starter* and *Unlimited* products.  
+9) Press **Create**.  
 
 ![APIM Add Calculator API](../../assets/images/apim-add-calc-api-1.png)
 
@@ -39,7 +40,7 @@ As a demo we will use an API that offers a simple calculator service : [Calc API
 
 ![APIM Developer Portal Calculator API Try It](../../assets/images/apim-developer-portal-calc-api-try-it-1.png)
 
-We can inspect / edit the Open API definition by selecting the *Edit* icon from the Frontend block:
+- Back in the APIM Portal, we can inspect / edit the Open API definition by selecting the *Edit* icon from the Frontend block:
 
 ![APIM Calculator API Swagger](../../assets/images/apim-calc-api-swagger-1.png)
 
