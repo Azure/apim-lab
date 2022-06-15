@@ -15,7 +15,7 @@ The ability to terminate a response gracefully is of importance in a number of c
 - Open the *Add two integers* operation in the Calculator API.
 - Open the 'Code View'.
 - Add the inbound policy to test for a condition (just `true` for our example) and return an error.
-- Invoke the API with the Authorization header as before. 
+- Invoke the API. 
 - Observe the 500 error.
 
   ```xml
@@ -32,6 +32,15 @@ The ability to terminate a response gracefully is of importance in a number of c
               </return-response>
           </when>
       </choose>
+      <set-query-parameter name="x-product-name" exists-action="override">
+          <value>@(context.Product?.Name ?? "none")</value>
+      </set-query-parameter>
+      <set-header name="x-request-context-data" exists-action="override">
+          <value>@(context.Deployment.Region)</value>
+      </set-header>
+      <set-header name="x-request-received-time" exists-action="override">
+          <value>{{TimeNow}}</value>
+      </set-header>
   </inbound>
   ```
 

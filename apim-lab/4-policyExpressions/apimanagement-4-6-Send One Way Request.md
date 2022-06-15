@@ -22,32 +22,33 @@ The following policy and payload applies for both examples in this lab. **Please
 
   ```xml
   <outbound>
-    <base />
-    <choose>
-      <when condition="@(context.Response.StatusCode == 200)">
-        <send-one-way-request mode="new">
-          <set-url>
-            https://enter-your-webhook-url
-          </set-url>
-          <set-method>POST</set-method>
-          <set-body>@{
-            return new JObject(
-              new JProperty("@type","MessageCard"),
-              new JProperty("@context", "http://schema.org/extensions"),
-              new JProperty("summary","Summary"),
-              new JProperty("themeColor", "0075FF"),
-              new JProperty("sections",
-                new JArray (
-                  new JObject (
-                    new JProperty("text", "Hello!")
-                  )
-                )
+      <base />
+      <xml-to-json kind="direct" apply="always" consider-accept-header="false" />
+      <set-header name="x-aspnet-version" exists-action="delete" />
+      <set-header name="x-powered-by" exists-action="delete" />
+      <choose>
+          <when condition="@(context.Response.StatusCode == 200)">
+              <send-one-way-request mode="new">
+                  <set-url>https://enter-your-webhook-url</set-url>
+                  <set-method>POST</set-method>
+                  <set-body>@{
+        return new JObject(
+          new JProperty("@type","MessageCard"),
+          new JProperty("@context", "http://schema.org/extensions"),
+          new JProperty("summary","Summary"),
+          new JProperty("themeColor", "0075FF"),
+          new JProperty("sections",
+            new JArray (
+              new JObject (
+                new JProperty("text", "Hello!")
               )
-            ).ToString();
-          }</set-body>
-        </send-one-way-request>
-      </when>
-    </choose>
+            )
+          )
+        ).ToString();
+      }</set-body>
+              </send-one-way-request>
+          </when>
+      </choose>
   </outbound>
   ```
 

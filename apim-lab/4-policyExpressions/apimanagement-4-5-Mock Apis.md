@@ -28,6 +28,7 @@ Mocking in APIM is a useful mechanism for API consumers to interact with APIs wi
   
   ![APIM Policy Mock Frontend](../../assets/images/apim-policy-mock-frontend.png)
 
+- Press **Save**.
 - Open the Inbound processing 'Code View'
 - Add *Mock Response* under *Other policies* after the `<base /> tag.
 
