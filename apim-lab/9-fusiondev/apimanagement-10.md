@@ -11,6 +11,12 @@ In this exercise, you will be using [Star Wars API](https://swapi.dev/) with Azu
 
 *Note: This exercise requires access to Power Apps Premium connectors. Sign up for a [free Developer Plan](https://powerapps.microsoft.com/en-us/developerplan/).*
 
+### Update CORS policy
+
+Check API Management -> Developer Portal -> Portal overview to see if CORS has been enabled globally. If it has been enabled, go to All APIs and add https://flow.microsoft.com as an allowed origin. Here's what the Portal overview will look like if CORS has been enabled:
+
+![](../../assets/images/apim-cors-policy-update.png)
+
 ### Create a custom connector
 
 From the existing Star Wars API Api in Azure API Management, click the ellipsis **...** and select the **Create Power Connector** option to generate a custom connector in your Power Platform environment.
