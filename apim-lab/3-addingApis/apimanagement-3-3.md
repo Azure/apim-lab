@@ -59,7 +59,7 @@ First, we need to enable CORS for the domain name of the frontend. To achieve th
 
 - Click on the hamburger menu next to *Colors* in the top left corner.
 - Click on *Config*.
-- Replace the *API URL* according to this format: <https://YOURAPIM.azure-api.net/color/api/randomcolor> (e.g. https://apim-sk-12212021.azure-api.net/color/api/randomcolor).
+- Replace the *API URL* according to this format: <https://YOURAPIM.azure-api.net/colors/api/random> (e.g. https://apim-sk-12212021.azure-api.net/colors/api/random).
 - After setting the API URL correctly, press the hamburger menu again and go to *Home*. 
 - Press *Start* to see how the frontend is calling the api. You should see a *401* response, indicating an auth error. This happens as our API requires a subscription, but we have not yet entered a subscription key. 
 
