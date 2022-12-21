@@ -12,7 +12,7 @@ nav_order: 3
 
 The *find-and-replace* policy finds a substring in a request or response and replaces it with a different string.
 
-- Open the *Color* API, then open the `ApiRandomColorGet` operation.
+- Open the *Color* API, then open the `Get random color` operation.
 - Enter the *Policy code editor* in the *Outbound processing* section.
 - Place the cursor after the `<base />` element in the `<outbound>` section.
 - Press *Show snippets*, then select the *Find and replace string in body* transformation policy.  
@@ -151,7 +151,7 @@ Query string parameters and headers can be easily modified prior to sending the 
   </inbound>
   ```
 
-- Test the call by using either the *Starter* or *Unlimited* product, then inspect the result on the *Trace* tab.
+- Test the call by using either the *Starter* or *Unlimited* product, click on Trace button (if Tracing is not enabled, Enable Tracing) and then inspect the result on the *Trace* tab.
 
   ![APIM Policy Amend Backend Call](../../assets/images/apim-trace-amend-backend-1.png)
 

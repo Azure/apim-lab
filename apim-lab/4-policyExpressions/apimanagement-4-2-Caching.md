@@ -10,7 +10,7 @@ nav_order: 2
 
 API Management can be configured for response caching which can significantly reduce API latency, bandwidth consumption, and web service load for data that does not change frequently.
 
-Using the Azure Management portal, navigate to the *Color* API and set a set a caching policy for the `ApiRandomColor` GET:
+Using the Azure Management portal, navigate to the *Color* API and set a set a caching policy for the `Get random color` GET:
   - Press *Add policy*.
 
     ![APIM Adding Enable Caching](../../assets/images/apim-enable-caching-1.png)
@@ -30,7 +30,7 @@ Using the Azure Management portal, navigate to the *Color* API and set a set a c
 
   ![Color Website Caching](../../assets/images/color-website-caching.png)
 
-- Looking at the *ApiRandomColor* GET API policies in the *Code View*, you'll see the caching policy defined:
+- Looking at the *Get Random color* GET API policies in the *Code View*, you'll see the caching policy defined:
 
   ```xml
   <policies>
