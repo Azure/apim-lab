@@ -31,7 +31,7 @@ There are two things to pay particular attention to:
 
 ### Getting Started - Frontend/Inbound/Outbound/Backend
 
-Select an API (e.g. *Color*). Policy can be configured for *Inbound processing*, *Backend*, and *Outbound processing*. Most commonly, policies are applied in the *Inbound processing* section. Select the pencil icon to visually edit any section or the `</>` code brackets to edit the underlying XML. The configuration can be scoped to the API (All operations) or to an individual operation.
+Select an API (e.g. *Colors*). Policy can be configured for *Inbound processing*, *Backend*, and *Outbound processing*. Most commonly, policies are applied in the *Inbound processing* section. Select the pencil icon to visually edit any section or the `</>` code brackets to edit the underlying XML. The configuration can be scoped to the API (All operations) or to an individual operation.
 
 The *Frontend* section allows for editing of the OpenAPI / Swagger definition.
 

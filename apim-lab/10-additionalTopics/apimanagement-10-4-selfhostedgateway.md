@@ -33,7 +33,7 @@ To deploy a self-hosted gateway:
 
 - Enter a Name and Location for the Gateway
 - Select the required APIs from those that are configured in the APIM instance
-  - Our lab will use the Color API - this was configured in an earlier module
+  - Our lab will use the Colors API - this was configured in an earlier module
 - Select the `Add` button
 
 ![](../../assets/images/apim-app-gateway-deploy-2.png)
@@ -86,7 +86,7 @@ Our Gateway Node is now deployed - and we can test that it works.
 
 - Open Developer portal, go in the Profile page and get API key for Unlimited products
 - Open Notepad - make note of URLs including the key.  For our lab test, the machine name is just *localhost*
-  - https://localhost/color/api/RandomColor?key=Unlimited-Key
+  - https://localhost/colors/random?key=Unlimited-Key
 
 ![](../../assets/images/apim-app-gateway-test-1.png)
 
