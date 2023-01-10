@@ -43,7 +43,7 @@ Before you can use Azure Application Insights, you first need to create an insta
 ### Enable Application Insights logging for your API
 
 1. Select **APIs** from the menu on the left.
-2. Click on the **Color** API.
+2. Click on the **Colors** API.
 3. Go to the **Settings** tab from the top bar.
 4. Scroll down to the **Diagnostics Logs** section.
 5. On the **Application Insights** tab check the **Enable** box.
@@ -75,7 +75,7 @@ A failed request is a request which:
 
 ### Generating Test Requests
 
-Any request you make to the Color API in APIM will be subject to being received by Application Insights (recall the 100% sampling). To generate a large amount of requests quickly, you can invoke the API via the [Color](https://markcolorweb.azurewebsites.net) website. As we are presently caching the output for 15 seconds, you may get a lot of requests with the same color. Please feel free to disable the output caching in the Color API if you would like to see more variety.
+Any request you make to the Colors API in APIM will be subject to being received by Application Insights (recall the 100% sampling). To generate a large amount of requests quickly, you can invoke the API via the [Colors](https://colors-web.azurewebsites.net) website. As we are presently caching the output for 15 seconds, you may get a lot of requests with the same color. Please feel free to disable the output caching in the Colors API if you would like to see more variety.
 
 ### Viewing Azure Application Insights Data
 
