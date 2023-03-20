@@ -16,7 +16,17 @@
         {
             "label": "build and run local",
             "type": "shell",
-            "command": "bundle install && bundle exec jekyll build ",
+            "command": "bundle install && bundle exec jekyll build",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "run locally and watch",
+            "type": "shell",
+            "command": "bundle exec jekyll serve",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -25,5 +35,3 @@
         }
     ]
 }
-
-
