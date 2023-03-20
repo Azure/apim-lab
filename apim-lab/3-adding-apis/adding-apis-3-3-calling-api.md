@@ -19,16 +19,16 @@ Let's add another API, the [Colors API](https://colors-api.azurewebsites.net/swa
 
   ![APIM Add Colors API](../../assets/images/apim-add-color-api-2.png)
 
-- We can test the newly-added API from the *Test* tab. Note the successful **200** response.
+- We can test the newly-added API from the **Test** tab. Note the successful `200` response.
 
   ![APIM Test Colors API](../../assets/images/apim-test-color-api.png)
 
-- Products can be configured after the API is initially created as well. On the *Settings* tab, set *Products* to include *Starter* and *Unlimited*, then press *Save*.
+- Products can be configured after the API is initially created as well. On the **Settings** tab, set **Products** to include **Starter** and **Unlimited**, then press **Save**.
 
   ![APIM Colors API Add Products](../../assets/images/apim-color-api-add-products.png)
 
-- Switch to the Developer portal and look at the *Colors* API.
-- Try the *Get random color* operation.
+- Switch to the Developer portal and look at the **Colors API**.
+- Try the **Get random color** operation.
 - Notice the successful `200` response and the returned random color.
 
   ![APIM Developer Portal Colors API Try It](../../assets/images/apim-developer-portal-color-api-try-it-1.png)
@@ -47,21 +47,21 @@ First, we need to enable CORS for the domain name of the frontend. To achieve th
 
 - On the sidemenu, click on `APIs`, then select the `All APIs` option.
 - Inside the `Inbound processing` area you will see the `cors` policy, which we added in part 2 by pressing the `Enable Cors` button.
-- Click on the pencil icon next to that policy to edit it.
+- Click on the **pencil icon** next to that policy to edit it.
 
   ![APIM Policy CORS All APIs](../../assets/images/apim-policy-cors-all-apis-1.png)  
 
-- Here we will see this form where we can add the domain name of our frontend `https://colors-web.azurewebsites.net` or the `*` for all domains. Press *Add allowed origin*, enter the URL, then press *Save*.
+- Here we will see this form where we can add the domain name of our frontend `https://colors-web.azurewebsites.net` or the `*` for all domains. Press **Add allowed origin**, enter the URL, then press **Save**.
 
   ![APIM Policy CORS All APIs](../../assets/images/apim-policy-cors-all-apis-2.png)
 
-- After enabling CORS in APIM lets go back to our frontend <https://colors-web.azurewebsites.net> and follow these steps:
+- After enabling CORS in APIM let's go back to our frontend <https://colors-web.azurewebsites.net> and follow these steps:
 
 - Click on the hamburger menu next to *Colors* in the top left corner.
-- Click on *Config*.
-- Replace the *API URL* according to this format: <https://YOURAPIM.azure-api.net/colors/random> (e.g. https://apim-lab-pk.azure-api.net/colors/random).
-- After setting the API URL correctly, press the hamburger menu again and go to *Home*. 
-- Press *Start* to see how the frontend is calling the api. You should see a *401* response, indicating an auth error. This happens as our API requires a subscription, but we have not yet entered a subscription key. 
+- Click on **Config**.
+- Replace the **API URL** according to this format: <https://<your-apim>.azure-api.net/colors/random> (e.g. https://apim-lab-pk.azure-api.net/colors/random).
+- After setting the API URL correctly, press the hamburger menu again and go to **Home**. 
+- Press **Start** to see how the frontend is calling the api. You should see a **401** response, indicating an auth error. This happens as our API requires a subscription, but we have not yet entered a subscription key.
 
   ![Colors Website APIM 401](../../assets/images/color-website-apim-401.png)
 

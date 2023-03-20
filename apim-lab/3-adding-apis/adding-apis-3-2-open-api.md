@@ -16,26 +16,29 @@ As a demo we will use an API that offers a simple calculator service : [Calc API
 
 ![APIM Calculator API](../../assets/images/apim-calc-api.png)
 
-1) On the left menu, open the *APIs* blade.  
-2) Click on *Add API*.  
-3) Under *Create from definition* select *OpenAPI*.  
-4) Select the *Full* option in the *Create from OpenAPI specification* dialog.  
-5) Enter `http://calcapi.cloudapp.net/calcapi.json` as the *OpenAPI specification* value. You should subsequently see *Display name*, *Name*, and *Description* populate.  
-    > **Note the intentional use of `http` instead of `https` as this backend does not presently support `https`.**  
+1) On the left menu, open the **APIs** blade.  
+2) Click on **Add API**.  
+3) Under **Create from definition** select **OpenAPI**.  
+4) Select the **Full** option in the **Create from OpenAPI specification** dialog.  
+5) Enter `http://calcapi.cloudapp.net/calcapi.json` as the **OpenAPI specification** value. You should subsequently see **Display name**, **Name**, and **Description** populate.  
+
+> **Note the intentional use of `http` instead of `https` as this backend does not presently support `https`.**  
+
 6) While the backend service only runs on `HTTP`, we need to **set URL scheme to `Both`** to allow for APIM ingress to occur on HTTPS for callers such as the Developer Portal.  
-7) Set the *API URL suffix* to `calc`.  
-8) Assign *Starter* and *Unlimited* products.  
+7) Set the **API URL suffix** to `calc`.  
+8) Assign **Starter** and **Unlimited** products.  
 9) Press **Create**.  
 
 ![APIM Add Calculator API](../../assets/images/apim-add-calc-api-1.png)
 
 - Once the API is created, it will show in the list of APIs along with all of its operations.
 
-> Ensure that the backend shows as `HTTP`. If that is not the case, navigate to the *Settings* tab and update the *Web service URL* accordingly.
+> Ensure that the backend shows as `HTTP`. If that is not the case, navigate to the **Settings** tab and update the **Web service URL** accordingly.
 
   ![APIM Add Calculator API](../../assets/images/apim-add-calc-api-2.png)
 
-- Back in the Developer Portal, try out the Calculator API via the *Add two integers* GET method, then examine the response.  
+- Back in the Developer Portal, try out the Calculator API via the **Add two integers** GET method, then examine the response.  
+
 > Accepting the defaults of `49` and `51` suffices. There's presently an issue where defaults are shown in a dropdown. If you wanted to change the values, add new `a` and `b` parameters and values, then remove the dropdown values.
 
 ![APIM Developer Portal Calculator API Try It](../../assets/images/apim-developer-portal-calc-api-try-it-1.png)

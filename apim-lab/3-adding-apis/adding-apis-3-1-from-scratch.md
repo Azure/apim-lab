@@ -34,12 +34,12 @@ Instead of developing an API, for this lab you will use the existing [*Star Wars
 
   1) **Get People**  
     - Display name: **Get People**  
-    - Name: **get-people**  
+    - Name will be populate with: **get-people**  
     - URL: **GET /people/**  
 
   2) **Get People By Id**  
     - Display name: **Get People By Id**  
-    - Name: **get-people-by-id**  
+    - Name will be populate with: **get-people-by-id**  
     - URL: **GET /people/{id}/**  
 
   ![APIM Star Wars API Add Operation](../../assets/images/apim-star-wars-api-add-operation.png)
