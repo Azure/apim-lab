@@ -24,7 +24,7 @@ An Event Hubs namespace provides a unique scoping container in which you create 
 
 1. Press **Create** to create the namespace, then enter the following:
    1. Select the **Resource Group** you created in previous labs.
-   1. Enter a unique **Namespace name**.
+   1. Enter a unique **Namespace name**, the naming convention for Event Hub Namespace is: `evhns-<environment>-<region>-<application-name>-<owner>-<instance>`
    1. Select the **Location** you used in previous labs.
    1. Choose **Basic** for the **Pricing Tier**. To learn about differences between tiers, see [Quotas and limits](event-hubs-quotas.md), [Event Hubs Premium](event-hubs-premium-overview.md), and [Event Hubs Dedicated](event-hubs-dedicated-overview.md) articles. 
    1. Leave the **Throughput Units** setting as it is. To learn more about throughput units or processing units: [Event Hubs scalability](event-hubs-scalability.md).  
@@ -32,9 +32,7 @@ An Event Hubs namespace provides a unique scoping container in which you create 
       
       ![Create an Event Hub Namespace](../../assets/images/event-hub-review-create.png)
 
-   1. Press **Go to resource**.
-
-      ![Event Hub Namespace Created](../../assets/images/event-hub-namespace-created.png)
+   1. Press **Go to resource** when it's created.
       
    1. Confirm that you see the **Event Hubs Namespace** page similar to the following example:   
       
@@ -44,17 +42,17 @@ An Event Hubs namespace provides a unique scoping container in which you create 
 
 ## Create an Event Hub
 
-To create an event hub within the namespace, follow these steps:
+We will create an Event hub to receive logs from our APIM. To create an event hub within the namespace, follow these steps:
 
-1. From the **Event Hubs** blade select **+ Event Hub**>
+1. From the **Event Hubs** blade select **+ Event Hub**
    
     ![Add Event Hub](../../assets/images/event-hub-create-1.png)
 
-1. Type a name for your event hub, then select **Create**.
+1. Type a name for your event hub,  the naming convention is `evh-<the-goal>-<environment>-<region>-<application-name>-<owner>-<instance>` then select **Create**.
        
-    The **partition count** setting allows you to parallelize consumption across many consumers. For more information, see [Partitions](event-hubs-scalability.md#partitions).
+    The **partition count** setting allows you to parallelize consumption across many consumers. For more information, see [Partitions](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-features#partitions).
 
-    The **message retention** setting specifies how long the Event Hubs service keeps data. For more information, see [Event retention](event-hubs-features.md#event-retention).
+    The **message retention** setting specifies how long the Event Hubs service keeps data. For more information, see [Event retention](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-features#event-publishers).
 
     ![Create Event Hub](../../assets/images/event-hub-create-2.png)
 
@@ -188,4 +186,4 @@ Once your logger is configured in API Management, you can configure your log-to-
 
     ![Event Hub APIM events](../../assets/images/event-hub-apim-events.png)
 
-> What to do with the data that is now in Event Hub is beyond the scope of this lab as this lab primarily focused on APIM to Event Hub integration. 
+> What to do with the data that is now in Event Hub is beyond the scope of this lab as this lab primarily focused on APIM to Event Hub integration.
