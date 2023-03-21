@@ -6,16 +6,16 @@ nav_order: 5
 ---
 
 
-## Star Wars API
+## Mock policy
 
 ### Mock responses
 
 Mocking in APIM is a useful mechanism for API consumers to interact with APIs without waiting for the backend to be ready. 
 
-- Open the Star Wars API and select **+ Add Operation**
+- Open the **Star Wars** API and select **+ Add Operation**
 - Create a new GET operation:
-  - Display name: **GetFilm**
-  - Name: **getfilm**
+  - Display name: **Get Film**
+  - Name: **get-film**
   - URL: **/film**
 - In the *Responses* configuration tab, press **+ Add response**, return `200 OK` with a representation with content type `application/json` and this sample data:
 
@@ -29,8 +29,8 @@ Mocking in APIM is a useful mechanism for API consumers to interact with APIs wi
   ![APIM Policy Mock Frontend](../../assets/images/apim-policy-mock-frontend.png)
 
 - Press **Save**.
-- Open the Inbound processing 'Code View'
-- Add *Mock Response* under *Other policies* after the `<base /> tag.
+- Open the Inbound processing **Code View**
+- Add **Mock Response** under **Other policies** after the `<base />` tag.
 
   ```xml    
   <inbound>

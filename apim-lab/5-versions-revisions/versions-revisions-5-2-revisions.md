@@ -10,8 +10,8 @@ nav_order: 2
 
 ### Add a new revision
 
-- Select the *Star Wars* API v2.
-- Select the *Revisions* tab.
+- Select the **Star Wars** API **v2**.
+- Select the **Revisions** tab.
 - Add a new revision with description `Adding a caching policy.`
 
   ![APIM Revisions Menu](../../assets/images/apim-revisions-menu.png)
@@ -23,8 +23,8 @@ nav_order: 2
 
 ### Add caching
 
-- Switch to the *Design* tab, then select the `GetPeople` operation.
-  > *Revision 2* automatically became the active revision you are now making changes in. You can also switch between revisions, but **be aware that changes to the *Current* revision are live immediately**.
+- Switch to the **Design** tab, then select the `Get People` operation.
+  > **Revision 2** automatically became the active revision you are now making changes in. You can also switch between revisions, but **be aware that changes to the *Current* revision are live immediately**.
 
   ![APIM Revision Add Caching](../../assets/images/apim-revision-add-caching-1.png)
 
@@ -48,7 +48,7 @@ nav_order: 2
 
 ### Test the new revision
 
-- From the Azure portal, test the `GetPeople` operation.
+- From the Azure portal, test the `Get People` operation.
   > Note the revision number at the top of the page as well as in the request URL.  
   The request URL should look similar to: `https://<your-apim-name>.azure-api.net/sw/v2;rev=2/people/`.
 
@@ -60,7 +60,7 @@ nav_order: 2
 
 ### Make current revision
 
-- Select the _Revisions_ tab.
+- Select the **Revisions** tab.
 - Click on the ellipsis for `rev2` and make it the current revision.
 
   ![APIM Revision Make Current](../../assets/images/apim-revision-make-current-1.png)

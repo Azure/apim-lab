@@ -6,19 +6,19 @@ nav_order: 6
 ---
 
 
-## Calculator API
+## Send One Way policy
 
 APIM integrates well with [external services](https://docs.microsoft.com/en-us/azure/api-management/api-management-sample-send-request) via HTTP-based interaction.
 
 This example shows a fire-and-forget [send-one-way-request](https://docs.microsoft.com/en-us/azure/api-management/api-management-sample-send-request#send-one-way-request) policy, which does not await a response. Alternatively, you can use a [send-request](https://docs.microsoft.com/en-us/azure/api-management/api-management-sample-send-request#send-request) policy to send a request and await a return. Some complex in-flight processing logic may also be better handled by using Logic Apps.
 
-### Send-One-Way-Request Setup
+### Setup the Send-One-Way-Request policy
 
-The following policy and payload applies for both examples in this lab. **Please ensure that you replace the value in `<set-url>` with your webhook target URL.** You will identify the URL in either example below.
+The following policy and payload applies for both examples in this section (webhook and teams). **Please ensure that you replace the value in `<set-url>` with your webhook target URL.** You will identify the URL in either example below.
 
-- Open the *Add two integers* operation in the Calculator API.
-- Open the 'Code View'.
-- Add the `send-one-way-request` policy to *Outbound processing* and replace the webhook and payload as required. For demo purposes we are going to use the payload for a Teams message (even for Webhook.site) and also send the message on every successful request.
+- Open the **Add two integers** operation in the Calculator API.
+- Open the **Code View**.
+- Add the `send-one-way-request` policy to **Outbound processing** and replace the webhook and payload as required. For demo purposes we are going to use the payload for a Teams message (even for Webhook.site) and also send the message on every successful request.
 
   ```xml
   <outbound>
@@ -60,11 +60,11 @@ The following policy and payload applies for both examples in this lab. **Please
 
     ![Webhook Site Setup](../../assets/images/webhook-site-1.png)
 
-- Use this URL as the value in the `<set-url>` property in the `send-one-way-request` policy.
+- Use this URL as the value in the `<set-url>` property in the `send-one-way-request` policy previously defined.
 
-- Invoke the API from the APIM _Test_ tab and observe the `200` success response.
+- Invoke the API from the APIM **Test** tab by clicking the **Trace** button and observe the `200` success response.
 
-- Check the _Trace_ for the _Outbound_ one-way message.
+- Check the **Trace** for the **Outbound** one-way message.
 
     ![Webhook Site APIM Trace](../../assets/images/webhook-site-apim-send-one-way-request-1.png)
 
@@ -74,22 +74,13 @@ The following policy and payload applies for both examples in this lab. **Please
 
 ### Send a message to Microsoft Teams channel
 
-An optional lab, for Microsoft Teams, please review [Create an Incoming Webhook](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook#create-an-incoming-webhook-1).
+An optional lab to connect to Microsoft Teams:
 
-- First, open Teams and enable a Webhook connector for your team.
-  - Get the URL of the webhook.
+- Follow the official steps from the [documentation to create an Incoming Webhook](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook#create-an-incoming-webhook-1) and when you have your rwebhook URL ready, update the previous `send-one-way-request` policy.
 
-    ![Teams Webhook](../../assets/images/teams-webhook-1.png)
+- If you want, you can format the required payload. The payload sent to a Teams channel uses the [MessageCard](https://docs.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-reference) JSON schema. You can experiment with different cards in the [MessageCard Playground](https://messagecardplayground.azurewebsites.net/).
 
-    ![Teams Webhook](../../assets/images/teams-webhook-2.png)
-
-    ![Teams Webhook](../../assets/images/teams-webhook-3.png)
-
-    ![Teams Webhook](../../assets/images/teams-webhook-4.png)
-
-- Format the required payload. The payload sent to a Teams channel uses the [MessageCard](https://docs.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-reference) JSON schema. You can experiment with different cards in the [MessageCard Playground](https://messagecardplayground.azurewebsites.net/).
-
-- Invoke the API from the _Test_ tab and observe the `200` success response.
+- When you are ready, invoke the API from the **Test** tab and observe the `200` success response.
 
 - Look for a received message in your Teams channel:
 

@@ -10,7 +10,7 @@ nav_order: 1
 
 Proper version management not only helps organize your API, it also aids in API Management. In this exercise we are going to version an existing API.
 
-> Integrate version management from the beginning with a `v1` or similar identifier. 
+> Good practice: Integrate version management from the beginning with a **v1** or similar identifier. 
 
 ### Add a new version
 
