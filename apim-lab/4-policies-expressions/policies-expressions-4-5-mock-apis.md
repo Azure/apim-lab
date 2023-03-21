@@ -1,6 +1,6 @@
 ---
 title: Mock policy
-parent: Policy Expressions
+parent: Policies Expressions
 has_children: false
 nav_order: 5
 ---

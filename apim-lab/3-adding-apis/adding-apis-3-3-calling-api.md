@@ -59,34 +59,36 @@ First, we need to enable CORS for the domain name of the frontend. To achieve th
 
 - Click on the hamburger menu next to *Colors* in the top left corner.
 - Click on **Config**.
-- Replace the **API URL** according to this format: <https://<your-apim>.azure-api.net/colors/random> (e.g. https://apim-lab-pk.azure-api.net/colors/random).
+- Replace the **API URL** according to this format: https://YOUR_APIM.azure-api.net/colors/random (e.g. https://apim-dev-we-hol-ms-01.azure-api.net/colors/random).
 - After setting the API URL correctly, press the hamburger menu again and go to **Home**. 
 - Press **Start** to see how the frontend is calling the api. You should see a **401** response, indicating an auth error. This happens as our API requires a subscription, but we have not yet entered a subscription key.
 
   ![Colors Website APIM 401](../../assets/images/color-website-apim-401.png)
 
-- The subscription keys can be fetched from the Developer Portal. Open the main Developer Portal page, then click on *Profile* in the top menu. 
-- Copy the following URL into Notepad, modify your APIM instance, then copy the URL, so that you have two of the same URLs. We will use them for the *Starter* and *Unlimited* pathways into APIM.
-  - `https://YOURAPIM.azure-api.net/colors/random?key=`
-- Append the primary keys for both subscriptions - one key per URL - to get unique URLs for *Starter* and *Unlimited*.
-  
-  ![Notepad Colors API Subscription Keys](../../assets/images/notepad-color-api-subscription-keys.png)
+- The subscription keys can be fetched from the Developer Portal. Open the main Developer Portal page, then click on **Profile** in the top menu. 
 
-- To see that *Unlimited* product has no rate limits:
+- Prepare the url in a text editor:
+Concat the base url and the subscription key for the **Starter** and **Unlimited**, and update modify the url with your APIM instance:
+
+```
+https://YOUR_APIM.azure-api.net/colors/random?key=STARTER_PRIMARY_KEY_HERE
+https://YOUR_APIM.azure-api.net/colors/random?key=UNLIMITED_PRIMARY__KEY_HERE
+```
+
+- To see that **Unlimited** product has no rate limits:
   - Configure the Colors website to use the Unlimited URL.
-  - Select [Start].
+  - Select **Start**.
   - Notice there is no rate limit - every light is randomly and continuously updated. 
 
     ![Colors Website APIM Unlimited Product](../../assets/images/color-website-apim-unlimited-product.png)
 
-- To see that *Starter* product is limited to 5 calls per minute:
+- To see that **Starter** product is limited to 5 calls per minute:
   - Configure the Colors website to use the Starter URL.
-  - Select [Start].
+  - Select **Start**.
   - Notice that only 5 lights get colored.
 
     ![Colors Website APIM Starter Product](../../assets/images/color-website-apim-starter-product.png)
 
-- Try the same *Starter* URL directly in your web browser:
-  - Notice the error status / message returned. For example: `{ "statusCode": 429, "message": "Rate limit is exceeded. Try again in 53 seconds." }`
+- Try the same **Starter** URL directly in your web browser and notice the error status / message returned:
 
     ![APIM Colors API URL in Browser for Starter Product 429 ](../../assets/images/apim-color-api-url-in-browser-starter-product-429.png)
