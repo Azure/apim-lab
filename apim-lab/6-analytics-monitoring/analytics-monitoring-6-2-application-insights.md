@@ -12,7 +12,7 @@ Azure API Management allows for easy integration with Azure Application Insights
 
 ### Create an Azure Application Insights instance
 
-Before you can use Azure Application Insights, you first need to create an instance of the service.
+Before you can use Azure Application Insights, you first need to create an instance of the service. The naming convention for Application Insights is: `appi-<environment>-<region>-<application-name>-<owner>-<instance>`
 
 1. Open the **Azure portal** and navigate to **Application Insights**.
 
@@ -38,7 +38,7 @@ Before you can use Azure Application Insights, you first need to create an insta
 
     ![APIM App Insights Logger](../../assets/images/apim-app-insights-logger-2.png)
 
-    > Behind the scenes, a [Logger](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/logger/createorupdate) entity is created in your API Management instance, containing the Instrumentation Key of the Application Insights instance.
+    > Behind the scenes, a [Logger](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/logger/createorupdate) entity is created in your API Management instance, containing the Connection String of the Application Insights instance.
 
 ### Enable Application Insights logging for your API
 
