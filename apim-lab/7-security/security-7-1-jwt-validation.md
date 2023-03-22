@@ -6,11 +6,11 @@ nav_order: 1
 ---
 
 
-## Security
+## JSON Web Tokens (JWT)
 
 In this lab, we are going to see how to use JSON Web Tokens with your APIs.
 
-### JSON Web Tokens (JWT) - Creation
+### Creation
 
 JSON Web Tokens are an open-industry standard method for representing claims securely between two parties. More info at <https://jwt.io>. 
 
@@ -36,10 +36,10 @@ Use the following sites:
 
     ![JWT.io Website](../../assets/images/jwt-io.png)
 
-### JSON Web Tokens (JWT) - Validation
+### Validation
 
-- Back in APIM, open the *Calculator* API and select *All operations*.
-- In the 'Code View' add an inbound `validate-jwt` policy with the signing key.
+- Back in APIM, open the **Calculator** API and select **All operations**.
+- In the **Code View** add an inbound `validate-jwt` policy with the signing key.
 
   ```xml
   <policies>
@@ -55,14 +55,14 @@ Use the following sites:
   </policies>
   ```
 
-- Invoke the *Divide two integers* method on the API from the *Test* tab. Observe the `401` Unauthorized error.
+- Invoke the **Divide two integers** method on the API from the **Test** tab. Observe the `401` Unauthorized error.
 
   ![APIM Request with no JWT](../../assets/images/apim-request-no-jwt.png)
 
 - Now add the following `Authorization` header to the test:
   - Name: `Authorization`
   - Value: `Bearer <jwt token>` 
-    - Replace `<jwt token>` with the *encoded* value from <https://jwt.io> above
+    - Replace `<jwt token>` with the **encoded** value from <https://jwt.io> above
 
   Note the bearer token in the Request payload.
 
@@ -72,11 +72,11 @@ Use the following sites:
 
   ![](../../assets/images/apim-request-valid-jwt.png)
 
-### JSON Web Tokens (JWT) - Check that a Claim Exists
+### Check that a Claim Exists
 
 Not only is it important that a JWT is valid, but, as we use it for authorization, we must also assert that the token contains expected claims before granting access to our APIs.
 
-- Open the *Calculator* API and select *All operations*.
+- Open the **Calculator** API and select **All operations**.
 - Modify the inbound `validate-jwt` policy to not only validate the JWT but ensure that a specific `admin` claim exists. Recall that we set `admin`: `true` in our JWT token on <https://jwt.io> above.
 
   ```xml
@@ -98,7 +98,7 @@ Not only is it important that a JWT is valid, but, as we use it for authorizatio
   </policies>
   ```
 
-- Invoke the *Divide two integers* method with the `Authorization` header as above and observe the `200` success. We have not fundamentally changed the test scenario as we only restricted the claims to something that we already had in our payload.
+- Invoke the **Divide two integers** method with the `Authorization` header as above and observe the `200` success. We have not fundamentally changed the test scenario as we only restricted the claims to something that we already had in our payload.
 
 - Now change the `required-claims` with a claim  that does not exist (e.g. `adminx`)
 
@@ -121,13 +121,15 @@ Not only is it important that a JWT is valid, but, as we use it for authorizatio
   </policies>
   ```
 
-- Invoke the *Divide two integers* method with the `Authorization` header once more and observe the `401` Unauthorized error as the token specifies `admin` but the policy requires `adminx`.
+- Invoke the **Divide two integers** method with the `Authorization` header once more and observe the `401` Unauthorized error as the token specifies `admin` but the policy requires `adminx`.
 
-### JSON Web Tokens (JWT) - Extract Claim and Pass to Backend
+### Extract Claim and Pass to Backend
 
 It may often be necessary to pass (specific) claims onto the backend API to inform further processing. One such way - and this can be tailored to an API's individuality - is to extract a claim and place it into a designated header the backend expects.
 
-- Open the *Calculator* API and select *All operations*.
+Let's add the username contained inside the JSON Web Tokens into a specific header.
+
+- Open the **Calculator** API and select **All operations**.
 - Append the inbound policy section to extract the `name` claim and place it into a header underneath the `validate-jwt` policy.
 - Change the claim back from `adminx` to `admin` as we are interested in a successful test again.
 
@@ -157,11 +159,11 @@ It may often be necessary to pass (specific) claims onto the backend API to info
   </policies>
   ```
 
-- Invoke the *Divide two integers* method with the `Authorization` header once more and observe the `200` Success.
-- Use the *Trace* feature to inspect what was passed to backend. You should see the new header and the correct value from the claims.
+- Invoke the **Divide two integers** method with the `Authorization` header once more and observe the `200` Success.
+- Use the **Trace** feature to inspect what was passed to backend. You should see the new header and the correct value from the claims.
 
   ![APIM JWT Claim in Trace](../../assets/images/apim-jwt-claim-in-trace.png)
 
-### JSON Web Tokens (JWT) - Improvements
+### Improvements
 
 Based on what you have learned thus far, consider how you can improve your policies. For example, you may not want to hard-code the `issuer-signing-key` and instead use a Named Value that you can more easily administer and change outside of an API's policies. If you have time in this exercise, go ahead and give it a try.

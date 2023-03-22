@@ -1,6 +1,6 @@
 ---
-title: Oauth2 And Azure APIM
-parent: Oauth2
+title: OAuth2 And Azure APIM
+parent: OAuth2
 grand_parent: Security
 has_children: false
 nav_order: 4

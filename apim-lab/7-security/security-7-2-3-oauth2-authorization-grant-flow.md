@@ -1,6 +1,6 @@
 ---
 title: Authorization Code Flow
-parent: Oauth2
+parent: OAuth2
 grand_parent: Security
 has_children: false
 nav_order: 5
