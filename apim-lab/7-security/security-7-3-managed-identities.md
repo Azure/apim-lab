@@ -5,27 +5,24 @@ has_children: false
 nav_order: 3
 ---
 
-## Security
-
-
-### Managed Service Identity
+## Managed Identities
 
 In Azure, an Active Directory identity can be assigned to a managed resource such as an Azure Function, App Service or even an API Management instance. Once an identity is assigned, it has many capabilities to work with other resources that leverage Azure AD for authentication, much like a service principal.
 
-#### Register API Management with Active Directory
+### Register API Management with Active Directory
 
 ![Register APIM](../../assets/images/apim-security-register-principal.png)
 
-#### Key Vault - Create Key Vault and add a secret
+### Key Vault - Create Key Vault and add a secret
 
-- Create a Key Vault instance
+- Create a **Key Vault** instance
 - Add a [secret](https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal#add-a-secret-to-key-vault) to the Key Vault instance
   - Name:`favoritePerson`
   - Value: `3`
 
 ![Create Key Vault](../../assets/images/apim-security-create-key-vault.png)
 
-#### Key Vault - Access policy and principal assignment
+### Key Vault - Access policy and principal assignment
 
 Create an access policy
 
@@ -45,7 +42,7 @@ Remember to click **Save**
 
 ![Create Key Vault](../../assets/images/apim-security-key-vault-5.jpg)
 
-#### API Management, Key Vault and Managed Service Identity
+### API Management, Key Vault and Managed Service Identity
 
 - Add a new operation to the Star Wars API
 - Update the policies for the new operation
@@ -67,7 +64,7 @@ Remember to click **Save**
 <rewrite-uri template="@((string)context.Variables["favoritePersonRequest"])" />
 ```
 
-#### Test the operation
+### Test the operation
 
 - Test the operation (use the developer portal, Azure portal or tools like Postman and curl)
 - Notice the request URL will be similar to: `https://{your-apim-instance}.azure-api.net/sw/favorite`
