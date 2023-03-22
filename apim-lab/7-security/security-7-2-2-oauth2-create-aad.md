@@ -11,23 +11,23 @@ nav_order: 5
 1. Sign in to your organization's [Azure portal](https://portal.azure.com/).
 
 1. From the Azure portal menu, select **Create a resource**.  
+ 
+1. Select **Identity**, and then select **Azure Active Directory**.
 
     ![Azure Active Directory Create resoure page](../../assets/images/azure-ad-portal.png)
 
-1. Select **Identity**, and then select **Azure Active Directory**.
-
     The **Create directory** page appears.
 
-    ![Azure Active Directory Create page](../../assets/images/azure-ad-create-new-tenant.png)
+    ![Azure Active Directory Create page](../../assets/images/azure-ad-create-new-tenant-1.png)
 
-1.  On the **Create directory** page, enter the following information:
+1.  On the **Create directory** page, enter the following information with a unique available value:
+    - **Organization name**
+    - **Initial domain name**
     
-    - Type _Contoso_ into the **Organization name** box.
+    - Finaly, leave the _United States_ option in the **Country or region** box.
 
-    - Type _Contoso_ into the **Initial domain name** box.
-
-    - Leave the _United States_ option in the **Country or region** box.
+    ![Azure Active Directory Create page](../../assets/images/azure-ad-create-new-tenant-2.png)
 
 1. Select **Create**.
 
-Your new tenant is created with the domain labapimtenant.onmicrosoft.com.
+Your new tenant is created with the domain `<your domain>.onmicrosoft.com`.
