@@ -90,7 +90,7 @@ API Management loggers are configured using the [API Management REST API](https:
 
 1. Press **Sign in** and use your Azure credentials that you have been using with this workshop, if prompted.
 1. Fill in the following **Parameters**:
-    1. loggerId: **eventhublogger**
+    1. loggerId: **event-hub-logger** (you will use it in the next steps)
     1. resourceGroupName: your resource group 
     1. serviceName: your Azure APIM instance
     1. subscriptionId: your Azure subscription
@@ -99,35 +99,35 @@ API Management loggers are configured using the [API Management REST API](https:
 
 1. Replace the request **Body** with the following json. Make sure you replace the parameters appropriately:
 
-    ```json
-    {
-        "properties": {
-            "loggerType": "azureEventHub",
-            "description": "adding a new logger",
-            "credentials": {
-                "name": "<your event hub namespace>",
-                "connectionString": "<your Connection string-primary key>"
-            }
+```json
+{
+    "properties": {
+        "loggerType": "azureEventHub",
+        "description": "adding a new logger",
+        "credentials": {
+            "name": "<your event hub namespace>",
+            "connectionString": "<your Connection string-primary key>"
         }
     }
-    ```
+}
+```
 
 1. Your request parameters might then look similar to this: 
 
     > Note my deviation by intential masking my `SharedAccessKey`. Please do not alter your key.
 
-    ```json
-    {
-        "properties": {
-            "loggerType": "azureEventHub",
-            "description": "adding a new logger",
-            "credentials": {
-                "name": "eh-sjk-01062022/myeventhub",
-                "connectionString": "Endpoint=sb://eh-sjk-01062022.servicebus.windows.net/;SharedAccessKeyName=sendpolicy;SharedAccessKey=********;EntityPath=myeventhub"
-            }
-        }
-    }
-    ```
+```json
+ {
+     "properties": {
+         "loggerType": "azureEventHub",
+         "description": "adding a new logger",
+         "credentials": {
+             "name": "evhns-dev-we-hol-ms-011/evh-logger-dev-we-hol-ms-01",
+             "connectionString": "Endpoint=sb://evhns-dev-we-hol-ms-011.servicebus.windows.net/;SharedAccessKeyName=sendpolicy;SharedAccessKey******=;EntityPath=evh-logger-dev-we-hol-ms-01"
+         }
+     }
+ }
+```
 
 1. Press **Run**.
 1. You should get a **201** response, confirming that the resource has been created.
@@ -138,7 +138,7 @@ API Management loggers are configured using the [API Management REST API](https:
 
 ## Configure log-to-eventhub policies
 
-Once your logger is configured in API Management, you can configure your log-to-eventhub policy to log the desired events. The log-to-eventhub policy can be used in either the *inbound* policy section or the *outbound* policy section.
+Once your logger is configured in API Management, you can configure your log-to-eventhub policy to log the desired events. The log-to-eventhub policy can be used in either the **inbound** policy section or the **outbound** policy section.
 
 1. Browse to your APIM instance.
 1. Select the **APIs** blade.
@@ -146,7 +146,7 @@ Once your logger is configured in API Management, you can configure your log-to-
    In this example, we're adding a policy to the **Echo API**.
 1. Select **All operations**.
 1. On the top of the screen, select the **Design** tab.
-1. In the *Inbound* or *Outbound* processing window, enter the Code editor.
+1. In the **Inbound** or **Outbound** processing window, enter the Code editor.
 1. Enter a new line after the `<base />` tag in the `inbound` or `outbound` policy section.
 1. Select **Show snippets**.
 1. In the window on the right, select **Advanced policies** > **Log to EventHub**. This inserts the `log-to-eventhub` policy statement template.
@@ -169,13 +169,13 @@ Once your logger is configured in API Management, you can configure your log-to-
     </log-to-eventhub>
     ```
 
-1. Replace `<your logger id>` with the value you used for `{loggerId}` in the request URL to create the logger in the previous step (e.g. `eventhublogger`).
+1. Replace `<your logger id>` with the value you used for `{loggerId}` in the request URL to create the logger in the previous step (e.g. `event-hub-logger`).
 
     > You can use any expression that returns a string as the value for the `log-to-eventhub` element. In this example, a string in JSON format containing the date and time, service name, request ID, request IP address, and operation name is logged.
 
     ![APIM Add to Event Hub](../../assets/images/apim-add-log-to-event-hub-2.png)
 
-1. Click **Save** to save the updated policy configuration. As soon as it is saved the policy is active and events are logged to the designated Event Hub.
+1. Click **Save** to update the policy configuration. As soon as it is saved the policy is active and events are logged to the designated Event Hub.
 
 ---
 
