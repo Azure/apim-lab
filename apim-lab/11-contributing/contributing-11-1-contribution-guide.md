@@ -13,7 +13,11 @@ If you'd like to contribute to this workshop, please read the following guidelin
 - [Minor update or fix to an existing challenge and adding a new challenge](3-minor-update-fix.md)
 - [Run the github page locally with Github Codespaces](4-github-codespaces.md)
 
+# Keep things consistent
 
+- Follow the naming convention for each components
+- Hide specific subscription name or personnal informations
+- Keep the screen updated and generic
 
 # Contributing
 
