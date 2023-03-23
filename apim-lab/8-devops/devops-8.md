@@ -1,11 +1,11 @@
 ---
-title: API Management DevOps 
+title: Overview
 parent: DevOps
 has_children: false
 nav_order: 1
 ---
 
-## API Management DevOps
+## Overview
 
 Review the documentation for advice on how to [use DevOps and CI/CD to publish APIs][1].
 

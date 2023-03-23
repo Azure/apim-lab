@@ -33,19 +33,19 @@ To protect an API with Azure AD, first register an application in Azure AD that 
 
 ![backend app registration2](../../assets/images/authflow2.png)
 
-- On the app Overview page, find the Application (client) ID value and record it for later.
+- On the app Overview page, find the Application (client) ID value and **record it for later**.
 
 ![backend app registration3](../../assets/images/authflow3.png)
 
 - Select **Expose an API** and **set** the Application ID URI with the default value. Record this value for later.
 ![backend app registration4a](../../assets/images/authflow4a.png)
 
-- Select the **Add a scope** button to display the Add a scope page. Then create a new scope that's supported by the API (for example, Calculator.Read).
+- Select the **Add a scope**. Then create a new scope that's supported by the API (for example, Calculator.Read).
 
 ![backend app registration4b](../../assets/images/authflow4b.png)
 
-- Select the **Add scope** button to create the scope. Repeat this step to add all scopes supported by your API.
-- When the scopes are created, **make a note of them** for use in a subsequent step.
+- Select the **Add scope** button to create the scope. 
+- Repeat this step to add all scopes supported by your API. When the scopes are created, **make a note of them** for use in a subsequent step (optional for this lab).
 
 ![backend app registration4c](../../assets/images/authflow4c.png)
 
@@ -56,16 +56,16 @@ Every client application that calls the API needs to be registered as an applica
 - Select **New registration**.
 
 - In the Name section, enter a meaningful application name that will be displayed to users of the app.  For example `oauth-client-app`
-- In the Supported account types section, select an option that suits your scenario.
-- Leave the Redirect URI section empty.
-- Select Register to create the application.
+- In the **Supported account** types section, select an option that suits your scenario.
+- Leave the **Redirect URI** section empty.
+- Select **Register** to create the application.
 
 ![client app registration5a](../../assets/images/authflow5a.png)
 
-- On the app **Overview page**, find the **Application (client) ID** value and record it for later.
+- On the app **Overview page**, find the **Application (client) ID** value and **record it for later**.
 - Create a client secret for this application to use in a subsequent step.
     - From the left menu options for your client app, select **Certificates & secrets**, and select New client **secret**.
-    - Under Add a client secret, provide a **Description**. Choose when the key should expire and select Add. When the secret is created, note the **key value** for use in a subsequent step.
+    - Under Add a client secret, provide a **Description**. Choose when the key should expire and select **Add**. When the secret is created, note the **key value** for use in a subsequent step.
 
 ![client app registration5b](../../assets/images/authflow5b.png)
 
@@ -93,11 +93,10 @@ Every client application that calls the API needs to be registered as an applica
 
 At this point, we have created the applications in Azure AD, and granted proper permissions to allow the client-app to call the backend-app.
 
-
 In this demo, the Developer Console is the client-app and has a walk through on how to enable OAuth 2.0 user authorization in the Developer Console.
 Steps mentioned below:
 
-- In Azure portal, browse to your **API Management instance** and Select **OAuth 2.0** then **Add**.
+- In Azure portal, browse to your **API Management instance**, select **OAuth 2.0** then **Add**.
 - Provide a **Display name** and **Description**.
 - For the Client **registration page URL**, enter a placeholder value, such as http://localhost.
 - For Authorization grant types, select **Authorization code**.
@@ -111,7 +110,7 @@ Specify the Authorization endpoint URL and Token endpoint URL. These values can 
 
 ![authcode8](../../assets/images/authflow8.png)
 
-#### Endpoints versions
+### Endpoints versions
 
 We recommend using v2 endpoints. When using v2 endpoints, use the scope you created for the backend-app in the Default scope field. Also, make sure to set the value for the accessTokenAcceptedVersion property to 2 in your application manifest in Azure AD Client APP and Backend app.
 
@@ -147,7 +146,7 @@ The next step is to enable OAuth 2.0 user authorization for your API. This enabl
 ![Apim Publish](../../assets/images/apim-developer-portal-publish.png)
 
 
-#### Calling the API from the Developer Portal
+### Calling the API from the Developer Portal
 
 Now that the OAuth 2.0 user authorization is enabled on your API, the Developer Console will obtain an access token on behalf of the user, before calling the API.
 
@@ -181,18 +180,20 @@ To pre-Authorize requests, we can use `validate-jwt` Policy by validating the ac
 We will now configure the Validate JWT policy to pre-authorize requests in API Management, by validating the access tokens of each incoming request. If a request does not have a valid token, API Management blocks it.
 
 - Browses to the APIs from the left menu of APIM
-- Click on **Basic Calculator Api** and open the **inbound** policy to add the validate-jwt policy (it checks the audience claim in an access token and returns an error message if the token is not valid) and save it.
+- Click on **Basic Calculator** Api and open the **inbound** policy to add the `validate-jwt policy` (it checks the audience claim in an access token and returns an error message if the token is not valid) and save it.
 
 ``` xml
 <validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized. Access token is missing or invalid.">
     <openid-config url="https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration" />
     <audiences>
-        <audience>YOUR-BACKENDAPP-SCOPE-ID</audience>
+        <audience>your-backendapp-scope-id-here</audience>
     </audiences>
 </validate-jwt>
 ```
 
-If you have configuration from previous par of this lab, just remove it. You should have something like this:
+> If you have configuration from previous par of this lab, just remove it.
+
+You should have something like this:
 
 ![authcode19](../../assets/images/authflow19.png)
 
@@ -207,7 +208,7 @@ If you have configuration from previous par of this lab, just remove it. You sho
 
 - Modify the token from authorization header to the valid token and send the api again to observe the 200 Ok response.
 
-#### Understanding validate-jwt Policy
+### Understanding validate-jwt Policy
 
 ![authcode21](../../assets/images/authflow21.png)
 
