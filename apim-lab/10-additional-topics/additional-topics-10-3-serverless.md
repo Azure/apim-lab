@@ -5,7 +5,7 @@ has_children: false
 nav_order: 3
 ---
 
-## Additional Topics - API Proxy to Serverless
+## API Proxy to Serverless
 
 Azure Serverless (Functions and Logic Apps) can be configured to benefit from the advantages of API Management.
 

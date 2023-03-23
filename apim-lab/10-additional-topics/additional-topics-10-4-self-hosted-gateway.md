@@ -5,7 +5,7 @@ has_children: false
 nav_order: 4
 ---
 
-## Additional Topics - Self-hosted Gateway
+## Self-hosted Gateway
 
 With the API Management self-hosted gateway, organisations have the ability to deploy an instance of the APIM gateway component to the environments where they host their applications and/or APIs - for example, in an on-premise data center.
 

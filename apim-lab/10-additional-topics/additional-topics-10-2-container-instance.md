@@ -6,31 +6,33 @@ nav_order: 2
 ---
 
 
-## Additional Topics - Provision your own instance of ColoursWeb/ColoursAPI
+## Provision your own instance of ColoursWeb/ColoursAPI
 
-Some of the demos use the ColourWeb web application and the ColourAPI API application. In this lab we will show you how to deploy your own instances of the Colours Web and Colours API.  Note - ColoursWeb / ColoursAPI is new version of ColorsWeb/ColorsAPI  ... do not mix the web client and API versions. 
+Some of the demos use the ColoursWeb web application and the ColoursAPI API application. In this lab we will show you how to deploy your own instances of the Colours Web and Colours API.  Note - ColoursWeb / ColoursAPI is new version of ColorsWeb/ColorsAPI  ... do not mix the web client and API versions. 
 
-The code for the ColourWeb / ColourAPI applications is available here:
+The code for the ColoursWeb / ColoursAPI applications is available here:
 
-- [ColourWeb](https://github.com/markharrison/ColoursWeb)
-- [ColourApi](https://github.com/markharrison/ColoursAPI)
+- [ColoursWeb](https://github.com/markharrison/ColoursWeb)
+- [ColoursAPI](https://github.com/markharrison/ColoursAPI)
 
-Docker Containers exist for these applications and so provides an easy deployment option ( IMPORTANT : due to the new pull restrictions on Docker Hub images, in this lab we will be using the GitHub registry):
+Docker Containers exist for these applications and so provides an easy deployment option.
+
+> IMPORTANT : due to the new pull restrictions on Docker Hub images, in this lab we will be using the GitHub registry
 
 - Github (Colours)
-  - docker pull ghcr.io/markharrison/coloursapi:latest
-  - docker pull ghcr.io/markharrison/coloursweb:latest
+  - `docker pull ghcr.io/markharrison/coloursapi:latest`
+  - `docker pull ghcr.io/markharrison/coloursweb:latest`
 - DockerHub (Colors)
-  - docker pull markharrison/colorweb:latest
-  - docker pull markharrison/colorapi:latest
+  - `docker pull markharrison/colorweb:latest`
+  - `docker pull markharrison/colorapi:latest`
 
 With the container we can deploy to multiple hosting options : VM's, App Services, ACI and also AKS. In this lab we are going to show you how to do it with [Azure Container Instances](https://docs.microsoft.com/en-us/azure/container-instances/).
 
 
 # Deploying Web and API containers with Azure Container Instances
 
-1. Login to Azure Portal at http://portal.azure.com.
-2. Open the Azure Cloud Shell and choose Bash Shell (do not choose Powershell)
+1. Login to [Azure Portal](https://portal.azure.com)
+2. Open the **Azure Cloud Shell** and choose **Bash Shell** (do not choose Powershell)
 
    ![Azure Cloud Shell](../../assets/images/azure-cloud-shell.png "Azure Cloud Shell")
 

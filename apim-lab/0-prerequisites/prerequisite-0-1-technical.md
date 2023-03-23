@@ -13,8 +13,8 @@ nav_order: 1
   - **Contributor** role in a resource group to be able to deploy an API Management instance
 
 - During this lab, we will add existing APIs to our API Management instance. The following APIs/websites should be available:
-  - [Colors API](https://colors-api.azurewebsites.net/swagger/v1/swagger.json), in case this website is down you can deploy your own API using the following [instructions](../10-additionalTopics/apimanagement-10-2-containerinstance.md)
-  - [Colors website](https://colors-web.azurewebsites.net), in case this website is down you can deploy your own website using the following [instructions](../10-additionalTopics/apimanagement-10-2-containerinstance.md)
+  - [Colors API](https://colors-api.azurewebsites.net/swagger/v1/swagger.json), in case this website is down you can deploy your own API using the following [instructions](../10-additional-topics/additional-topics-10-2-container-instance.md)
+  - [Colors website](https://colors-web.azurewebsites.net), in case this website is down you can deploy your own website using the following [instructions](../10-additional-topics/additional-topics-10-2-container-instance.md)
   - [Star Wars API](https://swapi.dev/)
   - [Calculator API](http://calcapi.cloudapp.net/calcapi.json)
 - For the DevOps part, you need to have access to a valid [Azure DevOps](https://dev.azure.com) organization.
