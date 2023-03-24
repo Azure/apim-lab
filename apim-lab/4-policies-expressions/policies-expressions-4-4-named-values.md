@@ -1,6 +1,6 @@
 ---
 title: Named Values
-parent: Policies Expressions
+parent: Policy Expressions
 has_children: false
 nav_order: 4
 ---

@@ -8,7 +8,7 @@ nav_order: 1
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.ApiManagement)
 
-Using either your own or [Azure's common naming convention](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming), fill in each required field and press *Review + Create*, followed by *Create* to provision the service. 
+Using the naming convention defined [previously](../0-prerequisites/prerequisite-0-2-naming.md), fill in each required field and press *Review + Create*, followed by *Create* to provision the service. 
 
 > Please bear in mind that this APIM instance is entirely intended for the purposes of the lab, and the approach is simplified to provide every lab participant a common starting point. To that end, **please do not modify any settings beyond the ones we ask** for here as it may result in having to recreate the APIM instance later, which is costly with respect to time.
 

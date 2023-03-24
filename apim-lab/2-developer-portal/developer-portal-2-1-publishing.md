@@ -16,7 +16,7 @@ The APIM Developer Portal uses role-based access control (RBAC). After creating 
 
   ![APIM Developer Portal Admin Launch](../../assets/images/apim-developer-portal-admin-launch.png)
 
-- You can now proceed with publishing the Developer Portal to allow anonymous and authenticated roles. Back in the Azure Portal, locate **_Developer Portal_** in the left-hand resource menu, then click on **Portal overview**. Press the **Publish** button and confirm with **Yes** in the popup. The portal will then be available for users to access.
+- You can now proceed with publishing the Developer Portal to allow anonymous and authenticated roles. Back in the Azure Portal, locate **Developer Portal** in the left-hand resource menu, then click on **Portal overview**. Press the **Publish** button and confirm with **Yes** in the popup. The portal will then be available for users to access.
 
   ![APIM Developer Portal Publish](../../assets/images/apim-developer-portal-publish.png)
 

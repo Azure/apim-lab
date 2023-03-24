@@ -15,9 +15,9 @@ If you'd like to contribute to this workshop, please read the following guidelin
 
 # Keep things consistent
 
-- Follow the naming convention for each components
-- Hide specific subscription name or personnal informations
-- Keep the screen updated and generic
+- Follow the naming convention for each component
+- Hide specific subscription name or personal information
+- Keep the screenshots and images updated and generic
 
 # Contributing
 

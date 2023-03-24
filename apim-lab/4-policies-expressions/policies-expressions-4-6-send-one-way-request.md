@@ -1,6 +1,6 @@
 ---
 title: Send One Way policy
-parent: Policies Expressions
+parent: Policy Expressions
 has_children: false
 nav_order: 6
 ---

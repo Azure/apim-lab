@@ -1,5 +1,5 @@
 ---
-title: APIM instanciation
+title: APIM instantiation
 parent: Prerequisites
 has_children: false
 nav_order: 3
