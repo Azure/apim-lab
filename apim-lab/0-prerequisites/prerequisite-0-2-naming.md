@@ -31,6 +31,8 @@ So we will use this convention:
 <service-prefix><environment><region><application-name><owner><instance>
 ```
 
+For instance, for a resouce group you will name it `rg-dev-we-hol-ms-01` and for a storage account you will have: `stdevweholms01`.
+
 > Be sure to use your own value to have unique names or use your own convention based on the [official resource abbreviations][az-abrevation]
 
 [az-naming-convention]: https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming
