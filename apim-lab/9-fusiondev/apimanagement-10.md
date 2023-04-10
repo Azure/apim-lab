@@ -13,7 +13,7 @@ In this exercise, you will be using [Star Wars API](https://swapi.dev/) with Azu
 
 ### Update CORS policy
 
-Check API Management -> Developer Portal -> Portal overview to see if CORS has been enabled globally. If it has been enabled, go to All APIs and add https://flow.microsoft.com as an allowed origin. Here's what the Portal overview will look like if CORS has been enabled:
+Check API Management -> Developer Portal -> Portal overview to see if CORS has been enabled globally. If it has been enabled, go to All APIs and add https://flow.microsoft.com and https://make.powerapps.com as allowed origins. Here's what the Portal overview will look like if CORS has been enabled:
 
 ![](../../assets/images/apim-cors-policy-update.png)
 
@@ -43,9 +43,17 @@ If you are unable to create a Power Connector from Azure API Management, you can
 
 <img width="800" alt="" src="https://user-images.githubusercontent.com/1610195/150047267-5b7874dc-6f30-4c76-ad2e-9e1bc3bf6334.png">
 
-Repeat this import for the `getpeoplebyid` action.
+6. Repeat this import for the `getpeoplebyid` action.
+7. In the **Policies** section select + New policy.
+8. Fill out the new policy with the following information:
 
-6. On the **Test** screen, create a new connection instance in the **Connections** section. You will then be redirected to the **Connections** area in Power Platform where your connection was created. Navigate back to the **Custom Connectors** page and edit the Star Wars API again. Return to the **Test** page and test each of the API actions.
+![](../../assets/images/apim-powerapp-cors-policy-update-1.png)
+
+![](../../assets/images/apim-powerapp-cors-policy-update-2.png)
+
+9. Next, **Update connector**.
+
+10. On the **Test** screen, create a new connection instance in the **Connections** section. You will then be redirected to the **Connections** area in Power Platform where your connection was created. Navigate back to the **Custom Connectors** page and edit the Star Wars API again. Return to the **Test** page and test each of the API actions.
 
 <img width="800" alt="" src="https://user-images.githubusercontent.com/1610195/150048076-f0c7e4ba-b3d4-4e05-a549-e5d6f19538f7.png">
 
