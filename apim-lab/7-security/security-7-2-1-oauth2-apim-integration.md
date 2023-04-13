@@ -6,7 +6,7 @@ has_children: false
 nav_order: 4
 ---
 
-## Azure APIM and Oauth2
+## Azure APIM and OAuth2
 
 Based on the Microsoft Tech Community [blog post](https://techcommunity.microsoft.com/t5/azure-paas-blog/protect-api-s-using-oauth-2-0-in-apim/ba-p/2309538) by [Sherry Sahni](https://techcommunity.microsoft.com/t5/user/viewprofilepage/user-id/799624).
 
@@ -32,7 +32,7 @@ Different grant types:
 
 ### High-level steps required to configure OAUTH
 
-To configure Oauth2 with APIM the following needs to be created:
+To configure OAuth2 with APIM the following needs to be created:
 
 - Register an application (backend-app) in Azure AD to represent the protected API resource.​
 - Register another application (client-app) in Azure AD which represent a client that wants to access the protected API resource.​
