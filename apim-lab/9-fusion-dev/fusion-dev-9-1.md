@@ -25,7 +25,7 @@ From the existing Star Wars API Api in Azure API Management, click the ellipsis 
 
 ![](https://user-images.githubusercontent.com/1610195/134442238-785e77fd-0230-433a-95ab-ac479a1427e6.png)
 
-If you are unable to create a Power Connector from Azure API Management, you can also export an `OpenAPI v2 (JSON)` file that can be imported as a Custom Connector within Power Platform. You can find a sample [here](https://github.com/Azure/apim-lab/blob/main/apim-lab/9-fusiondev/Star%20Wars%20API.swagger.json).
+If you are unable to create a Power Connector from Azure API Management, you can also export an `OpenAPI v2 (JSON)` file that can be imported as a Custom Connector within Power Platform. You can find a sample [here](https://github.com/Azure/apim-lab/blob/main/apim-lab/9-fusion-dev/Star%20Wars%20API.swagger.json).
 
 ### View your custom connector in Power Platform
 
