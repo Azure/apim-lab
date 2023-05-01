@@ -7,9 +7,9 @@ nav_order: 3
 
 ## Managed Identities
 
-In Azure, an Active Directory identity can be assigned to a managed resource such as an Azure Function, App Service or even an API Management instance. Once an identity is assigned, it has many capabilities to work with other resources that leverage Azure AD for authentication, much like a service principal.
+In Azure, an Active Directory identity can be assigned to a managed resource such as an Azure Function, App Service or even an Azure API Management instance. Once an identity is assigned, it has many capabilities to work with other resources that leverage Azure AD for authentication, much like a service principal.
 
-### Register API Management with Active Directory
+### Register Azure API Management with Active Directory
 
 ![Register APIM](../../assets/images/apim-security-register-principal.png)
 
@@ -35,7 +35,7 @@ Select the `Get` operation from the list of Secret permissions
 
 ![Create Key Vault](../../assets/images/apim-security-key-vault-2.png)
 
-Select the principal and search for the name of your API Management instance
+Select the principal and search for the name of your Azure API Management instance
 
 ![Create Key Vault](../../assets/images/apim-security-key-vault-3.png)
 
@@ -45,7 +45,7 @@ You should see something like this:
 
 ![Create Key Vault](../../assets/images/apim-security-key-vault-4.png)
 
-### API Management, Key Vault and Managed Service Identity
+### Azure API Management, Key Vault and Managed Service Identity
 
 - Go back to your APIM
 - Add a new operation to the **Star Wars** API (if you did the previous parts of the labs, choose the version of the API you want)

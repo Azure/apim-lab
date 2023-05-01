@@ -30,7 +30,7 @@ Use the following sites:
     }
     ```
 
-  - In the **Verify Signature** area use a 256-bit key that will also be used in the APIM policy. We used `123412341234123412341234` as an example, which is a rather weak secret but serves the demo purpose.
+  - In the **Verify Signature** area use a 256-bit key that will also be used in the Azure API Management policy. We used `123412341234123412341234` as an example, which is a rather weak secret but serves the demo purpose.
   - Check **secret base64 encoded**.
   - Your configuration should be similar to this now:
 

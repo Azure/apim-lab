@@ -7,16 +7,16 @@ nav_order: 4
 
 ## Self-hosted Gateway
 
-With the API Management self-hosted gateway, organisations have the ability to deploy an instance of the APIM gateway component to the environments where they host their applications and/or APIs - for example, in an on-premise data center.
+With the Azure API Management self-hosted gateway, organisations have the ability to deploy an instance of the Azure API Management gateway component to the environments where they host their applications and/or APIs - for example, in an on-premise data center.
 
-The self-hosted gateways are hosted in a Docker or Kuberenetes environment, and are managed from the API Management service they are connected to.
+The self-hosted gateways are hosted in a Docker or Kuberenetes environment, and are managed from the Azure API Management service they are connected to.
 
 This part of the lab assumes that the user has Docker Desktop installed.  Installation instructions are [here](https://docs.docker.com/docker-for-windows/install/)
 
 There are two terms to become familiar with:
 
-- Gateway Deployment ... this is a set of APIM configuration details that will be used by the Gateway Node(s)
-- Gateway Node ... this is a running instance of a APIM gateway proxy i.e. a containerised instance of the gateway
+- Gateway Deployment ... this is a set of Azure API Management configuration details that will be used by the Gateway Node(s)
+- Gateway Node ... this is a running instance of a Azure API Management gateway proxy i.e. a containerised instance of the gateway
 
 There can be multiple Gateway Deployments and multiple Gateway Nodes.  The Gateway Deployments are chargeable - the Gateway Nodes are free i.e. an organization pays for the management control plane, but the compute is free (you are running on the organizations own hardware)
 
@@ -32,7 +32,7 @@ To deploy a self-hosted gateway:
 ![](../../assets/images/apim-app-gateway-deploy-1.png)
 
 - Enter a Name and Location for the Gateway
-- Select the required APIs from those that are configured in the APIM instance
+- Select the required APIs from those that are configured in the Azure API Management instance
   - Our lab will use the Colors API - this was configured in an earlier module
 - Select the `Add` button
 

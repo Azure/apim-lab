@@ -1,6 +1,6 @@
 ---
 title: Instantiation
-parent: Azure Apim Creation
+parent: Azure API Management Creation
 has_children: false
 nav_order: 1
 ---
@@ -10,7 +10,7 @@ nav_order: 1
 
 Using the naming convention defined [previously](../0-prerequisites/prerequisite-0-2-naming.md), fill in each required field and press *Review + Create*, followed by *Create* to provision the service. 
 
-> Please bear in mind that this APIM instance is entirely intended for the purposes of the lab, and the approach is simplified to provide every lab participant a common starting point. To that end, **please do not modify any settings beyond the ones we ask** for here as it may result in having to recreate the APIM instance later, which is costly with respect to time.
+> Please bear in mind that this Azure API Management instance is entirely intended for the purposes of the lab, and the approach is simplified to provide every lab participant a common starting point. To that end, **please do not modify any settings beyond the ones we ask** for here as it may result in having to recreate the Azure API Management instance later, which is costly with respect to time.
 
 Please note that the **service name must be unique**, this is where the owner value of your naming convention will be useful.
 
@@ -18,13 +18,13 @@ The naming conventions here are:
 - Resource group: `rg-<environment>-<region>-<application-name>-<owner>-<instance>`
 - APIM: `apim-<environment>-<region>-<application-name>-<owner>-<instance>`.
 
-> Take note of APIM service name as you will need it for forming URLs in this lab.
+> Take note of the Azure API Management service name as you will need it for forming URLs in this lab.
 
 Please use the **Developer** tier, which provides [all relevant features at the lowest cost](https://azure.microsoft.com/en-us/pricing/details/api-management/#pricing). 
 
 ![APIM deploy blade](../../assets/images/apim-deploy-blade.png)
 
-Please do not modify other settings. Specifically, the *Virtual network* tab should remain as **None**. We will allude to best practices for securing access to APIM later on in this workshop.
+Please do not modify other settings. Specifically, the *Virtual network* tab should remain as **None**. We will allude to best practices for securing access to Azure API Management later on in this workshop.
 
 ![APIM deploy blade Virtual Network tab](../../assets/images/apim-deploy-blade-vnet.png)
 

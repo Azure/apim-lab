@@ -9,13 +9,13 @@ nav_order: 1
 
 The *premier* Star Wars Fan club is growing and the club officers would like to upgrade from their existing member tracking worksheet to a mobile application that would be available to their members all over the world. The members would also like to see information about their favorite Star Wars movies and characters in the application that would update as new shows and movies are released.
 
-In this exercise, you will be using [Star Wars API](https://swapi.dev/) with Azure API Management instance that you created [in part three](../3-adding-apis/adding-apis-3-1-from-scratch.md) of this lab. The Excel worksheet of member profiles will serve as the primary backing data source and will be used to generate a base application. You will export the Star Wars API from API Management as a Power Platform Custom Connector so that the Canvas App can access real-time Star Wars character information. For each of the Fan Club members, you can then search the Star Wars API character data and show information about their favorite character in the Canvas App.
+In this exercise, you will be using [Star Wars API](https://swapi.dev/) with Azure API Management instance that you created [in part three](../3-adding-apis/adding-apis-3-1-from-scratch.md) of this lab. The Excel worksheet of member profiles will serve as the primary backing data source and will be used to generate a base application. You will export the Star Wars API from Azure API Management as a Power Platform Custom Connector so that the Canvas App can access real-time Star Wars character information. For each of the Fan Club members, you can then search the Star Wars API character data and show information about their favorite character in the Canvas App.
 
 > *Note: This exercise requires access to Power Apps Premium connectors. Sign up for a [free Developer Plan](https://powerapps.microsoft.com/en-us/developerplan/).*
 
 ### Update CORS policy
 
-Check API Management -> Developer Portal -> Portal overview to see if CORS has been enabled globally. If it has been enabled, go to All APIs and add https://flow.microsoft.com and https://make.powerapps.com as allowed origins. Here's what the Portal overview will look like if CORS has been enabled:
+Check Azure API Management -> Developer Portal -> Portal overview to see if CORS has been enabled globally. If it has been enabled, go to All APIs and add https://flow.microsoft.com and https://make.powerapps.com as allowed origins. Here's what the Portal overview will look like if CORS has been enabled:
 
 ![](../../assets/images/apim-cors-policy-update.png)
 
@@ -30,7 +30,7 @@ If you are unable to create a Power Connector from Azure API Management, you can
 ### View your custom connector in Power Platform
 
 1. Go to [https://make.powerapps.com](https://make.powerapps.com/) and sign in with your organizational account.
-2. Select **Data** from the left pane, and then select **Custom Connectors** to see your generated custom connector to your API Management API.
+2. Select **Data** from the left pane, and then select **Custom Connectors** to see your generated custom connector to your Azure API Management API.
 
 <img width="1437" alt="" src="https://user-images.githubusercontent.com/1610195/134442341-a0dee5ef-a736-432b-88c9-100102980f58.png">
 

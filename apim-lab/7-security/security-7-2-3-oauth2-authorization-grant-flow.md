@@ -51,7 +51,7 @@ To protect an API with Azure AD, first register an application in Azure AD that 
 
 ### Register another application (client-app) in Azure AD to represent the Developer Portal( client application)​
 
-Every client application that calls the API needs to be registered as an application in Azure AD. In this example, the client application is the Developer Console in the API Management developer portal. In this case we will register another application in Azure AD to represent the Developer Console:
+Every client application that calls the API needs to be registered as an application in Azure AD. In this example, the client application is the Developer Console in the Azure API Management developer portal. In this case we will register another application in Azure AD to represent the Developer Console:
 
 - Select **New registration**.
 
@@ -96,7 +96,7 @@ At this point, we have created the applications in Azure AD, and granted proper 
 In this demo, the Developer Console is the client-app and has a walk through on how to enable OAuth 2.0 user authorization in the Developer Console.
 Steps mentioned below:
 
-- In Azure portal, browse to your **API Management instance**, select **OAuth 2.0** then **Add**.
+- In Azure portal, browse to your **Azure API Management instance**, select **OAuth 2.0** then **Add**.
 - Provide a **Display name** and **Description**.
 - For the Client **registration page URL**, enter a placeholder value, such as http://localhost.
 - For Authorization grant types, select **Authorization code**.
@@ -173,11 +173,11 @@ Select Send to call the API successfully with 200 ok response.
 
 ### Validate-jwt policy to pre-authorize requests with AD token:
 
-At this point we can call the APIs with the obtained bearer token. However, what if someone calls your API without a token or with an invalid token? For example, try to call the API without the Authorization header, the call will still go through. This is because the API Management does not validate the access token, It simply passes the Authorization header to the back-end API.
+At this point we can call the APIs with the obtained bearer token. However, what if someone calls your API without a token or with an invalid token? For example, try to call the API without the Authorization header, the call will still go through. This is because the Azure  does not validate the access token, It simply passes the Authorization header to the back-end API.
 
-To pre-Authorize requests, we can use `validate-jwt` Policy by validating the access tokens of each incoming request. If a request does not have a valid token, API Management blocks it.
+To pre-Authorize requests, we can use `validate-jwt` Policy by validating the access tokens of each incoming request. If a request does not have a valid token, Azure API Management blocks it.
 
-We will now configure the Validate JWT policy to pre-authorize requests in API Management, by validating the access tokens of each incoming request. If a request does not have a valid token, API Management blocks it.
+We will now configure the Validate JWT policy to pre-authorize requests in Azure API Management, by validating the access tokens of each incoming request. If a request does not have a valid token, Azure API Management blocks it.
 
 - Browses to the APIs from the left menu of APIM
 - Click on **Basic Calculator** Api and open the **inbound** policy to add the `validate-jwt policy` (it checks the audience claim in an access token and returns an error message if the token is not valid) and save it.
@@ -216,7 +216,7 @@ In this section, we will be focusing on understanding how `validate-jwt` policy 
 
 - The validate-jwt policy supports the validation of JWT tokens from the security viewpoint, It validates a JWT (JSON Web Token) passed via the HTTP Authorization header
 
-- If the validation fails, a 401 code is returned. The policy requires an `openid-config` endpoint to be specified via an `openid-config` element. API Management expects to browse this endpoint when evaluating the policy as it has information which is used internally to validate the token.
+- If the validation fails, a 401 code is returned. The policy requires an `openid-config` endpoint to be specified via an `openid-config` element. Azure API Management expects to browse this endpoint when evaluating the policy as it has information which is used internally to validate the token.
 Please Note : OpenID config URL differs for the v1 and v2 endpoints.
 
 - The required-claims section contains a list of claims expected to be present on the token for it to be considered valid. The specified claim value in the policy must be present in the token for validation to succeed.

@@ -8,7 +8,7 @@ nav_order: 1
 
 ## Version
 
-Proper version management not only helps organize your API, it also aids in API Management. In this exercise we are going to version an existing API.
+Proper version management not only helps organize your API, it also aids in Azure API Management. In this exercise we are going to version an existing API.
 
 > Good practice: Integrate version management from the beginning with a **v1** or similar identifier. 
 
@@ -20,7 +20,7 @@ Proper version management not only helps organize your API, it also aids in API 
   - Version identifier: **v2**  
   - Versioning scheme: **Path**
   - Full API version name: **star-wars-v2**
-    > This name must be unique across the APIM instance. Therefore, a combination of the API name and its version identifier is both semantic and suitable.
+    > This name must be unique across the Azure API Management instance. Therefore, a combination of the API name and its version identifier is both semantic and suitable.
   - Products: **Starter** and **Unlimited**
 
     ![APIM Versions Add](../../assets/images/apim-versions-add.png)
@@ -49,4 +49,4 @@ Proper version management not only helps organize your API, it also aids in API 
 
 ### What Versions Enable
 
-Now that you have created a new version of the API, you have the ability to introduce breaking changes. Often times a breaking change in a backend API necessitates an API version change in APIM. Leaving a legacy implementation behind to focus on more contemporary API implementations also is a common versioning use case. Whatever the reason may be, APIM provides means to abstract breaking changes in a responsible and safe manner.  
+Now that you have created a new version of the API, you have the ability to introduce breaking changes. Often times a breaking change in a backend API necessitates an API version change in APIM. Leaving a legacy implementation behind to focus on more contemporary API implementations also is a common versioning use case. Whatever the reason may be, Azure API Management provides means to abstract breaking changes in a responsible and safe manner.  

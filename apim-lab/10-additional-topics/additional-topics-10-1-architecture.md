@@ -8,11 +8,11 @@ nav_order: 1
 
 ## Architecture Design Session
 
-In this section we provide you with a template architecture diagram for your APIM baseline architecture. We recommend you take the time and answer the following questions:
+In this section we provide you with a template architecture diagram for your Azure API Management baseline architecture. We recommend you take the time and answer the following questions:
 
 - What type of APIs are you onboarding to Azure APIM?   
 - What deployment model works for you (no vnet, internal, external)?  
-- What tier of APIM is the right for you?  
+- What tier of Azure API Management is the right for you?  
 - What security will you add to your APIs? 
 - What products are we going to define? 
 - What teams and processes need to be in place to manage the Azure APIM?

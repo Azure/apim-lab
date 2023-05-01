@@ -8,9 +8,9 @@ nav_order: 1
 
 ## Publishing the Developer Portal
 
-The APIM Developer Portal uses role-based access control (RBAC). After creating the APIM instance, you need to first **access the Developer Portal using the admin role**, which will trigger its activation.
+The Azure API Management Developer Portal uses role-based access control (RBAC). After creating the Azure API Management instance, you need to first **access the Developer Portal using the admin role**, which will trigger its activation.
 
-- Click the **Developer portal** link in the **Overview** blade of the APIM instance:
+- Click the **Developer portal** link in the **Overview** blade of the Azure API Management instance:
 
   ![APIM Developer Portal](../../assets/images/apim-developer-portal.png)
 

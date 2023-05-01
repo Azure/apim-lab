@@ -1,6 +1,11 @@
 // Custom scheme implemented as per these directions: https://github.com/pmarsceill/just-the-docs/blob/master/docs/customization.md#custom-schemes
 $content-width: 1024px;
 
+// The site header needs to be taller due to the lengthy title.
+.site-header {
+  min-height: 100px;
+}
+
 // Make the blockquote visually more noticeable than the default Just the Docs styling provides
 blockquote {
   background: $grey-lt-000;

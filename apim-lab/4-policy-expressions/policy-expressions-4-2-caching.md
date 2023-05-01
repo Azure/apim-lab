@@ -8,7 +8,7 @@ nav_order: 2
 
 ### Caching policy
 
-API Management can be configured for response caching which can significantly reduce API latency, bandwidth consumption, and web service load for data that does not change frequently.
+Azure API Management can be configured for response caching which can significantly reduce API latency, bandwidth consumption, and web service load for data that does not change frequently.
 
 Using the Azure Management portal, navigate to the **Colors** API and set a caching policy for the `Get random color` call:
   - Press **Add policy**.
