@@ -54,7 +54,7 @@ The following policy and payload applies for both examples in this section (webh
 
 ### Send a message to Webhook.site
 
-[Webhook.site](https://webhook.site) is a simple recipient to test webhook messages and requires no setup overhead, making this an ideal component in this lab, especially as we are not sending any sensitive information in our payload from our test APIM instance.
+[Webhook.site](https://webhook.site) is a simple recipient to test webhook messages and requires no setup overhead, making this an ideal component in this lab, especially as we are not sending any sensitive information in our payload from our test Azure API Management instance.
 
 - Go to [Webhook.site](https://webhook.site) and copy the value for **Your unique URL**.
 
@@ -62,7 +62,7 @@ The following policy and payload applies for both examples in this section (webh
 
 - Use this URL as the value in the `<set-url>` property in the `send-one-way-request` policy previously defined.
 
-- Invoke the API from the APIM **Test** tab by clicking the **Trace** button and observe the `200` success response.
+- Invoke the API from the Azure API Management **Test** tab by clicking the **Trace** button and observe the `200` success response.
 
 - Check the **Trace** for the **Outbound** one-way message.
 

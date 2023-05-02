@@ -1,15 +1,15 @@
 ---
 title: Verification
-parent: Azure Apim Creation
+parent: Azure API Management Creation
 has_children: false
 nav_order: 2
 ---
 
-## Verifying the API Management instance
+## Verifying the Azure API Management instance
 
-Once the APIM instance has been created, please verify that it functions correctly by following these steps:
+Once the Azure API Management instance has been created, please verify that it functions correctly by following these steps:
 
-1) Navigate to the newly-created APIM instance in the Azure Portal.  
+1) Navigate to the newly-created Azure API Management instance in the Azure Portal.  
 2) Select the **APIs** blade, then select the *Echo API*.   
 3) Press the **Test** tab, then select the **GET Retrieve resource** operation.  
 4) Press **Send** to issue a simple request.  
@@ -20,7 +20,7 @@ Once the APIM instance has been created, please verify that it functions correct
 
   ![APIM Echo API Test Success](../../assets/images/apim-echo-api-test-2.png)
 
-At this time you have successfully verified that APIM is set up!
+At this time you have successfully verified that Azure API Management is set up!
 
 ### Verification Failure (and Path to Success)
 
@@ -28,11 +28,11 @@ You may have noticed the *Request URL* and may be tempted to put it in your brow
 
 ![APIM Echo API Test 401](../../assets/images/apim-echo-api-test-3.png)
 
-The reason for this the unauthorized access status code is that the *Echo API* requires a subscription key to be set. Whereas tests originating in APIM account for this automatically, external callers cannot (and, naturally, should not).
+The reason for this the unauthorized access status code is that the *Echo API* requires a subscription key to be set. Whereas tests originating in Azure API Management account for this automatically, external callers cannot (and, naturally, should not).
 
 Back in APIM, switch to the **Settings** tab and uncheck **Subscription required** and press **Save** at the bottom of the page.
 
-> Subscriptions are important and useful, but in this case, we just want to quickly verify the APIM instance is working as intended.
+> Subscriptions are important and useful, but in this case, we just want to quickly verify the Azure API Management instance is working as intended.
 
 ![APIM Echo API Disable Required Subscription](../../assets/images/apim-echo-api-test-4.png)
 
@@ -41,6 +41,6 @@ Accessing the link in your browser should now show you no error message. In fact
 ![APIM Echo API Browser Success](../../assets/images/apim-echo-api-test-5.png)
 
 Alternatively, you can issue a verbose (`-v`) CURL command against the **Echo API** and observe the `200` Success:
-`curl -v https://<your apim instance>.azure-api.net/echo/resource?param1=sample`
+`curl -v https://<your azure api management instance>.azure-api.net/echo/resource?param1=sample`
 
 ![APIM Echo API Curl Success](../../assets/images/apim-echo-api-test-6.png)

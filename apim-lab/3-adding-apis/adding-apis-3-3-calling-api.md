@@ -37,7 +37,7 @@ Let's add another API, the [Colors API](https://colors-api.azurewebsites.net/swa
 
 ### Rate limit
 
-API Management uses rate limiting to protect APIs from being overwhelmed and helps prevent exposure to DDoS attacks. As APIM sits in between your API and their callers, it effectively governs access to your APIs.  
+Azure API Management uses rate limiting to protect APIs from being overwhelmed and helps prevent exposure to DDoS attacks. As Azure API Management sits in between your API and their callers, it effectively governs access to your APIs.  
 
 We are going to use the [Colors](https://colors-web.azurewebsites.net) website to demonstrate how rate limiting is applied. The website displays 500 lights. Each light will randomly make a call to the Get random color API and then apply the returned color to the lights.
 
@@ -55,7 +55,7 @@ First, we need to enable CORS for the domain name of the frontend. To achieve th
 
   ![APIM Policy CORS All APIs](../../assets/images/apim-policy-cors-all-apis-2.png)
 
-- After enabling CORS in APIM let's go back to our frontend <https://colors-web.azurewebsites.net> and follow these steps:
+- After enabling CORS in Azure API Management let's go back to our frontend <https://colors-web.azurewebsites.net> and follow these steps:
 
 - Click on the hamburger menu next to *Colors* in the top left corner.
 - Click on **Config**.
@@ -68,7 +68,7 @@ First, we need to enable CORS for the domain name of the frontend. To achieve th
 - The subscription keys can be fetched from the Developer Portal. Open the main Developer Portal page, then click on **Profile** in the top menu. 
 
 - Prepare the url in a text editor:
-Concat the base url and the subscription key for the **Starter** and **Unlimited**, and update modify the url with your APIM instance:
+Concat the base url and the subscription key for the **Starter** and **Unlimited**, and update modify the url with your Azure API Management instance:
 
 ```
 https://YOUR_APIM.azure-api.net/colors/random?key=STARTER_PRIMARY_KEY_HERE

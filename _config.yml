@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: "Azure Apim Hands on Lab"
+title: "Azure API Management Hands on Lab"
 #email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   This hands-on-lab will guide you through the different concepts around Azure API Management, from the creation to the DevOps, including good practices in terms of versioning, security and so on. It is designed to bring customers and partners to a 200-level understanding of Azure Api Management. 
@@ -99,7 +99,7 @@ ga_tracking: UA-177508304-1
 ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
 # Aux links for the upper right navigation
 aux_links:
-  "Apim Lab on GitHub":
+  "Azure API Management Lab on GitHub":
     - "//github.com/Azure/apim-lab"
 
 # Makes Aux links open in a new tab. Default is false

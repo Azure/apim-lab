@@ -10,7 +10,7 @@ nav_order: 5
 
 ### Mock responses
 
-Mocking in APIM is a useful mechanism for API consumers to interact with APIs without waiting for the backend to be ready. 
+Mocking in Azure API Management is a useful mechanism for API consumers to interact with APIs without waiting for the backend to be ready. 
 
 - Open the **Star Wars** API and select **+ Add Operation**
 - Create a new GET operation:

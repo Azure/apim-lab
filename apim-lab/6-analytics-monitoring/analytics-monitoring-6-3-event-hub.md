@@ -10,7 +10,7 @@ nav_order: 3
 
 [Azure Event Hubs](https://azure.microsoft.com/en-us/services/event-hubs/#overview) is a fully managed, real-time data ingestion service. Millions of events per second can be aggregated to build dynamic data pipelines. 
 
-We can use Event Hubs with API Management to obtain analytics of our API usage.
+We can use Event Hubs with Azure API Management to obtain analytics of our API usage.
 
 ## Create an Event Hubs namespace
 
@@ -78,11 +78,11 @@ We will create an Event hub to receive logs from our APIM. To create an event hu
 
 ---
 
-## Create an API Management logger
+## Create an Azure API Management logger
 
-Now that you have an Event Hub, the next step is to configure a [Logger](https://docs.microsoft.com/en-us/rest/api/apimanagement/current-ga/logger) in your API Management service, so that it can log events to the Event Hub.
+Now that you have an Event Hub, the next step is to configure a [Logger](https://docs.microsoft.com/en-us/rest/api/apimanagement/current-ga/logger) in your Azure API Management service, so that it can log events to the Event Hub.
 
-API Management loggers are configured using the [API Management REST API](https://docs.microsoft.com/en-us/rest/api/apimanagement/ApiManagementREST/API-Management-REST). For this example we are going to use the "REST API Try it" Functionality to create the logger:
+Azure API Management loggers are configured using the [API Management REST API](https://docs.microsoft.com/en-us/rest/api/apimanagement/ApiManagementREST/API-Management-REST). For this example we are going to use the "REST API Try it" Functionality to create the logger:
 
 1. Open the following link [REST API Try It](https://docs.microsoft.com/en-us/rest/api/apimanagement/current-ga/logger/create-or-update)
 
@@ -92,7 +92,7 @@ API Management loggers are configured using the [API Management REST API](https:
 1. Fill in the following **Parameters**:
     1. loggerId: **event-hub-logger** (you will use it in the next steps)
     1. resourceGroupName: your resource group 
-    1. serviceName: your Azure APIM instance
+    1. serviceName: your Azure API Management instance
     1. subscriptionId: your Azure subscription
 
         ![RREST API Try It](../../assets/images/rest-api-try-it.png)
@@ -138,9 +138,9 @@ API Management loggers are configured using the [API Management REST API](https:
 
 ## Configure log-to-eventhub policies
 
-Once your logger is configured in API Management, you can configure your log-to-eventhub policy to log the desired events. The log-to-eventhub policy can be used in either the **inbound** policy section or the **outbound** policy section.
+Once your logger is configured in Azure API Management, you can configure your log-to-eventhub policy to log the desired events. The log-to-eventhub policy can be used in either the **inbound** policy section or the **outbound** policy section.
 
-1. Browse to your APIM instance.
+1. Browse to your Azure API Management instance.
 1. Select the **APIs** blade.
 1. Select the API to which you want to add the policy.  
    In this example, we're adding a policy to the **Echo API**.
@@ -181,9 +181,9 @@ Once your logger is configured in API Management, you can configure your log-to-
 
 # Verify Events are logged in Event Hub
 
-1. Issue a handful of test Echo API calls from within APIM (e.g. **Get Retrieve Resource** operation).
+1. Issue a handful of test Echo API calls from within Azure API Management (e.g. **Get Retrieve Resource** operation).
 1. In the Azure portal open the Event Hub you created earlier. You should see recent events. If not, give it a minute, then refresh.
 
     ![Event Hub APIM events](../../assets/images/event-hub-apim-events.png)
 
-> What to do with the data that is now in Event Hub is beyond the scope of this lab as this lab primarily focused on APIM to Event Hub integration.
+> What to do with the data that is now in Event Hub is beyond the scope of this lab as this lab primarily focused on Azure API Management to Event Hub integration.

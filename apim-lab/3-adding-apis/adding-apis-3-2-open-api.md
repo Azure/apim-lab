@@ -12,7 +12,7 @@ Instead of importing operations one-by-one, you can also import a full API. The 
 
 As a demo we will use an API that offers a simple calculator service : [Calc API](http://calcapi.cloudapp.net)
 
-> This is an older API and only available via `HTTP`. APIM provides means for fronting access to it via `HTTPS`, which further demonstrates how APIM can help with a secure, uniform facade while the backend implementation can be reworked and upgraded.
+> This is an older API and only available via `HTTP`. Azure API Management provides means for fronting access to it via `HTTPS`, which further demonstrates how Azure API Management can help with a secure, uniform facade while the backend implementation can be reworked and upgraded.
 
 ![APIM Calculator API](../../assets/images/apim-calc-api.png)
 
@@ -24,7 +24,7 @@ As a demo we will use an API that offers a simple calculator service : [Calc API
 
 > **Note the intentional use of `http` instead of `https` as this backend does not presently support `https`.**  
 
-6) While the backend service only runs on `HTTP`, we need to **set URL scheme to `Both`** to allow for APIM ingress to occur on HTTPS for callers such as the Developer Portal.  
+6) While the backend service only runs on `HTTP`, we need to **set URL scheme to `Both`** to allow for Azure API Management ingress to occur on HTTPS for callers such as the Developer Portal.  
 7) Set the **API URL suffix** to `calc`.  
 8) Assign **Starter** and **Unlimited** products.  
 9) Press **Create**.  
@@ -43,7 +43,7 @@ As a demo we will use an API that offers a simple calculator service : [Calc API
 
 ![APIM Developer Portal Calculator API Try It](../../assets/images/apim-developer-portal-calc-api-try-it-1.png)
 
-- Back in the APIM Portal, we can inspect / edit the Open API definition by selecting the *Edit* icon from the Frontend block:
+- Back in the Azure API Management Portal, we can inspect / edit the Open API definition by selecting the *Edit* icon from the Frontend block:
 
 ![APIM Calculator API Swagger](../../assets/images/apim-calc-api-swagger-1.png)
 
@@ -55,6 +55,6 @@ As a demo we will use an API that offers a simple calculator service : [Calc API
 
 ### Unable to complete the request
 
-This is likely a mixed-content CORS error in which you are attempting a call to an APIM endpoint that is only set up for *HTTP*. It fails as the Developer Portal runs on *HTTPS*. Please check the setup steps above for the _URL scheme_.
+This is likely a mixed-content CORS error in which you are attempting a call to an Azure API Management endpoint that is only set up for *HTTP*. It fails as the Developer Portal runs on *HTTPS*. Please check the setup steps above for the _URL scheme_.
 
 ![APIM Calculator CORS Error](../../assets/images/apim-calc-cors-error.png)

@@ -7,7 +7,7 @@ nav_order: 3
 
 ## API Proxy to Serverless
 
-Azure Serverless (Functions and Logic Apps) can be configured to benefit from the advantages of API Management.
+Azure Serverless (Functions and Logic Apps) can be configured to benefit from the advantages of Azure API Management.
 
 ### Azure Functions
 
@@ -27,7 +27,7 @@ Example:
     return  (ActionResult)new OkObjectResult(strColors[rInt]);
 ```
 
-Lets add the function to API Management.   In the API blade select [+Add API] and the [Function App] tile
+Lets add the function to Azure API Management. In the API blade select [+Add API] and the [Function App] tile
 
 ![](../../assets/images/apim-azure-function-add-api.png)
 

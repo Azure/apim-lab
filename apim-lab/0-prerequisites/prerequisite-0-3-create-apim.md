@@ -1,10 +1,10 @@
 ---
-title: APIM creation
+title: Azure API Management creation
 parent: Prerequisites
 has_children: false
 nav_order: 3
 ---
 
-## APIM creation
+## Azure API Management creation
 
-> **An API Management instance can take some time to provision.** Please follow the steps outlined in the APIM Creation prior to the workshop.
+> **An Azure API Management instance can take some time to provision.** Please follow the steps outlined in the Azure API Managementi creation prior to the workshop.
