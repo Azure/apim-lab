@@ -3,7 +3,7 @@ $content-width: 1024px;
 
 // The site header needs to be taller due to the lengthy title.
 .site-header {
-  min-height: 100px;
+  min-height: 100px !important;
 }
 
 // Make the blockquote visually more noticeable than the default Just the Docs styling provides
