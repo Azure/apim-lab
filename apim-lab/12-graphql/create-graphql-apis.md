@@ -8,7 +8,7 @@ nav_order: 1
 
 ## Adding a Synthetic GraphQL API
 
-For this lab you willuse the existing [*Star Wars* API](https://swapi.dev) as the HTTP backend for your GraphQL APIs. 
+For this lab you will use the existing [*Star Wars* API](https://swapi.dev) as the HTTP backend for your GraphQL APIs. 
 
 Copy the following contents to a new file (People.gql) on any folder on your machine. 
 ```
@@ -29,7 +29,7 @@ type AllPeople {
     count:      Int!
     next:       String
     previous:   String
-    results: [Person]
+    results:    [Person]
 }
 
 type Query {
