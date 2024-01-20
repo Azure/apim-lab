@@ -20,9 +20,9 @@ type Person {
     skin_color: String 
     eye_color:  String 
     birth_year: String 
-    gender:		String
-    homeworld:	String
-    url:		String 
+    gender:     String
+    homeworld:  String
+    url:        String 
 }
 
 type AllPeople {
@@ -39,7 +39,7 @@ type Query {
 ```
 
 
-- On the left menu, open the *APIs* blade. You will see all APIs, the possibility to add new ones, but also to customize existing ones.
+- On the left menu, open the *APIs* blade. You will see all APIs, In the "Define new API" screen select "GraphQL".
 
   ![APIM APIs](../../assets/images/apim-apis.png)
 
