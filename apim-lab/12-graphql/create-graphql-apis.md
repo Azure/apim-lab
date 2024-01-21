@@ -56,22 +56,33 @@ type Query {
 ### Add Resolvers 
 
 1) In the Schema tab, click on **+ sign** on the left side of the line `getAllPeople: AllPeople` in `type Query {` section.
+   
    ![Add HTTP Resolver](../../assets/images/add_http_resolver_1.png)
+   
 2) This opens the create resolver page. Scroll down to the resolver policy section.
 3) Edit the `<set-method>` field in the resolver policy to `<set-method>GET</set-method>`
 4) Edit the `<set-url>` field in the resolver policy to `<set-url>https://swapi.dev/api/people</set-url>`
+   
    ![Create HTTP Resolver](../../assets/images/create_http_resolver.png)
+   
 5) On the right side of the screen, click on **Run Test** button to validate the backend HTTP data source URL.
+   
    ![Run HTTP Resolver test](../../assets/images/http_resolver_run_test.png)
+   
 6) Click the **Create** button on the bottom of the page to create HTTP resolver.
 7) Let us add a second resolver, for finding a person by ID. In the Schema tab, click on the **+ sign** on the left side of the line `person(id: String!): Person` in the `type Query {` section.
    
   ![Add HTTP Resolver](../../assets/images/add_http_resolver_2.png)
-9) This opens the create resolver page. Scroll down to the resolver policy section.
-10) Edit the <set-method> field in the resolver policy to `<set-method>GET</set-method>`
-11) Edit the <set-url> field in the resolver policy to `<set-url>@($"https://swapi.dev/api/people/{context.GraphQL.Arguments["id"]}")</set-url>`
+  
+8) This opens the create resolver page. Scroll down to the resolver policy section.
+9) Edit the <set-method> field in the resolver policy to `<set-method>GET</set-method>`
+10) Edit the <set-url> field in the resolver policy to `<set-url>@($"https://swapi.dev/api/people/{context.GraphQL.Arguments["id"]}")</set-url>`
+    
     ![HTTP Resolver Policy](../../assets/images/create_http_resolver_2.png)
-12) On **Run Test** section, in the **Arguments** section, change {"id": "null"} to {"id": "10"} and click **Run Test**.
+    
+11) On **Run Test** section, in the **Arguments** section, change {"id": "null"} to {"id": "10"} and click **Run Test**.
+    
     ![Run HTTP Resolver test](../../assets/images/http_resolver_run_test_2.png)
-13) Click the **Create** button on the bottom of the page to create the second HTTP resolver. 
+    
+12) Click the **Create** button on the bottom of the page to create the second HTTP resolver. 
    
