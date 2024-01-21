@@ -93,7 +93,7 @@ type Query {
 
    ![Run GraphQL Test](../../assets/images/graphql_test_1.png)
 
-3) Select the result field, and select a few more fields in the result field. Click the "Send" button on the bottom of page to test the GraphQL API.
+3) Select the results field, and select a few more fields in the results field. Click the "Send" button on the bottom of page to test the GraphQL API.
 
       ![Run GraphQL Test](../../assets/images/graphql_test_2.png)
 
