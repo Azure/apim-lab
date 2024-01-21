@@ -45,12 +45,11 @@ type Query {
 
 ### Add GraphQL API
 
-1) Click on **Add API**.  
-2) Enter **Display name** `People`, **Name** `people`.  
-3) For the GraphQL type, select **Synthetic GraphQL**.  
-4) For the schema file, browse and upload the GraphQL schema (`People.gql`).  
-5) Set the **API URL suffix** to `swgql`. This allows us to compartmentalize the Azure API Management URLs for distinct APIs.  
-6) Press **Create**.
+1) Enter **Display name** `People`, **Name** `people`.  
+2) For the GraphQL type, select **Synthetic GraphQL**.  
+3) For the schema file, browse and upload the GraphQL schema (`People.gql`).  
+4) Set the **API URL suffix** to `swgql`. This allows us to compartmentalize the Azure API Management URLs for distinct APIs.  
+5) Press **Create**.
 
   ![APIM APIs](../../assets/images/create_graphql_from_schema.png)
 
