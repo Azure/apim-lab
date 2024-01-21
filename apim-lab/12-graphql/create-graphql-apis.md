@@ -69,4 +69,5 @@ type Query {
 8) This opens the create resolver page. Scroll down to the resolver policy section.
 9) Edit the <set-method> field in the resolver policy to `<set-method>GET</set-method>`
 10) Edit the <set-url> field in the resolver policy to `<set-url>@($"https://swapi.dev/api/people/{context.GraphQL.Arguments["id"]}")</set-url>`
+11) On **Run Test** section, in the **Arguments** section, change {"id": "null"} to {"id": "10"} and click **Run Test**. 
    
