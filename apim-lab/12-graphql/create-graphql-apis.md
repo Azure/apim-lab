@@ -1,6 +1,6 @@
 ---
 title: Create GraphQL APIs
-parent: Adding APIs
+parent: GraphQL APIs
 has_children: false
 nav_order: 1
 ---
