@@ -39,20 +39,17 @@ type Query {
 ```
 
 
-- On the left menu, open the *APIs* blade. You will see all APIs, In the "Define new API" screen select "GraphQL".
+- On the left menu, open the *APIs* blade. You will see all APIs, In the "Add API" screen select "GraphQL".
 
-  ![APIM APIs](../../assets/images/apim-apis.png)
+  ![APIM APIs](../../assets/images/add_graphql_api.png)
 
-### Add API from Scratch
-
-Instead of developing an API, for this lab you will use the existing [*Star Wars* API](https://swapi.dev):
+### Add GraphQL API
 
 1) Click on **Add API**.  
-2) Click on **HTTP - Manually define an HTTP API**.  
-3) Select the **Full** option in the **Create an HTTP API** dialog.  
-4) Enter **Display name** `Star Wars`, **Name** `star-wars`, and, optionally, **Description**.  
-5) Assign `https://swapi.dev/api` to the **Web service URL**.  
-6) Keep the **URL scheme** at `HTTPS` as we strive to enforce HTTPS only.  
-7) Set the **API URL suffix** to `sw`. This allows us to compartmentalize the Azure API Management URLs for distinct APIs.  
-8) Assign **Starter** and **Unlimited** products.  
-9) Press **Create**.  
+2) Enter **Display name** `People`, **Name** `people`.  
+3) For the GraphQL type, select **Synthetic GraphQL**.  
+4) For the schema file, browse and upload the GraphQL schema (People.gql).  
+5) Set the **API URL suffix** to `swgql`. This allows us to compartmentalize the Azure API Management URLs for distinct APIs.  
+6) Press **Create**.
+
+  ![APIM APIs](../../assets/images/create_graphql_from_schema.png)
