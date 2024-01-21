@@ -98,4 +98,7 @@ type Query {
       ![Run GraphQL Test](../../assets/images/graphql_test_2.png)
 
 4) In the Test tab, click Query -> getPerson
-5) 
+5) Select the `id` field. Change `id: "string"`  to `id: "10"`
+6) Select a few more fields. Click "Send" to test the GraphQL API.
+
+      ![Run GraphQL Test](../../assets/images/graphql_test_3.png)
