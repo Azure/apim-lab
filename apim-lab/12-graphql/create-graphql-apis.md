@@ -65,7 +65,8 @@ type Query {
    ![Run HTTP Resolver test](../../assets/images/http_resolver_run_test.png)
 6) Click the **Create** button on the bottom of the page to create HTTP resolver.
 7) Let us add a second resolver, for finding a person by ID. In the Schema tab, click on the **+ sign** on the left side of the line `person(id: String!): Person` in the `type Query {` section.
-     ![Add HTTP Resolver](../../assets/images/add_http_resolver_2.png)
+   
+  ![Add HTTP Resolver](../../assets/images/add_http_resolver_2.png)
 9) This opens the create resolver page. Scroll down to the resolver policy section.
 10) Edit the <set-method> field in the resolver policy to `<set-method>GET</set-method>`
 11) Edit the <set-url> field in the resolver policy to `<set-url>@($"https://swapi.dev/api/people/{context.GraphQL.Arguments["id"]}")</set-url>`
