@@ -95,10 +95,38 @@ type Query {
 
 3) Select the results field, and select a few more fields in the results field. Click the "Send" button on the bottom of page to test the GraphQL API.
 
-      ![Run GraphQL Test](../../assets/images/graphql_test_2.png)
+   ![Run GraphQL Test](../../assets/images/graphql_test_2.png)
 
 4) In the Test tab, click Query -> getPerson
 5) Select the `id` field. Change `id: "string"`  to `id: "10"`
 6) Select a few more fields. Click "Send" to test the GraphQL API.
 
-      ![Run GraphQL Test](../../assets/images/graphql_test_3.png)
+   ![Run GraphQL Test](../../assets/images/graphql_test_3.png)
+
+## Test GraphQL APIs using Developer Portal
+
+1) On the left menu, select `Products` and create a new product.
+2) Enter the display name as `GraphQL APIs`
+3) Provide a description for the product.
+4) Select the check mark for `Published'.
+5) In the APIs, add the People API.
+
+   ![Add API to product](../../assets/images/graphql_add_api_to_product.png)
+
+6) Click on "Create" to create the product.
+7) Open the product, and in the Product menu, select "Access Control".
+8) Add "Developers" and "Guests" groups to the access control list.
+
+   ![Access Control](../../assets/images/graphql_product_access_control.png)
+
+9) Make sure that CORS is enabled in Developer Portal (API Management -> Portal Overview -> Enable CORS).
+ 
+   ![Access Control](../../assets/images/developer_portal_enable_cors.png)
+
+10) Open the Developer Portal in a private window.
+11) Click on APIs
+12) Select the People API
+13) Click on "Try it" next to the getAllPeople
+14) Select a few fields, and test the API.
+
+    ![Test through developer portal](../../assets/images/developer_portal_test_graphql.png)
