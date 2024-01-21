@@ -55,7 +55,7 @@ type Query {
 
 ### Add Resolvers 
 
-1) In the Schema tab, click on **+ sign** on the left side of the line `people: [AllPeople]` in `type Query {` section.
+1) In the Schema tab, click on **+ sign** on the left side of the line `getAllPeople: AllPeople` in `type Query {` section.
    ![Add HTTP Resolver](../../assets/images/add_http_resolver_1.png)
 2) This opens the create resolver page. Scroll down to the resolver policy section.
 3) Edit the `<set-method>` field in the resolver policy to `<set-method>GET</set-method>`
