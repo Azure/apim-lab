@@ -85,4 +85,10 @@ type Query {
     ![Run HTTP Resolver test](../../assets/images/http_resolver_run_test_2.png)
     
 12) Click the **Create** button on the bottom of the page to create the second HTTP resolver. 
-   
+
+## Test GraphQL API
+
+1) In the Test tab, click on Query -> getAllPeople.
+2) Select a few fields (such as count, next). Click the "Send" button on bottom of page to test the GraphQL API.
+
+   ![Run GraphQL Test](../../assets/images/graphql_test_1.png)
