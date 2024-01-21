@@ -57,4 +57,7 @@ type Query {
 ### Add Resolvers 
 
 1) In the Schema tab, click on **+ sign** on the left side of the line **people: [AllPeople]** in **type Query {** section.
+   ![Add HTTP Resolver](../../assets/images/add_http_resolver_1.png)
 2) This opens the create resolver page. Scroll down to the resolver policy section.
+   ![Create HTTP Resolver](../../assets/images/create_http_resolver.png)
+   
