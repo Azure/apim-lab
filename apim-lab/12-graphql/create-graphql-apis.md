@@ -53,3 +53,8 @@ type Query {
 6) Press **Create**.
 
   ![APIM APIs](../../assets/images/create_graphql_from_schema.png)
+
+### Add Resolvers 
+
+1) In the Schema tab, click on **+ sign** on the left side of the line **people: [AllPeople]** in **type Query {** section.
+2) This opens the create resolver page. Scroll down to the resolver policy section.
