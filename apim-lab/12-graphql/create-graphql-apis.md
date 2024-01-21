@@ -69,5 +69,8 @@ type Query {
 8) This opens the create resolver page. Scroll down to the resolver policy section.
 9) Edit the <set-method> field in the resolver policy to `<set-method>GET</set-method>`
 10) Edit the <set-url> field in the resolver policy to `<set-url>@($"https://swapi.dev/api/people/{context.GraphQL.Arguments["id"]}")</set-url>`
-11) On **Run Test** section, in the **Arguments** section, change {"id": "null"} to {"id": "10"} and click **Run Test**. 
+    ![HTTP Resolver Policy](../../assets/images/create_http_resolver_2.png)
+12) On **Run Test** section, in the **Arguments** section, change {"id": "null"} to {"id": "10"} and click **Run Test**.
+    ![Run HTTP Resolver test](../../assets/images/http_resolver_run_test_2.png)
+13) Click the **Create** button on the bottom of the page to create the second HTTP resolver. 
    
