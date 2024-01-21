@@ -48,7 +48,7 @@ type Query {
 1) Click on **Add API**.  
 2) Enter **Display name** `People`, **Name** `people`.  
 3) For the GraphQL type, select **Synthetic GraphQL**.  
-4) For the schema file, browse and upload the GraphQL schema (People.gql).  
+4) For the schema file, browse and upload the GraphQL schema (`People.gql`).  
 5) Set the **API URL suffix** to `swgql`. This allows us to compartmentalize the Azure API Management URLs for distinct APIs.  
 6) Press **Create**.
 
@@ -62,4 +62,6 @@ type Query {
 3) Edit the <set-method>field in the resolver policy to <set-method>**GET**</set-method>
 4) Edit the <set-url>field in the resolver policy to <set-url>**https://swapi.dev/api/people**</set-url>
    ![Create HTTP Resolver](../../assets/images/create_http_resolver.png)
+5) On the right side of the screen, click on **Run Test** button to validate the backend HTTP data source URL.
+   ![Run HTTP Resolver test](../../assets/images/http_resolver_run_test.png)
    
