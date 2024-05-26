@@ -22,7 +22,7 @@ Slides
 
 Diagrams
 
-- [Azure API Management Architecture Design Session](apim-lab/10-additional-topics/additional-topics-10-1-architecture.md)
+- [Azure API Management Architecture Diagrams](https://github.com/Azure/apim-lab/tree/main/assets/diagrams)
 
 
 
