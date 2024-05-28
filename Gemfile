@@ -9,7 +9,7 @@ source "https://rubygems.org"
 
 # Enforcing supported github pages versions (Jekyll 3.9.2)
 # https://pages.github.com/versions/
-gem "jekyll", "	3.9.2"
+gem "jekyll", "	3.9.5"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "just-the-docs"
