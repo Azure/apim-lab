@@ -52,4 +52,4 @@ nav_order: 4
   }
   ```
 
-  **VIDEO**: There is a video example that walks through Named Values that you can find [HERE](https://youtu.be/qjT4Usqqj90?si=e8sTIx1iWftw__WY)
+**VIDEO**: There is a video example that walks through Named Values that you can find [HERE](https://youtu.be/qjT4Usqqj90?si=e8sTIx1iWftw__WY)
