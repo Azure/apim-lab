@@ -62,3 +62,5 @@ Instead of developing an API, for this lab you will use the existing [*Star Wars
 - Examine the successful `200` response with `C-3PO`'s details in the response body payload.
   
   ![APIM Developer Portal Star Wars Try It](../../assets/images/apim-developer-portal-star-wars-try-it-3.png)
+
+**VIDEO**: There is a video example that walks through creating an API from scratch that you can find [HERE](https://youtu.be/G5-SMKFwpK4?si=CvNeZYjCbgHrzwVd)

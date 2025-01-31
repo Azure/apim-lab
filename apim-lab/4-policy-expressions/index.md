@@ -57,3 +57,5 @@ Editing **Inbound processing / Outbound processing / Backend**:
   ![APIM Inbound Processing](../../assets/images/apim-inbound-processing.png)
 
   ![APIM Inbound Form Editor](../../assets/images/apim-inbound-form-editor.png)
+
+  **VIDEO**: There is a video example that walks through APIM polices that you can find [HERE](https://youtu.be/P1pO22eEYwM?si=VGFM_jCvr-aadJzC)

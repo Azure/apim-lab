@@ -50,3 +50,5 @@ Proper version management not only helps organize your API, it also aids in Azur
 ### What Versions Enable
 
 Now that you have created a new version of the API, you have the ability to introduce breaking changes. Often times a breaking change in a backend API necessitates an API version change in APIM. Leaving a legacy implementation behind to focus on more contemporary API implementations also is a common versioning use case. Whatever the reason may be, Azure API Management provides means to abstract breaking changes in a responsible and safe manner.  
+
+**VIDEO**: There is a video example that walks through using Versions that you can find [HERE](https://youtu.be/W-uN95A1PJc?si=0-Z0uFQxqIaIdWVS)
