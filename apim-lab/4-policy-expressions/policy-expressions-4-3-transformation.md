@@ -151,3 +151,5 @@ Query string parameters and headers can be easily modified prior to sending the 
   ![APIM Policy Amend Backend Call](../../assets/images/apim-trace-amend-backend-1.png)
 
   ![APIM Policy Amend Backend Call](../../assets/images/apim-trace-amend-backend-2.png)
+
+**VIDEO**: There is a video example that walks through transformation polices that you can find [HERE](https://youtu.be/qSn1oenDRXU?si=ztuH3tLrnGpPJwrr)

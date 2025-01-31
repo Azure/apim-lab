@@ -85,3 +85,5 @@ An optional lab to connect to Microsoft Teams:
 - Look for a received message in your Teams channel:
 
   ![Teams APIM Message](../../assets/images/teams-apim-message.png)
+
+**VIDEO**: There is a video example that walks through using the Send One Way policy that you can find [HERE](https://youtu.be/4IrEHJadtjI?si=Y8_WRdh8Kyo1w5xg)

@@ -33,3 +33,5 @@ A product contains one or more APIs as well as a usage quota and the terms of us
   Back in the private browsing session, browse to **Products** and observe the new **Gold Tier**. 
 
   ![APIM Developer Portal Added Product](../../assets/images/apim-developer-portal-added-product.png)
+
+**VIDEO**: There is a video example that walks through product management that you can find [HERE](https://youtu.be/uZ4E5fas-lY?si=sPhyud4hmBV0YvPk)

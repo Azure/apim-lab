@@ -44,3 +44,5 @@ Alternatively, you can issue a verbose (`-v`) CURL command against the **Echo AP
 `curl -v https://<your azure api management instance>.azure-api.net/echo/resource?param1=sample`
 
 ![APIM Echo API Curl Success](../../assets/images/apim-echo-api-test-6.png)
+
+**VIDEO**: There is a video example that walks through creation and verification that you can find [HERE](https://youtu.be/LFKnYz5PnvU?si=mWGUtL1WGr1hFQRi)

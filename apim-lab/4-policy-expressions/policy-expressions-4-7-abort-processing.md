@@ -48,3 +48,5 @@ The ability to terminate a response gracefully is of importance in a number of c
   ### Clean Up
 
   Now that you have seen how to gracefully terminate a request with a response, it is time to clean up the code to prevent a downstream impact in subsequent labs. **Please remove the `<choose>` logic above to let all requests flow again, then save the changes.**
+
+**VIDEO**: There is a video example that walks through error handling in APIM that you can find [HERE](https://youtu.be/56HYoSmvuyg?si=OlAjzXRFkEwnIVFS)

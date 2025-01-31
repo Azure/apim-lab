@@ -31,3 +31,5 @@ Please do not modify other settings. Specifically, the *Virtual network* tab sho
 Once started, it is not necessary to remain on this page or in the Azure Portal. If you entered a valid email address, you will receive a provisioning completion email:
 
 ![APIM creation email](../../assets/images/apim-creation-email.png)
+
+**VIDEO**: There is a video example that walks through creation and verification that you can find [HERE](https://youtu.be/LFKnYz5PnvU?si=mWGUtL1WGr1hFQRi)
