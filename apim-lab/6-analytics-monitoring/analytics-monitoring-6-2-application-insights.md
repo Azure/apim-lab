@@ -73,6 +73,20 @@ A failed request is a request which:
 - triggered an *on-error* section of the API policies, or
 - has a response HTTP status code matching 4xx or 5xx.
 
+### Log request and response headers
+
+There is a way to log all the request and response headers in Azure API Management
+1. Navigate to "All APIs" or select specific API if you wish to apply for specific API scope
+2. Go to the **Settings** tab from the top bar.
+3. Scroll down to the **Diagnostics Logs** section.
+5. Under the diagnostics setting you can find Application Insights and Azure Monitor. You can select options based on your configuration however for this Application Insights integration select **Application Insights**.
+6. On the **Application Insights** tab check the **Enable** box if not already enabled.
+7. In the **Destination** dropdown select your logger.
+8. Set sampling to **100** to capture all events.
+9. Check the **Always log errors** checkbox and click on Advanced Options
+10. Check Frontend Request, Frontend Response, Backend Request and Backend response. For these request add Header to log as X-Forwarded-For and size give max 8192 and click save.
+11. Once done test your APIs then go to Application Insight resource —> Logs —> requests table —> You can find the request body under customDimensions
+
 ### Generating Test Requests
 
 Any request you make to the Colors API in Azure API Management will be subject to being received by Application Insights (recall the 100% sampling). To generate a large amount of requests quickly, you can invoke the API via the [Colors](https://colors-web.azurewebsites.net) website. As we are presently caching the output for 15 seconds, you may get a lot of requests with the same color. Please feel free to disable the output caching in the Colors API if you would like to see more variety.
