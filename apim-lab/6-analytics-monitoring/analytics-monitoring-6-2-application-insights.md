@@ -95,3 +95,5 @@ You can manipulate the number of requests being logged by adjusting the **Sampli
 Sampling is an effective tool in diagnosing often general operational issues. For example, sampling can identify connectivity or integration issues as these would often occur in high quantity, not singular instances. A sampling rate of 50% is as effective in diagnosing such issues as 100% is.
 
 Skipping logging of headers and body of requests and responses will also have positive impact on alleviating performance issues.
+
+**VIDEO**: There is a video example that walks through using Azure Monitor & Application insights that you can find [HERE](https://youtu.be/-8JWforFbww?si=4f1id4NuK5BgQn8p)

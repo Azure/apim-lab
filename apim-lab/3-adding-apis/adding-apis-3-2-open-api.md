@@ -58,3 +58,5 @@ As a demo we will use an API that offers a simple calculator service : [Calc API
 This is likely a mixed-content CORS error in which you are attempting a call to an Azure API Management endpoint that is only set up for *HTTP*. It fails as the Developer Portal runs on *HTTPS*. Please check the setup steps above for the _URL scheme_.
 
 ![APIM Calculator CORS Error](../../assets/images/apim-calc-cors-error.png)
+
+**VIDEO**: There is a video example that walks through importing APIs that you can find [HERE](https://youtu.be/3vz-xMCr12s?si=n4BCVHrw-V_LOYYB)

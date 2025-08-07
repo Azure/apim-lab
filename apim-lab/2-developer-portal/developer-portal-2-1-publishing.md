@@ -111,3 +111,5 @@ It's now time to test one of the published APIs.
   ![APIM Developer Portal Try API](../../assets/images/apim-developer-portal-try-api-1.png)
 
   ![APIM Developer Portal Try API](../../assets/images/apim-developer-portal-try-api-2.png)
+
+**VIDEO**: There is a video example that walks through publishing the developer portal that you can find [HERE](https://youtu.be/E2T23XlP8iI?si=ueuEwEYJ12B5o4MX)

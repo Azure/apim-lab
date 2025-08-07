@@ -92,3 +92,5 @@ https://YOUR_APIM.azure-api.net/colors/random?key=UNLIMITED_PRIMARY__KEY_HERE
 - Try the same **Starter** URL directly in your web browser and notice the error status / message returned:
 
     ![APIM Colors API URL in Browser for Starter Product 429 ](../../assets/images/apim-color-api-url-in-browser-starter-product-429.png)
+
+**VIDEO**: There is a video example that walks through calling APIs that you can find [HERE](https://youtu.be/1bNhXwu5nIc?si=nJkSpkSCm4kpWhK6)
