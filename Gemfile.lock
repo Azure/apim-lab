@@ -265,7 +265,7 @@ GEM
     tzinfo-data (1.2024.1)
       tzinfo (>= 1.0.0)
     unicode-display_width (1.8.0)
-    uri (0.13.0)
+    uri (0.13.2)
 
 PLATFORMS
   x64-mingw-ucrt
