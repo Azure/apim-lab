@@ -16,7 +16,7 @@ It is possible to self-host and manage your own Developer Portal outside of an A
 
 Before you make your portal available to visitors, you should personalize the automatically-generated content. Recommended changes include the layouts, styles, and the content of the home page. This is documented at <https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-developer-portal-customize>.
 
-A video on customization is available at <https://www.youtube.com/watch?v=5mMtUSmfUlw>.
+**VIDEOS**: There are videos on customization available at <https://www.youtube.com/watch?v=5mMtUSmfUlw> and <https://youtu.be/KEe3pPE0crM?si=4gbhrmTe0fbd3qz_>
 
 ![APIM Developer Portal Config](../../assets/images/apim-developer-portal-config-1.png)
 
@@ -35,3 +35,5 @@ Look at the available notifications and notifications templates which are custom
 ![APIM Notification Templates](../../assets/images/apim-notification-templates.png)
 
 ![APIM Notification Template Edit](../../assets/images/apim-notification-edit.png)
+
+**VIDEO**: There is a video example that walks through email notifications that you can find [HERE](https://youtu.be/UnTkA555AgE?si=SfhqWvrpCgil3Hqe)

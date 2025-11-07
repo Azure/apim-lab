@@ -74,3 +74,5 @@ nav_order: 2
   > Unlike versioning, revisioning requires no URL updates for the API consumer.
 
   ![APIM Revision Make Current](../../assets/images/apim-revision-make-current-3.png)
+
+**VIDEO**: There is a video example that walks through using Revisions that you can find [HERE](https://youtu.be/2lub4l6-8FI?si=cLBnR5c-zglW_Ox1)

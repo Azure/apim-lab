@@ -18,3 +18,5 @@ nav_order: 1
   - [Star Wars API](https://swapi.dev/)
   - [Calculator API](http://calcapi.cloudapp.net/calcapi.json)
 - For the DevOps part, you need to have access to a valid [Azure DevOps](https://dev.azure.com) organization.
+
+**VIDEO**: There is a video example that walks through getting started which includes technical requirements that you can find [HERE](https://youtu.be/MZWPLyPgJz8)
