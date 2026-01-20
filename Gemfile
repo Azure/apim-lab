@@ -7,12 +7,15 @@ source "https://rubygems.org"
 #     bundle exec jekyll serve
 #
 
-# Enforcing supported github pages versions (Jekyll 3.9.2)
+# Enforcing supported github pages versions (Jekyll 3.9.5)
 # https://pages.github.com/versions/
 gem "jekyll", "	3.9.5"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "just-the-docs"
+
+# Required for Ruby 3.x (webrick was removed from stdlib)
+gem "webrick"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
