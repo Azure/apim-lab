@@ -53,11 +53,11 @@ In this section, we will create a simple HTTP Triggered Azure Function which run
 
 ![](../../assets/images/azf-published.png)
 
-- If you click on the **HTTPExample** Function, this will take you to the **Code + Test** console where you can inspect the **function_app.py** Python Code. As you can see below, the template HTTP Trigger code is very simple. It defines a single route which prints a successful message and a personalised message if a **name** is passed as query parameter. Let's test that next with an API.
+- If you click on the **HTTPExample** Function, this will take you to the **Code + Test** console where you can inspect the **function_app.py** Python Code. As you can see below, the template HTTP Trigger code is very simple. It defines a single route which prints a successful message and a personalised message if a **name** is passed as a query parameter. Let's test that next with an API.
 
 ![](../../assets/images/azf-python-code.png)
 
-- Let's now create an API based on this Azure Function App and HTTPTrigger. Add the function to Azure API Management. In the API blade select [+Add API] and the [Function App] tile
+- Let's now create an API based on this Azure Function App and HTTPTrigger. Add the function to Azure API Management. In the API blade, select **+Add API** and the **Function App** tile.
 
 ![](../../assets/images/apim-azure-function-add-api.png)
 
@@ -69,12 +69,11 @@ In this section, we will create a simple HTTP Triggered Azure Function which run
 
 ![](../../assets/images/apim-azure-function-select-1.png)
 
-- Select the HTTPExample Function Handler from the app and then **Select**.
+- Select the **HTTPExample** Function Handler from the app and then **Select**.
 
 ![](../../assets/images/apim-azure-function-select-2.png)
 
 - Accept the defaults and click **Create**
-
 
 - Validate the function works in the APIM portal. Select the **APIMAZF** API, select **Test**, then select the **HTTExample** post route. Add a **Query Parameter** called **Name** with the value of your choice. Click **Send** to see the response. You can optionally test again but this time remove the **name** query parameter to see a different response.
 
@@ -86,52 +85,50 @@ Congratulations, you have successfully created an API from an Azure Function!
 
 ### Azure Logic Apps
 
-- Create a simple logic app that is Triggered by an HTTP Request
+In this section, we will create a simple Logic App that is Triggered by a HTTP Request and which will run our Azure Function from the previous step. We will then use this Logic App to create an API in APIM.
 
-Example:
+- Before we create a Logic App, we will need the **Function URL** from our Azure Function. In the **Azure Function portal**, find the Azure Function you created in the previous step. In **Overview**, click on **HTTPExample** from the **Functions** list and then **Get Function URL**. Copy the **default (Function key)** and keep this safe. This is the function URL with the default function key and we will need this for our Logic App to call the Azure Function.
 
-![](../../assets/images/apim-logic-app-example-1.png)
+- In the **Logic App portal**, click **Create** and then select **Consumption** to create a new Logic App on the Consumption plan.
 
-![](../../assets/images/apim-logic-app-example-2.png)
+![](../../assets/images/apim-logic-app-plan.png)
 
-Use the following sample message to generate the schema of the Request body payload.  By specifying the schema, the individual fields (in this case `msg`) can be extracted and referred to in the subsequent logic
+- Add the following basic details:
+  - **Name**: `APIMLGA`
+  - **Resource Group (re-use Azure Function RG)**: `af-dev-we-apimazf-[your-initials]-01`
 
-```json
-{
-  "msg": "text"
-}
-```
+- After creation and in the **Logic app designer**, click on **Add a Trigger**, click on **Request**, and then select **When an HTTP request is received**.
 
-Lets add the function to API Managament. In the API blade select [+Add API] and the [Logic App] tile
+- Click on the **+** to add an action after the **When an HTTP request is received** and select **Compose** within the **Data Operations** section. Paste the following into the **Inputs** textbox: `@{triggerOutputs()?['queries']?['name']}`. This retrieves the name from the query parameters that we will pass in to the Logic App and eventually pass in from APIM.
 
-![](../../assets/images/apim-logic-app-add-api.png)
+- Click on the **+** to add a **HTTP** action within the **built-in HTTP section**. In the *HTTP* details, enter the following and hit **Save** when complete:
+  - **URI**: Add the first section of your function URL before the question mark e.g. `https://apimazf-e2fxbwhnd8dwd8ch.westeurope-01.azurewebsites.net/api/HttpExample`.
+  - **Method**:  Select **POST**
+  - **Headers**: Add a key **x-functions-key** and use the code value from the remainder of your function url as the value e.g code=**rxgSatMHC4Dmsi26OXvRzg0QFkzGyMkRqBQJrqhdszFuSueRvQ==**
+  - **Queries**: Enter **name** for the name and for the value, select the lightenning bolt to select a **Dynamic Expression** and then selecting **Outputs** from the **Compose** action. This enables us to propogate the name query parameter from the input to Logic App through to the Azure Function.
 
-- Select the [Browse] button to get a list of Logic Apps in the subscription
+![](../../assets/images/apim-logic-app-http-action.png)
 
-![](../../assets/images/apim-logic-app-add-browse.png)
+- Click on the **+** below the **HTTP** action to add a **Response** action, which is under **Request** in the **By Connector** section. In the **Body** text box, click the lightenning bolt to add a dynamic expression and select **Body** from the HTTP action. This will return the response body from the Azure Function.
 
-- Select the Logic App
+![](../../assets/images/apim-logic-app-response.png)
 
-![](../../assets/images/apim-logic-app-select.png)
+- Your final Logic App workflow should look like the image below:
 
-- Amend the Names / Descriptions, URL suffix  and select the Products
+![](../../assets/images/apim-logic-app-final.png)
 
-![](../../assets/images/apim-logic-app-create.png)
+- Hit **Save** at the top left of the workflow.
 
- As previously add CORS policy
+- Back in the **APIM Portal**, navigate to the **APIs** blade, click **Add API** and in the **Create from Azure resource** section, click on **Logic App**.
 
-- Validate the Logic App works - either from the Azure management portal or the developer poral
+![](../../assets/images/apim-add-logic-app-api.png)
 
-![](../../assets/images/apim-logic-app-test-1.png)
+- In the **Create from Logic App** dialog, click **browse** to find the Logic App you just created. Click **Select**. Once the details from the Logic App you selected have been filled into boxes automatically in the **Create from Logic App** dialog, hit **Create**.
 
-![](../../assets/images/apim-logic-app-test-2.png)
+- This will create an API based on our Logic App and should automatically generate a single POST route entitled **When_an_HTTP_request_is_received-invoke**. Select that **POST** operation and click on **Test**. Add a Query Parameter using **name** as the name and a value of your choice. Finally, click **Send** to send the test request. You should see the same response as previously because the Logic App will output the response from the Azure Function. As before, you can send another test without a name query parameter to get a generic and non-personalised response.
 
-- Check the Logic App audit
+![](../../assets/images/apim-logic-app-test.png)
 
-![](../../assets/images/apim-logic-app-test-3.png)
-
-- Check the email was sent
-
-![](../../assets/images/apim-logic-app-test-4.png)
+**This completes our exercise into creating APIs in APIM from Azure Functions and Logic Apps!**
 
 
