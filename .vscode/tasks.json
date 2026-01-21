@@ -26,7 +26,7 @@
         {
             "label": "run locally and watch",
             "type": "shell",
-            "command": "bundle exec jekyll serve",
+            "command": "bundle exec jekyll serve --livereload --force_polling",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
