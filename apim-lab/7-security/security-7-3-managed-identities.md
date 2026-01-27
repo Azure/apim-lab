@@ -54,25 +54,15 @@ In Azure, an Active Directory identity can be assigned to a managed resource suc
 ```xml
 <inbound>
   <base />
-  <send-request mode="new" response-variable-name="secretResponse" timeout="20" ignore-error="false">
-      <set-url>https://{your-keyvault-name}.vault.azure.net/secrets/favoritePerson/?api-version=7.0</set-url>
-      <set-method>GET</set-method>
-      <authentication-managed-identity resource="https://vault.azure.net" />
-  </send-request>
-  <set-variable name="favoritePersonRequest" value="@{
-      var secret = ((IResponse)context.Variables["secretResponse"]).Body.As<JObject>();
-      return "/people/" + secret["value"].ToString() + "/";
-  }" />
-  <rewrite-uri template="@((string)context.Variables["favoritePersonRequest"])" />
+  <rewrite-uri template="/people/{{my-secret}}/" />
 </inbound>
 ```
-
-Don't forget to change the `set-url` value with your Key Vault name.
 
 ### Test the operation
 
 - Sign in to the developer portal and test this new operation
 - Notice the request URL will be similar to: `https://{your-apim-instance}.azure-api.net/sw/favorite`
+
 
 
 
