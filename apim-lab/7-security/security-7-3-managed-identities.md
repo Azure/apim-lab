@@ -21,6 +21,10 @@ In Azure, an Active Directory identity can be assigned to a managed resource suc
 
 ![Create Key Vault](../../assets/images/apim-security-create-key-vault.png)
 
+#### Next, add a [secret](https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal#add-a-secret-to-key-vault) to the Key Vault instance
+  - Name:`Secret-test`
+  - Secret value: `3`
+    
 ### Steps to grant the API Management managed identity the appropriate RBAC permissions on the Key Vault
 
 1. In the left menu, select Access control (IAM).
@@ -62,6 +66,7 @@ In Azure, an Active Directory identity can be assigned to a managed resource suc
 
 - Sign in to the developer portal and test this new operation
 - Notice the request URL will be similar to: `https://{your-apim-instance}.azure-api.net/sw/favorite`
+
 
 
 
