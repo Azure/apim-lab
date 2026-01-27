@@ -7,7 +7,7 @@ nav_order: 3
 
 ## Managed Identities
 
-In Azure, an Active Directory identity can be assigned to a managed resource such as an Azure Function, App Service or even an Azure API Management instance. Once an identity is assigned, it has many capabilities to work with other resources that leverage Azure AD for authentication, much like a service principal. This section will demonstrate how to access "Named Values" of type Secrets from Key Vault. Here are the prerequisites:
+In Azure, an Active Directory identity can be assigned to a managed resource such as an Azure Function, App Service or even an Azure API Management instance. Once an identity is assigned, it has many capabilities to work with other resources that leverage Azure AD for authentication, much like a service principal. This section will demonstrate how to access "Named Values" of type Secrets from Key Vault. 
 
 ### Register Azure API Management with Active Directory by enabling its Managed Idenity
 
@@ -66,6 +66,7 @@ In Azure, an Active Directory identity can be assigned to a managed resource suc
 
 - Sign in to the developer portal and test this new operation
 - Notice the request URL will be similar to: `https://{your-apim-instance}.azure-api.net/sw/favorite`
+
 
 
 
