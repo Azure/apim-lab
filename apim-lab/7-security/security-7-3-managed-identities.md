@@ -7,9 +7,9 @@ nav_order: 3
 
 ## Managed Identities
 
-In Azure, an Active Directory identity can be assigned to a managed resource such as an Azure Function, App Service or even an Azure API Management instance. Once an identity is assigned, it has many capabilities to work with other resources that leverage Azure AD for authentication, much like a service principal.
+In Azure, an Active Directory identity can be assigned to a managed resource such as an Azure Function, App Service or even an Azure API Management instance. Once an identity is assigned, it has many capabilities to work with other resources that leverage Azure AD for authentication, much like a service principal. This section will demonstrate how to access "Named Values" of type Secrets from Key Vault. Here are the prerequisites:
 
-### Register Azure API Management with Active Directory
+### Register Azure API Management with Active Directory by enabling its Managed Idenity
 
 ![Register APIM](../../assets/images/apim-security-register-principal.png)
 
@@ -25,25 +25,14 @@ In Azure, an Active Directory identity can be assigned to a managed resource suc
   - Name:`favoritePerson`
   - Secret value: `3`
 
-### Access policy and principal assignment
+### - Here are the steps to grant the API Management managed identity the appropriate RBAC permissions on the Key Vault
 
-Create an access policy
-
-![Create Key Vault](../../assets/images/apim-security-key-vault-1.png)
-
-Select the `Get` operation from the list of Secret permissions
-
-![Create Key Vault](../../assets/images/apim-security-key-vault-2.png)
-
-Select the principal and search for the name of your Azure API Management instance
-
-![Create Key Vault](../../assets/images/apim-security-key-vault-3.png)
-
-Remember to click **Create**
-
-You should see something like this:
-
-![Create Key Vault](../../assets/images/apim-security-key-vault-4.png)
+1. In the left menu, select Access control (IAM).
+1. On the Access control (IAM) page, select Add role assignment.
+1. On the Role tab, select Key Vault Secrets User, then select Next.
+1. On the Members tab, select Managed identity > + Select members.
+1. On the Select managed identity page, select the system-assigned managed identity associated with your API Management instance, and then select Select.
+1. Select Review + assign.
 
 ### Azure API Management, Key Vault and Managed Service Identity
 
@@ -76,4 +65,5 @@ Don't forget to change the `set-url` value with your Key Vault name.
 
 - Sign in to the developer portal and test this new operation
 - Notice the request URL will be similar to: `https://{your-apim-instance}.azure-api.net/sw/favorite`
+
 
