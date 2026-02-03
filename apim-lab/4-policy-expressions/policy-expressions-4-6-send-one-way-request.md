@@ -12,18 +12,19 @@ APIM integrates well with [external services](https://docs.microsoft.com/en-us/a
 
 This example shows a fire-and-forget [send-one-way-request](https://docs.microsoft.com/en-us/azure/api-management/api-management-sample-send-request#send-one-way-request) policy, which does not await a response. Alternatively, you can use a [send-request](https://docs.microsoft.com/en-us/azure/api-management/api-management-sample-send-request#send-request) policy to send a request and await a return. Some complex in-flight processing logic may also be better handled by using Logic Apps.
 
+In this lab, we'll use a real-world scenario: when an order is placed in the Petstore, we want to immediately acknowledge the customer, but also fire off an asynchronous notification for downstream processing (inventory updates, fulfillment, notifications, etc.). In production this might go to Azure Service Bus or Event Grid, but we'll demo with webhook.site.
+
 ### Setup the Send-One-Way-Request policy
 
 The following policy and payload applies for both examples in this section (webhook and teams). **Please ensure that you replace the value in `<set-url>` with your webhook target URL.** You will identify the URL in either example below.
 
-- Open the **Add two integers** operation in the Calculator API.
+- Open the **Place an order for a pet** operation in the Swagger Petstore API.
 - Open the **Code View**.
 - Add the `send-one-way-request` policy to **Outbound processing** and replace the webhook and payload as required. For demo purposes we are going to use the payload for a Teams message (even for Webhook.site) and also send the message on every successful request.
 
   ```xml
   <outbound>
       <base />
-      <xml-to-json kind="direct" apply="always" consider-accept-header="false" />
       <set-header name="x-aspnet-version" exists-action="delete" />
       <set-header name="x-powered-by" exists-action="delete" />
       <choose>
@@ -35,12 +36,12 @@ The following policy and payload applies for both examples in this section (webh
         return new JObject(
           new JProperty("@type","MessageCard"),
           new JProperty("@context", "http://schema.org/extensions"),
-          new JProperty("summary","Summary"),
+          new JProperty("summary","New Order Received"),
           new JProperty("themeColor", "0075FF"),
           new JProperty("sections",
             new JArray (
               new JObject (
-                new JProperty("text", "Hello!")
+                new JProperty("text", "A new order has been placed in the Petstore!")
               )
             )
           )

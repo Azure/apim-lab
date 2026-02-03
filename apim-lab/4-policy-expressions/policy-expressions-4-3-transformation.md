@@ -92,39 +92,40 @@ Note that the inbound `Accept-Encoding` header is set to `deflate` to ensure tha
 
 ---
 
-### Transformation - XML to JSON
+### Transformation - JSON to XML
 
-A frequent requirement is to transform content, especially to maintain compatibility with legacy APIs. For this lab we are going back to the **Calculator** API that returned an XML response. 
+A frequent requirement is to transform content to maintain compatibility with legacy applications. In this lab, the modern **Swagger Petstore** API returns JSON, but imagine you have a legacy identity system that expects user profile data in XML format. Use APIM's transformation policy to convert the JSON response to XML.
 
-- Add an outbound policy to the **Add two integers** operation on the **Calculator** API to transform the response body to JSON.
+- Open the **Get user by user name** operation on the **Swagger Petstore** API.
+- Add an outbound policy to transform the response body to XML.
 
   ```xml
   <outbound>
       <base />
-      <xml-to-json kind="direct" apply="always" consider-accept-header="false" />
+      <json-to-xml apply="always" consider-accept-header="false" />
   </outbound>
   ```
 
-- Test the API and examine the response. Note that it's now JSON.
+- Test the API with username `user1` and examine the response. Note that it's now XML.
 
-  ![APIM Policy Transform XML to JSON](../../assets/images/apim-policy-transform-xml-to-json.png)
+  ![APIM Policy Transform JSON to XML](../../assets/images/apim-policy-transform-json-to-xml.png)
 
 ### Transformation - Delete response headers
 
 A frequent requirement is to remove headers, especially ones that return security-related or superfluous information.
 
-- Add an outbound policy to the same **Calculator** API operation to remove specific response headers.
+- Add an outbound policy to the same **Swagger Petstore** API operation to remove specific response headers.
 
   ```xml
   <outbound>
       <base />
-      <xml-to-json kind="direct" apply="always" consider-accept-header="false" />
+      <json-to-xml apply="always" consider-accept-header="false" />
       <set-header name="x-aspnet-version" exists-action="delete" />
       <set-header name="x-powered-by" exists-action="delete" />
   </outbound>
   ```
 
-- Invoke the API and examine the response, which now no longer contains the two headers. See above screenshot for how it looked prior.
+- Invoke the API and examine the response, which now no longer contains those headers if they were present.
 
   ![APIM Policy Delete Response Header](../../assets/images/apim-policy-delete-response-header.png)
 
@@ -132,7 +133,7 @@ A frequent requirement is to remove headers, especially ones that return securit
 
 Query string parameters and headers can be easily modified prior to sending the request on to the backend. 
 
-- Back in the same **Calculator** API operation, add inbound policies to modify the query string and headers. 
+- Open the **Find pets by status** operation in the **Swagger Petstore** API and add inbound policies to modify the query string and headers. 
 
   ```xml
   <inbound>

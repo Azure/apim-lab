@@ -19,7 +19,7 @@ nav_order: 4
 
     ![APIM Named Values](../../assets/images/apim-named-values.png)
 
-- Back in the **APIs** blade, open the **Add two integers** operation in the Calculator API. 
+- Back in the **APIs** blade, open the **Find pets by status** operation in the Swagger Petstore API. 
 - Amend the inbound `set-header` policy by clicking on the pencil icon.
 - Create a new header by pressing **+ Add header**:
   - Name: **x-request-received-time**

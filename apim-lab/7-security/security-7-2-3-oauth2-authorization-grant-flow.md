@@ -15,7 +15,7 @@ In Authorization code grant type, User is challenged to prove their identity pro
 ![Authorization Code Flow](../../assets/images/convergence-scenarios-native.svg)
 
 
-### Register an application (backend-app) in Azure AD to represent the Basic Calculator API​
+### Register an application (backend-app) in Azure AD to represent the Swagger Petstore API​
 
 To protect an API with Azure AD, first register an application in Azure AD that represents the API. The following steps use the Azure portal to register the application.
 
@@ -40,7 +40,7 @@ To protect an API with Azure AD, first register an application in Azure AD that 
 - Select **Expose an API** and **set** the Application ID URI with the default value. Record this value for later.
 ![backend app registration4a](../../assets/images/authflow4a.png)
 
-- Select the **Add a scope**. Then create a new scope that's supported by the API (for example, Calculator.Read).
+- Select the **Add a scope**. Then create a new scope that's supported by the API (for example, Petstore.Read).
 
 ![backend app registration4b](../../assets/images/authflow4b.png)
 
@@ -79,7 +79,7 @@ Every client application that calls the API needs to be registered as an applica
 ![client app registration5.1](../../assets/images/apim-oauth-grants-1.png)
 
 - Then select the `Delegated Permissions` option
-- Then mark the `Calculator.Read` checkbox
+- Then mark the `Petstore.Read` checkbox
 - Then click the `Add Permissions` button
 
 ![client app registration5.2](../../assets/images/apim-oauth-grants-2.png)
@@ -136,7 +136,7 @@ Now that you have configured an OAuth 2.0 authorization server, the Developer Co
 The next step is to enable OAuth 2.0 user authorization for your API. This enables the Developer Console to know that it needs to obtain an access token on behalf of the user, before making calls to your API.
 
 - Go to **APIs** menu under the APIM
-- Select the **Basic Calculator** and Go to **Settings**.
+- Select the **Swagger Petstore** and Go to **Settings**.
 - Under Security, choose OAuth 2.0, select the OAuth 2.0 server you configured earlier and select save.
 
 ![authcode13](../../assets/images/authflow13.png)
@@ -154,7 +154,7 @@ Now that the OAuth 2.0 user authorization is enabled on your API, the Developer 
 
 ![authcode14](../../assets/images/authflow14.png)
 
-- Browse to any operation under the **Basic Calculator** API in the developer portal and select Try it. This brings you to the Developer Console.
+- Browse to any operation under the **Swagger Petstore** API in the developer portal and select Try it. This brings you to the Developer Console.
 - Note a new item in the Authorization section, corresponding to the authorization server you just added.
 
 ![authcode15](../../assets/images/authflow15.png)
@@ -180,7 +180,7 @@ To pre-Authorize requests, we can use `validate-jwt` Policy by validating the ac
 We will now configure the Validate JWT policy to pre-authorize requests in Azure API Management, by validating the access tokens of each incoming request. If a request does not have a valid token, Azure API Management blocks it.
 
 - Browses to the APIs from the left menu of APIM
-- Click on **Basic Calculator** Api and open the **inbound** policy to add the `validate-jwt policy` (it checks the audience claim in an access token and returns an error message if the token is not valid) and save it.
+- Click on **Swagger Petstore** Api and open the **inbound** policy to add the `validate-jwt policy` (it checks the audience claim in an access token and returns an error message if the token is not valid) and save it.
 
 ``` xml
 <validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized. Access token is missing or invalid.">
@@ -197,7 +197,7 @@ You should have something like this:
 
 ![authcode19](../../assets/images/authflow19.png)
 
-- You will need to get the id of your scope, you set from you backend-app registration. Normally this comes in the form `api://<your-backend-id>/Calculator.read` , we need to use the id `<your-backend-id>` as audience
+- You will need to get the id of your scope, you set from you backend-app registration. Normally this comes in the form `api://<your-backend-id>/Petstore.Read` , we need to use the id `<your-backend-id>` as audience
 
 ![backend app registration4](../../assets/images/authflow4a.png)
 

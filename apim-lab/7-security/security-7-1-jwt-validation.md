@@ -38,7 +38,7 @@ Use the following sites:
 
 ### Validation
 
-- Back in APIM, open the **Calculator** API and select **All operations**.
+- Back in APIM, open the **Swagger Petstore** API and select **All operations**.
 - In the **Code View** add an inbound `validate-jwt` policy with the signing key.
 
   ```xml
@@ -55,7 +55,7 @@ Use the following sites:
   </policies>
   ```
 
-- Invoke the **Divide two integers** method on the API from the **Test** tab. Observe the `401` Unauthorized error.
+- Invoke the **Find pet by ID** method on the API from the **Test** tab (use pet ID `1`). Observe the `401` Unauthorized error.
 
   ![APIM Request with no JWT](../../assets/images/apim-request-no-jwt.png)
 
@@ -76,7 +76,7 @@ Use the following sites:
 
 Not only is it important that a JWT is valid, but, as we use it for authorization, we must also assert that the token contains expected claims before granting access to our APIs.
 
-- Open the **Calculator** API and select **All operations**.
+- Open the **Swagger Petstore** API and select **All operations**.
 - Modify the inbound `validate-jwt` policy to not only validate the JWT but ensure that a specific `admin` claim exists. Recall that we set `admin`: `true` in our JWT token on <https://jwt.io> above.
 
   ```xml
@@ -98,7 +98,7 @@ Not only is it important that a JWT is valid, but, as we use it for authorizatio
   </policies>
   ```
 
-- Invoke the **Divide two integers** method with the `Authorization` header as above and observe the `200` success. We have not fundamentally changed the test scenario as we only restricted the claims to something that we already had in our payload.
+- Invoke the **Find pet by ID** method with the `Authorization` header as above and observe the `200` success. We have not fundamentally changed the test scenario as we only restricted the claims to something that we already had in our payload.
 
 - Now change the `required-claims` with a claim  that does not exist (e.g. `adminx`)
 
@@ -121,7 +121,7 @@ Not only is it important that a JWT is valid, but, as we use it for authorizatio
   </policies>
   ```
 
-- Invoke the **Divide two integers** method with the `Authorization` header once more and observe the `401` Unauthorized error as the token specifies `admin` but the policy requires `adminx`.
+- Invoke the **Find pet by ID** method with the `Authorization` header once more and observe the `401` Unauthorized error as the token specifies `admin` but the policy requires `adminx`.
 
 ### Extract Claim and Pass to Backend
 
@@ -129,7 +129,7 @@ It may often be necessary to pass (specific) claims onto the backend API to info
 
 Let's add the username contained inside the JSON Web Tokens into a specific header.
 
-- Open the **Calculator** API and select **All operations**.
+- Open the **Swagger Petstore** API and select **All operations**.
 - Append the inbound policy section to extract the `name` claim and place it into a header underneath the `validate-jwt` policy.
 - Change the claim back from `adminx` to `admin` as we are interested in a successful test again.
 
@@ -159,7 +159,7 @@ Let's add the username contained inside the JSON Web Tokens into a specific head
   </policies>
   ```
 
-- Invoke the **Divide two integers** method with the `Authorization` header once more and observe the `200` Success.
+- Invoke the **Find pet by ID** method with the `Authorization` header once more and observe the `200` Success.
 - Use the **Trace** feature to inspect what was passed to backend. You should see the new header and the correct value from the claims.
 
   ![APIM JWT Claim in Trace](../../assets/images/apim-jwt-claim-in-trace.png)
