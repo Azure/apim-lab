@@ -15,14 +15,22 @@ This hands-on-lab will guide you through the different concepts around Azure API
 [Based on the original Azure API Management Lab by Mark Harrison.](https://github.com/markharrison/Lab_APIM_Original)
 
 
-Slides
+## Learn More
 
-- [Azure API Management Slides - Basic](assets/slides/APIM.pptx)
-- [Azure API Management Grand Tour Slides - 116 slides](assets/slides/Grand%20tour%20of%20Azure%20API%20Management.pdf)
+Explore the official Microsoft Learn documentation for topics covered in this lab:
+
+- **API Management Creation** - [Create an API Management instance](https://learn.microsoft.com/azure/api-management/get-started-create-service-instance)
+- **Developer Portal** - [Developer portal overview](https://learn.microsoft.com/azure/api-management/api-management-howto-developer-portal)
+- **Adding APIs** - [Import and publish APIs](https://learn.microsoft.com/azure/api-management/import-and-publish)
+- **Policy Expressions** - [API Management policies](https://learn.microsoft.com/azure/api-management/api-management-howto-policies)
+- **Versions & Revisions** - [Versions and revisions](https://learn.microsoft.com/azure/api-management/api-management-versions)
+- **Analytics & Monitoring** - [Monitor API Management](https://learn.microsoft.com/azure/api-management/api-management-howto-use-azure-monitor)
+- **Security** - [Authentication and authorization](https://learn.microsoft.com/azure/api-management/authentication-authorization-overview)
+- **DevOps** - [CI/CD for API Management](https://learn.microsoft.com/azure/api-management/devops-api-development-templates)
 
 Diagrams
 
-- [Azure API Management Architecture Design Session](/apim-lab/apim-lab/10-additional-topics/additional-topics-10-1-architecture.html)
+- [Azure API Management Architecture Design Session](apim-lab/10-additional-topics/additional-topics-10-1-architecture.html)
 
 
 
