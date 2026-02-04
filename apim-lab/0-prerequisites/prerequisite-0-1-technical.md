@@ -16,5 +16,5 @@ nav_order: 1
   - [Colors API](https://colors-api.azurewebsites.net/swagger/v1/swagger.json), in case this website is down you can deploy your own API using the following [instructions](../10-additional-topics/additional-topics-10-2-container-instance.md)
   - [Colors website](https://colors-web.azurewebsites.net), in case this website is down you can deploy your own website using the following [instructions](../10-additional-topics/additional-topics-10-2-container-instance.md)
   - [Star Wars API](https://swapi.dev/)
-  - [Swagger Petstore API](https://petstore3.swagger.io/)
+  - [Swagger Petstore API](https://petstore.swagger.io/)
 - For the DevOps part, you need to have access to a valid [Azure DevOps](https://dev.azure.com) organization.

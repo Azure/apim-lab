@@ -10,7 +10,7 @@ nav_order: 2
 
 Instead of importing operations one-by-one, you can also import a full API. The [OpenAPI specification](https://www.openapis.org/) (aka [Swagger](https://swagger.io)) is a definition format to describe RESTful APIs. The specification creates a RESTful interface for easily developing and consuming an API by effectively mapping all the resources and operations associated with it.
 
-As a demo we will use an API that offers a sample pet store service: [Swagger Petstore](https://petstore3.swagger.io)
+As a demo we will use an API that offers a sample pet store service: [Swagger Petstore](https://petstore.swagger.io)
 
 ![APIM Swagger Petstore API](../../assets/images/apim-petstore-api.png)
 
@@ -18,7 +18,7 @@ As a demo we will use an API that offers a sample pet store service: [Swagger Pe
 2) Click on **Add API**.  
 3) Under **Create from definition** select **OpenAPI**.  
 4) Select the **Full** option in the **Create from OpenAPI specification** dialog.  
-5) Enter `https://petstore3.swagger.io/api/v3/openapi.json` as the **OpenAPI specification** value. You should subsequently see **Display name**, **Name**, and **Description** populate. For simplicity, change **Display name** and **Name** to just `Petstore`.  
+5) Enter `https://petstore.swagger.io/v2/swagger.json` as the **OpenAPI specification** value. You should subsequently see **Display name**, **Name**, and **Description** populate. For simplicity, change **Display name** and **Name** to just `Petstore`.  
 6) The **URL scheme** defaults to `HTTPS` since the backend supports HTTPS - no change needed.  
 7) Set the **API URL suffix** to `petstore`.  
 8) Assign **Starter** and **Unlimited** products.  
