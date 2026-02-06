@@ -112,22 +112,39 @@ A frequent requirement is to transform content to maintain compatibility with le
 
 ### Transformation - Delete response headers
 
-A frequent requirement is to remove headers, especially ones that return security-related or superfluous information.
+A frequent requirement is to remove headers, especially ones that return security-related or superfluous information. To demonstrate this pattern, we'll first add a custom header to simulate sensitive backend info, then remove it.
 
-- Add an outbound policy to the same **Swagger Petstore** API operation to remove specific response headers.
+- Continue with the **Get user by user name** operation on the **Swagger Petstore** API.
+- First, add an outbound policy to add a custom header to the response.
 
   ```xml
   <outbound>
       <base />
       <json-to-xml apply="always" consider-accept-header="false" />
-      <set-header name="x-aspnet-version" exists-action="delete" />
-      <set-header name="x-powered-by" exists-action="delete" />
+      <set-header name="x-backend-name" exists-action="override">
+          <value>petstore-backend</value>
+      </set-header>
   </outbound>
   ```
 
-- Invoke the API and examine the response, which now no longer contains those headers if they were present.
+- Test the API with username `user1` and verify the `x-backend-name` header appears in the response.
 
-  ![APIM Policy Delete Response Header](../../assets/images/apim-policy-delete-response-header.png)
+  ![APIM Policy Response Header](../../assets/images/apim-policy-delete-response-header.png)
+
+- Now update the policy to also delete the header, demonstrating how you would remove sensitive headers:
+
+  ```xml
+  <outbound>
+      <base />
+      <json-to-xml apply="always" consider-accept-header="false" />
+      <set-header name="x-backend-name" exists-action="override">
+          <value>petstore-backend</value>
+      </set-header>
+      <set-header name="x-backend-name" exists-action="delete" />
+  </outbound>
+  ```
+
+- Test again and verify the `x-backend-name` header is no longer in the response.
 
 ### Transformation - Amend what's passed to the backend
 
@@ -147,7 +164,7 @@ Query string parameters and headers can be easily modified prior to sending the 
   </inbound>
   ```
 
-- Test the call by using either the **Starter** or **Unlimited** product, click on Trace button and then inspect the result on the **Trace** tab. If Tracing is not enabled, press **Enable Tracing**.
+- Test the call by using either the **Starter** or **Unlimited** product, status of 'available'. Click on Trace button and then inspect the result on the **Trace** tab. If Tracing is not enabled, press **Enable Tracing**.
 
   ![APIM Policy Amend Backend Call](../../assets/images/apim-trace-amend-backend-1.png)
 

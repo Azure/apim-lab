@@ -19,6 +19,7 @@ In this lab, we'll use a real-world scenario: when an order is placed in the Pet
 The following policy and payload applies for both examples in this section (webhook and teams). **Please ensure that you replace the value in `<set-url>` with your webhook target URL.** You will identify the URL in either example below.
 
 - Open the **Place an order for a pet** operation in the Swagger Petstore API.
+
 - Open the **Code View**.
 - Add the `send-one-way-request` policy to **Outbound processing** and replace the webhook and payload as required. For demo purposes we are going to use the payload for a Teams message (even for Webhook.site) and also send the message on every successful request.
 
@@ -63,6 +64,19 @@ The following policy and payload applies for both examples in this section (webh
 
 - Use this URL as the value in the `<set-url>` property in the `send-one-way-request` policy previously defined.
 
+- When testing this operation, use the following example request body:
+
+  ```json
+  {
+    "id": 0,
+    "petId": 5,
+    "quantity": 1,
+    "shipDate": "2026-02-06T10:38:42.974Z",
+    "status": "placed",
+    "complete": true
+  }
+  ```
+  
 - Invoke the API from the Azure API Management **Test** tab by clicking the **Trace** button and observe the `200` success response.
 
 - Check the **Trace** for the **Outbound** one-way message.
