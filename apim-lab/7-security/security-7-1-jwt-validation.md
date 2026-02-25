@@ -17,8 +17,8 @@ JSON Web Tokens are an open-industry standard method for representing claims sec
 Use the following sites:
 - <https://www.unixtimestamp.com> to get a future date using the Epoch Unix Timestamp _at least one hour from the current time_ as the JWT will not work otherwise (e.g. 01/11/2029 = `1862842300`)
 
-- <https://jwt.io> to create a JWT with payload. In the **Decoded** section make these changes:
-  - Leave the **Header** as is.
+- <https://jwt.io> to create a JWT with payload. In the **JWT Encoder** section generate an example with these changes:
+  - Change the algorithm to HS256. This should update the **Header** as per the image below.
   - Use the following **Payload** format and replace the `exp` value with your newly-created Unix timestamp:
 
     ```json
@@ -30,8 +30,8 @@ Use the following sites:
     }
     ```
 
-  - In the **Verify Signature** area use a 256-bit key that will also be used in the Azure API Management policy. We used `123412341234123412341234` as an example, which is a rather weak secret but serves the demo purpose.
-  - Check **secret base64 encoded**.
+  - In the **Sign JWT** area enter a 256-bit secret (minimum 32 characters). We used `12341234123412341234123412341234` as an example, which is a rather weak secret but serves the demo purpose.
+  - Copy the **Encoded** JWT token - you'll need it for testing in APIM.
   - Your configuration should be similar to this now:
 
     ![JWT.io Website](../../assets/images/jwt-io.png)
@@ -41,13 +41,15 @@ Use the following sites:
 - Back in APIM, open the **Swagger Petstore** API and select **All operations**.
 - In the **Code View** add an inbound `validate-jwt` policy with the signing key.
 
+  > **Important**: The APIM `<key>` element expects a **base64-encoded** value of your secret. If your jwt.io secret is `12341234123412341234123412341234`, use its base64 encoding: `MTIzNDEyMzQxMjM0MTIzNDEyMzQxMjM0MTIzNDEyMzQ=`
+
   ```xml
   <policies>
       <inbound>
           <base />
           <validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized">
               <issuer-signing-keys>
-                  <key>123412341234123412341234</key>
+                  <key>MTIzNDEyMzQxMjM0MTIzNDEyMzQxMjM0MTIzNDEyMzQ=</key>
               </issuer-signing-keys>
           </validate-jwt>
       </inbound>
@@ -85,7 +87,7 @@ Not only is it important that a JWT is valid, but, as we use it for authorizatio
           <base />
           <validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized">
               <issuer-signing-keys>
-                  <key>123412341234123412341234</key>
+                  <key>MTIzNDEyMzQxMjM0MTIzNDEyMzQxMjM0MTIzNDEyMzQ=</key>
               </issuer-signing-keys>
               <required-claims>
                   <claim name="admin" match="any">
@@ -108,7 +110,7 @@ Not only is it important that a JWT is valid, but, as we use it for authorizatio
           <base />
           <validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized">
               <issuer-signing-keys>
-                  <key>123412341234123412341234</key>
+                  <key>MTIzNDEyMzQxMjM0MTIzNDEyMzQxMjM0MTIzNDEyMzQ=</key>
               </issuer-signing-keys>
               <required-claims>
                   <claim name="adminx" match="any">
@@ -139,7 +141,7 @@ Let's add the username contained inside the JSON Web Tokens into a specific head
           <base />
           <validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized">
               <issuer-signing-keys>
-                  <key>123412341234123412341234</key>
+                  <key>MTIzNDEyMzQxMjM0MTIzNDEyMzQxMjM0MTIzNDEyMzQ=</key>
               </issuer-signing-keys>
               <required-claims>
                   <claim name="admin" match="any">

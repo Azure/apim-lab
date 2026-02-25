@@ -73,7 +73,7 @@ Every client application that calls the API needs to be registered as an applica
 
 - Now we have to open our client app and choose the option `API permissions`
 - In here we need to click on `Add a permission`
-- Then choose `My APIs`
+- Then choose `My APIs/org APIs`
 - Select the record for `backend-app-oauth`
 
 ![client app registration5.1](../../assets/images/apim-oauth-grants-1.png)
@@ -112,7 +112,23 @@ Specify the Authorization endpoint URL and Token endpoint URL. These values can 
 
 ### Endpoints versions
 
-We recommend using v2 endpoints. When using v2 endpoints, use the scope you created for the backend-app in the Default scope field. Also, make sure to set the value for the accessTokenAcceptedVersion property to 2 in your application manifest in Azure AD Client APP and Backend app.
+We recommend using v2 endpoints. When using v2 endpoints, you **must** specify the full scope URI in the **Default scope** field. This is required - without it you will get an `AADSTS900144` error about missing scope.
+
+- For **Default scope**, enter the full scope URI from your backend-app, for example:
+  ```
+  api://<your-backend-app-client-id>/Petstore.Read
+  ```
+  You can find this in your backend-app registration under **Expose an API**.
+
+Also, make sure to set the value for the `accessTokenAcceptedVersion` property to `2` in your application manifest for both the Client APP and Backend app.
+
+To set this value in Microsoft Entra ID:
+1. Navigate to your app registration and select **Manifest** from the left menu.
+2. By default, Entra ID now shows the **Graph App manifest** view, which does not include `accessTokenAcceptedVersion`.
+3. Click on the manifest view dropdown and switch to **AAD manifest** to see the full manifest with all properties.
+4. Find `accessTokenAcceptedVersion` (it may be set to `null` by default) and change it to `2`.
+5. Click **Save** at the top of the manifest editor.
+6. Repeat these steps for both your backend-app and client-app registrations.
 
 ![authcode9](../../assets/images/authflow9.png)
 
@@ -122,12 +138,21 @@ We recommend using v2 endpoints. When using v2 endpoints, use the scope you crea
 ![authcode10](../../assets/images/authflow10.png)
 
 - For **Client secret**, use the key you created for the client-app earlier.
-- Immediately following the client secret is the redirect_urls
+- Immediately following the client secret is the **Redirect URL**. Copy this value - you will need it in the next step.
 
 ![authcode11](../../assets/images/authflow11.png)
 
-- Go back to your client-app registration in Azure Active Directory under Authentication.
-- Paste the redirect_url under Redirect URI, and  check the issuer tokens then click on Configure button to save.
+### Configure Redirect URI in Client App Registration
+
+Now you need to register the redirect URL from APIM in your client-app so that Azure AD knows where to send users after authentication.
+
+1. Go back to **Microsoft Entra ID** → **App registrations** → **oauth-client-app**
+2. Select **Authentication** from the left menu
+3. Under **Platform configurations**, click **Add a platform**
+4. Select **Web** (not "Single-page application")
+5. In the **Redirect URIs** field, paste the redirect URL you copied from APIM (in this case its the auth code redirect URI e.g. `https://<your-apim-name>.developer.azure-api.net/signin-oauth/code/callback/<oauth-server-name>` not the implicit redirect one)
+6. Under **Implicit grant and hybrid flows**, check **ID tokens**
+7. Click **Configure** to save
 
 ![authcode12](../../assets/images/authflow12.png)
 
