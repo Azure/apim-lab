@@ -10,7 +10,9 @@ nav_order: 1
 #  About this workshop
 
 
-This hands-on-lab will guide you through the different concepts around Azure API Management, from the creation to the DevOps, including good practices in terms of versioning, security and so on. It is designed to bring customers and partners to a 200-level understanding of Azure Api Management. This is meant to be a hands on lab experience, all instructions are provided, but a basic level of understanding of apis is expected(http operations, networking basics, openapi, rest, soap, oauth2 and other concepts).
+This guided lab will walk you through the different concepts around Azure API Management, from the creation to the DevOps, including good practices in terms of versioning, security and so on. It is designed to bring customers and partners to a 200-level understanding of Azure Api Management. This is a guided lab experience where all instructions are provided, but a basic level of understanding of APIs is expected (HTTP operations, networking basics, OpenAPI, REST, SOAP, OAuth2 and other concepts).
+
+> **Important:** Before starting, please review the [Prerequisites](apim-lab/0-prerequisites/) section. You will need your own Azure subscription and an account with appropriate permissions.
 
 [Based on the original Azure API Management Lab by Mark Harrison.](https://github.com/markharrison/Lab_APIM_Original)
 
