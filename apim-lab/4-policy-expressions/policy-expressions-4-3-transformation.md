@@ -62,13 +62,17 @@ Note that the inbound `Accept-Encoding` header is set to `deflate` to ensure tha
           <choose>
               <when condition="@(context.Response.StatusCode == 200 && context.Product?.Name != "Unlimited")">
                   <set-body>@{
-                          var response = context.Response.Body.As<JObject>();
-
-                          foreach (var key in new [] {"hair_color", "skin_color", "eye_color", "gender"}) {
-                              response.Property(key).Remove();
-                          }
-
-                          return response.ToString();
+                        var response = context.Response.Body.As<JObject>();
+                        var props = response["result"]?["properties"] as JObject;
+                        
+                        if (props != null)
+                        {
+                            foreach (var key in new [] {"hair_color", "skin_color", "eye_color", "gender"}) {
+                            props.Property(key)?.Remove(); 
+                            }
+                        }
+                        
+                        return response.ToString();
                       }
                   </set-body>
               </when>

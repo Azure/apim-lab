@@ -14,13 +14,13 @@ nav_order: 1
 
 ### Add API from Scratch
 
-Instead of developing an API, for this lab you will use the existing [*Star Wars* API](https://swapi.dev):
+Instead of developing an API, for this lab you will use the existing [*Star Wars* API](https://swapi.tech):
 
 1) Click on **Add API**.  
 2) Click on **HTTP - Manually define an HTTP API**.  
 3) Select the **Full** option in the **Create an HTTP API** dialog.  
 4) Enter **Display name** `Star Wars`, **Name** `star-wars`, and, optionally, **Description**.  
-5) Assign `https://swapi.dev/api` to the **Web service URL**.  
+5) Assign `https://swapi.tech/api` to the **Web service URL**.  
 6) Keep the **URL scheme** at `HTTPS` as we strive to enforce HTTPS only.  
 7) Set the **API URL suffix** to `sw`. This allows us to compartmentalize the Azure API Management URLs for distinct APIs.  
 8) Assign **Starter** and **Unlimited** products.  
@@ -28,7 +28,7 @@ Instead of developing an API, for this lab you will use the existing [*Star Wars
 
   > While it is conventionally a good idea to version APIs from the onset, we are omitting this step here for brevity of the labs.
 
-  ![APIM Add Blank API](../../assets/images/apim-add-blank-api.png)
+  ![image](https://github.com/user-attachments/assets/2f4913c5-248a-44cc-9bd0-125150ff83d5)
 
 - Once created, inside the *Star Wars* API press **+ Add operation** to declare two new operations:
 
