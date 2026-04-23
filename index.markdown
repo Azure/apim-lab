@@ -10,19 +10,29 @@ nav_order: 1
 #  About this workshop
 
 
-This hands-on-lab will guide you through the different concepts around Azure API Management, from the creation to the DevOps, including good practices in terms of versioning, security and so on. It is designed to bring customers and partners to a 200-level understanding of Azure Api Management. This is meant to be a hands on lab experience, all instructions are provided, but a basic level of understanding of apis is expected(http operations, networking basics, openapi, rest, soap, oauth2 and other concepts).
+This guided lab will walk you through the different concepts around Azure API Management, from the creation to the DevOps, including good practices in terms of versioning, security and so on. It is designed to bring customers and partners to a 200-level understanding of Azure Api Management. This is a guided lab experience where all instructions are provided, but a basic level of understanding of APIs is expected (HTTP operations, networking basics, OpenAPI, REST, SOAP, OAuth2 and other concepts).
+
+> **Important:** Before starting, please review the [Prerequisites](apim-lab/0-prerequisites/) section. You will need your own Azure subscription and an account with appropriate permissions.
 
 [Based on the original Azure API Management Lab by Mark Harrison.](https://github.com/markharrison/Lab_APIM_Original)
 
 
-Slides
+## Learn More
 
-- [Azure API Management Slides - Basic](assets/slides/APIM.pptx)
-- [Azure API Management Grand Tour Slides - 116 slides](assets/slides/Grand%20tour%20of%20Azure%20API%20Management.pdf)
+Explore the official Microsoft Learn documentation for topics covered in this lab:
+
+- **API Management Creation** - [Create an API Management instance](https://learn.microsoft.com/azure/api-management/get-started-create-service-instance)
+- **Developer Portal** - [Developer portal overview](https://learn.microsoft.com/azure/api-management/api-management-howto-developer-portal)
+- **Adding APIs** - [Import and publish APIs](https://learn.microsoft.com/azure/api-management/import-and-publish)
+- **Policy Expressions** - [API Management policies](https://learn.microsoft.com/azure/api-management/api-management-howto-policies)
+- **Versions & Revisions** - [Versions and revisions](https://learn.microsoft.com/azure/api-management/api-management-versions)
+- **Analytics & Monitoring** - [Monitor API Management](https://learn.microsoft.com/azure/api-management/api-management-howto-use-azure-monitor)
+- **Security** - [Authentication and authorization](https://learn.microsoft.com/azure/api-management/authentication-authorization-overview)
+- **DevOps** - [CI/CD for API Management](https://learn.microsoft.com/azure/api-management/devops-api-development-templates)
 
 Diagrams
 
-- [Azure API Management Architecture Design Session](/apim-lab/apim-lab/10-additional-topics/additional-topics-10-1-architecture.html)
+- [Azure API Management Architecture Design Session](apim-lab/10-additional-topics/additional-topics-10-1-architecture.html)
 
 
 
