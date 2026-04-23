@@ -11,7 +11,8 @@ nav_order: 7
 
 The ability to terminate a response gracefully is of importance in a number of cases such as error handling or business logic. Using the `return-response` policies short-circuits the request and yields a response that often does not originate from the backend. Consider what general situations may make sense without shifting too much business logic into APIM.
 
-- Open the **Add two integers** operation in the **Calculator** API.
+- Open the **Finds Pets by tags** operation in the **Swagger Petstore** API. This is a deprecated operation, making it ideal for demonstrating how to return a custom error response.
+- Feel free to test it first, use a tag of 'photo' or similar - you should get an empty response back. 
 - Open the **Code View**.
 - Add the **inbound** policy to test for a condition (just `true` for our example) and return an error.
 - Invoke the API. 
@@ -31,15 +32,6 @@ The ability to terminate a response gracefully is of importance in a number of c
               </return-response>
           </when>
       </choose>
-      <set-query-parameter name="x-product-name" exists-action="override">
-          <value>@(context.Product?.Name ?? "none")</value>
-      </set-query-parameter>
-      <set-header name="x-request-context-data" exists-action="override">
-          <value>@(context.Deployment.Region)</value>
-      </set-header>
-      <set-header name="x-request-received-time" exists-action="override">
-          <value>{{TimeNow}}</value>
-      </set-header>
   </inbound>
   ```
 
