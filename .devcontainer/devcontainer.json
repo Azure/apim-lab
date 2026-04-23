@@ -1,12 +1,22 @@
 {
     "name": "Codespaces Apim github pages",
-    "extensions": [
-		"vscode-icons-team.vscode-icons",
-        "ms-azuretools.vscode-docker",
-        "ginfuru.ginfuru-vscode-jekyll-syntax"
-    ],
     "dockerFile": "Dockerfile",
-    "settings": {
-        "terminal.integrated.shell.linux": "/usr/bin/zsh",
-    }
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscode-icons-team.vscode-icons",
+                "ms-azuretools.vscode-docker",
+                "ginfuru.ginfuru-vscode-jekyll-syntax"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "rubyLsp.rubyVersionManager": {
+                    "identifier": "none"
+                },
+                "rubyLsp.bundleGemfile": "",
+                "rubyLsp.enabled": false
+            }
+        }
+    },
+    "postCreateCommand": "sudo chmod -R a+w /usr/local/rvm/gems || true && bundle install"
 }

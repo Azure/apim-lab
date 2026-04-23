@@ -1,4 +1,4 @@
-ARG VARIANT=2.7-bullseye
+ARG VARIANT=3.2-bookworm
 FROM mcr.microsoft.com/vscode/devcontainers/ruby:${VARIANT}
 
 WORKDIR /home/
@@ -15,8 +15,11 @@ RUN gem install bundler github-pages
 
 COPY . .
 
+# Convert line endings from CRLF to LF (in case files were edited on Windows)
+RUN sed -i 's/\r$//' ./setup.sh
+
 ENV DEBIAN_FRONTEND=noninteractive
-RUN sh ./setup.sh
+RUN bash ./setup.sh
 
 RUN echo 'export NVM_DIR="$HOME/.nvm"' >> "$HOME/.zshrc"
 RUN echo '\n' >> "$HOME/.zshrc"
