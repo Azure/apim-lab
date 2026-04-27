@@ -30,7 +30,11 @@ Explore the official Microsoft Learn documentation for topics covered in this la
 - **Security** - [Authentication and authorization](https://learn.microsoft.com/azure/api-management/authentication-authorization-overview)
 - **DevOps** - [CI/CD for API Management](https://learn.microsoft.com/azure/api-management/devops-api-development-templates)
 
-Diagrams
+## Samples
+
+- [Azure API Management Samples](https://aka.ms/apim/samples) - A collection of ready-to-use samples, policies, and code snippets for Azure API Management.
+
+## Diagrams
 
 - [Azure API Management Architecture Design Session](apim-lab/10-additional-topics/additional-topics-10-1-architecture.html)
 
